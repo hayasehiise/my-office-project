@@ -31,7 +31,7 @@ const Agen = () => {
                   </p>
                   <Link href="#">
                     <Button color="light" className="flex-initial" pill>
-                      Let&lsquo;s Check out
+                      Lets Check out
                       <img
                         src="./icons/arrow-upright.svg"
                         alt="next section"
