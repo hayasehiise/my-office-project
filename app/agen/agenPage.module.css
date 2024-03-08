@@ -1,0 +1,11 @@
+.bgBlack {
+    background: black;
+}
+
+.bgBlack h1 {
+    color: white;
+}
+
+.agen_dashboard {
+    height: 50px;
+}

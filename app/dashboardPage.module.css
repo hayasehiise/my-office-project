@@ -1,0 +1,24 @@
+.section {
+    max-height: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    background: black;
+
+    color: white;
+}
+
+.section .content {
+    margin: 20px auto;
+    height: 900px;
+}
+
+.section .content img {
+    margin: auto;
+}
+
+.name_owner {
+    font-size: 60px;
+    color: white;
+    font-weight: 500;
+}
