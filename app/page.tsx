@@ -76,7 +76,7 @@ export default function Home() {
           </section>
           <section>
             <div className="flex flex-col">
-              <div className="flex-auto h-52 sm:h-720">
+              <div className="flex-auto h-52 sm:h-720p">
                 <Carousel
                   indicators={false}
                   leftControl="<<"
