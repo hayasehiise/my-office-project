@@ -64,7 +64,7 @@ const Agen = () => {
                 </p>
               </div>
               <div className="flex-1 mb-10 sm:mb-0">
-                <div className="grid grid-cols-1 sm:grid-cols-3 divide-y divide-x-0 sm:divide-x items-center justify-center text-center font-bold font-mono mt-16 sm:mt-36">
+                <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x items-center justify-center text-center font-bold font-mono mt-16 sm:mt-36">
                   <p className="text-6xl">
                     Rp.100 Juta <br />
                     <span className="text-3xl">Penghasilan Proyek</span>
