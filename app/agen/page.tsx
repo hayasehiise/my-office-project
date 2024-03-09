@@ -12,25 +12,25 @@ const Agen = () => {
   };
   return (
     <>
-      <div className="container-xl">
+      <div className="container-lg">
         <main className="flex flex-col">
           <section className="flex-1">
             <div className="flex flex-col mt-10">
               <div className="flex-1 mx-10">
-                <p className="font-medium text-8xl mb-12">
+                <p className="font-medium text-4xl sm:text-8xl mb-5 sm:mb-12">
                   Desain Masa depan, <br />
                   Buat Pengalaman
                 </p>
               </div>
               <div className="flex-1 mx-10">
-                <div className="flex flex-row justify-between">
-                  <p className="flex-initial w-1/4 mb-12">
+                <div className="flex flex-col sm:flex-row justify-between">
+                  <p className="flex-initial w-full sm:w-1/4 mb-5 sm:mb-12">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Phasellus at urna sapien. Duis et justo id sem finibus
                     ultrices. Sed a felis sagittis, tempus leo.
                   </p>
                   <Link href="#">
-                    <Button color="light" className="flex-initial" pill>
+                    <Button color="light" className="flex-initial mb-5 sm:mb-0" pill>
                       Lets Check out
                       <img
                         src="./icons/arrow-upright.svg"
@@ -44,18 +44,18 @@ const Agen = () => {
               <div className="flex-1">
                 <img
                   src="./image/agen_dashboard.jpg"
-                  className="object-cover h-520p w-full"
+                  className="object-cover w-screen sm:h-520p sm:w-full"
                 />
               </div>
             </div>
           </section>
           <section className=" text-black flex-1" id="section2">
-            <div className="flex flex-col p-10">
+            <div className="flex flex-col p-5 sm:p-10">
               <div className="flex-1">
                 <p className="mb-4 font-sans font-medium text-2xl">About Us</p>
               </div>
               <div className="flex-1">
-                <p className="font-sans font-semibold text-7xl">
+                <p className="font-sans font-semibold text-4xl sm:text-7xl">
                   Selamat Datang di Landing Page Agen. Tim kami adalah{" "}
                   <span className="text-amber-500">
                     Tim yang penuh semangat untuk berkreasi dalam pembuatan
@@ -63,8 +63,8 @@ const Agen = () => {
                   </span>
                 </p>
               </div>
-              <div className="flex-1">
-                <div className="grid grid-cols-3 divide-x items-center justify-center text-center font-bold font-mono mt-36">
+              <div className="flex-1 mb-10 sm:mb-0">
+                <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-x items-center justify-center text-center font-bold font-mono mt-16 sm:mt-36">
                   <p className="text-6xl">
                     Rp.100 Juta <br />
                     <span className="text-3xl">Penghasilan Proyek</span>
@@ -83,13 +83,13 @@ const Agen = () => {
           </section>
           <section className=" flex-1 bg-slate-950 text-white">
             <div className="flex flex-col px-10 py-10">
-              <p className="flex font-sans font-semibold text-2xl mb-4">Jasa</p>
-              <p className="flex font-sans font-black text-5xl">
+              <p className="flex-initial font-sans font-semibold text-2xl mb-4">Jasa</p>
+              <p className="flex-initial font-sans font-black text-5xl">
                 Jasa yang kami sediakan
               </p>
               <br />
-              <div className="flex">
-                <div className="overflow-x-auto">
+              <div className="flex-initial">
+                <div className="overflow-x-auto sm:overflow-x-auto">
                   <Table>
                     <TableHead className="text-lg">
                       <Table.HeadCell className="">Nama Jasa</Table.HeadCell>
@@ -100,7 +100,7 @@ const Agen = () => {
                       <Table.Row>
                         <Table.Cell>Penjualan Properti</Table.Cell>
                         <Table.Cell>
-                          <motion.div whileHover={{ scale: 1.1 }}>
+                          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 2 }}>
                             <img
                               src="./image/jasa1.jpg"
                               className="rounded-md"
@@ -119,7 +119,7 @@ const Agen = () => {
                       <Table.Row>
                         <Table.Cell>Pembelian Properti</Table.Cell>
                         <Table.Cell>
-                          <motion.div whileHover={{ scale: 1.1 }}>
+                          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 2 }}>
                             <img
                               src="./image/jasa2.jpg"
                               className="rounded-md"
@@ -138,7 +138,7 @@ const Agen = () => {
                       <Table.Row>
                         <Table.Cell>Penyewaan Properti</Table.Cell>
                         <Table.Cell>
-                          <motion.div whileHover={{ scale: 1.1 }}>
+                          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 2 }}>
                             <img
                               src="./image/jasa3.jpg"
                               className="rounded-md"
@@ -156,7 +156,7 @@ const Agen = () => {
                       <Table.Row>
                         <Table.Cell>Manajemen Properti</Table.Cell>
                         <Table.Cell>
-                          <motion.div whileHover={{ scale: 1.1 }}>
+                          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 2 }}>
                             <img
                               src="./image/jasa4.jpg"
                               className="rounded-md"
@@ -174,7 +174,7 @@ const Agen = () => {
                       <Table.Row>
                         <Table.Cell>Pengembangan Properti</Table.Cell>
                         <Table.Cell>
-                          <motion.div whileHover={{ scale: 1.1 }}>
+                          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 2 }}>
                             <img
                               src="./image/jasa5.jpg"
                               className="rounded-md"
@@ -198,8 +198,8 @@ const Agen = () => {
           </section>
           <section className="flex-1 text-black">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideInVariants} >
-            <div className="flex flex-col p-10">
-                <p className="flex-auto font-sans font-black text-8xl">Apakah Kamu Tertarik? <br/>Daftar Sekarang!</p>
+            <div className="flex flex-col py-10 px-5 sm:px-10">
+                <p className="flex-auto font-sans font-black text-4xl sm:text-8xl">Apakah Kamu Tertarik? <br/>Daftar Sekarang!</p>
                 <p className="flex-auto font-serif my-5 font-medium">Mari kita bersama menciptakan ide menjadi nyata dan hasil yang memuaskan</p>
                 <div className="flex-auto">
                 <Button pill color="light" className="w-auto">Register Now <img src="./icons/resume.svg" className="ml-2 h-7" /></Button>
