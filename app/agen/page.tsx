@@ -44,7 +44,7 @@ const Agen = () => {
               <div className="flex-1">
                 <img
                   src="./image/agen_dashboard.jpg"
-                  className="object-cover w-screen sm:h-520p sm:w-full"
+                  className="object-cover w-screen sm:h-[520px] sm:w-full"
                 />
               </div>
             </div>
@@ -197,7 +197,7 @@ const Agen = () => {
             </div>
           </section>
           <section className="flex-1 text-black">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideInVariants} >
+            <motion.div initial="hidden" whileInView="visible" variants={slideInVariants} >
             <div className="flex flex-col py-10 px-5 sm:px-10">
                 <p className="flex-auto font-sans font-black text-4xl sm:text-8xl">Apakah Kamu Tertarik? <br/>Daftar Sekarang!</p>
                 <p className="flex-auto font-serif my-5 font-medium">Mari kita bersama menciptakan ide menjadi nyata dan hasil yang memuaskan</p>

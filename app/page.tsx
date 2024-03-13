@@ -25,6 +25,32 @@ export default function Home() {
         "text-white bg-amber-500 border border-transparent enabled:hover:bg-amber-300 focus:ring-4 focus:ring-gray-300 dark:bg-gray-800 dark:enabled:hover:bg-gray-700 dark:focus:ring-gray-800 dark:border-gray-700",
     },
   };
+
+  interface myServiceType {
+    title: string;
+    images: string;
+  }
+
+  interface carouselImageType {
+    images: string;
+  }
+
+  const carouselImageData: carouselImageType[] = [
+    {images: "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU"},
+    {images: "https://fastly.picsum.photos/id/1/5000/3333.jpg?hmac=Asv2DU3rA_5D1xSe22xZK47WEAN0wjWeFOhzd13ujW4"},
+    {images: "https://fastly.picsum.photos/id/2/5000/3333.jpg?hmac=_KDkqQVttXw_nM-RyJfLImIbafFrqLsuGO5YuHqD-qQ"},
+  ]
+
+  const myServiceData: myServiceType[] = [
+    {title: "Ingin Jadi Agen?", images: "./image/agen_icon.png"},
+    {title: "Ingin Desain Rumah?", images: "./image/desain_icon.png"},
+    {title: "Ingin Bangun Rumah?", images: "./image/bangun_rumah_icon.png"},
+    {title: "Ingin Jual Rumah?", images: "./image/jual_rumah_icon.png"},
+    {title: "Ingin Bahan Bangunan?", images: "./image/material_icon.png"},
+    {title: "Ingin info kerja?", images: "./image/kerja_icon.png"},
+    {title: "Ingin tau tentang infinity?", images: "./image/logo_Infinity.png"},
+  ]
+
   return (
     <>
       <div className="container-lg md:container-md mx-auto">
@@ -76,16 +102,16 @@ export default function Home() {
           </section>
           <section>
             <div className="flex flex-col">
-              <div className="flex-auto h-52 sm:h-720p">
+              <div className="flex-auto h-52 sm:h-[720px]">
                 <Carousel
                   indicators={false}
                   leftControl="<<"
                   rightControl=">>"
                   theme={fullScreenCarousel}
                 >
-                  <img src="https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU" />
-                  <img src="https://fastly.picsum.photos/id/1/5000/3333.jpg?hmac=Asv2DU3rA_5D1xSe22xZK47WEAN0wjWeFOhzd13ujW4" />
-                  <img src="https://fastly.picsum.photos/id/2/5000/3333.jpg?hmac=_KDkqQVttXw_nM-RyJfLImIbafFrqLsuGO5YuHqD-qQ" />
+                  {carouselImageData.map((item, index) => (
+                    <img src={item.images} />
+                  ))}
                 </Carousel>
               </div>
             </div>
@@ -127,71 +153,17 @@ export default function Home() {
                       indicators={false}
                       theme={myServiceCarousel}
                     >
-                      <div className="flex flex-col h-full items-center justify-center text-black">
-                        <img src="./image/agen_icon.png" className="h-1/2" />
-                        <p className="py-3">Ingin Jadi Agen?</p>
+                      {myServiceData.map((item, index) => (
+                        <div key={index} className="flex flex-col h-full items-center justify-center text-black">
+                        <img src={item.images} className="h-1/2" />
+                        <p className="py-3">{item.title}</p>
                         <Link href="/agen">
                         <Button pill color="amber" theme={myServiceButton}>
                           Klik Disini
                         </Button>
                         </Link>
                       </div>
-                      <div className="flex flex-col h-full items-center justify-center text-black">
-                        <img src="./image/desain_icon.png" className="h-1/2" />
-                        <p className="py-3">Ingin Desain Rumah?</p>
-                        <Button pill color="amber" theme={myServiceButton}>
-                          Klik Disini
-                        </Button>
-                      </div>
-                      <div className="flex flex-col h-full items-center justify-center text-black">
-                        <img
-                          src="./image/bangun_rumah_icon.png"
-                          className="h-1/2"
-                        />
-                        <p className="py-3">Ingin Bangun Rumah?</p>
-                        <Button pill color="amber" theme={myServiceButton}>
-                          Klik Disini
-                        </Button>
-                      </div>
-                      <div className="flex flex-col h-full items-center justify-center text-black">
-                        <img
-                          src="./image/jual_rumah_icon.png"
-                          className="h-1/2"
-                        />
-                        <p className="py-3">Ingin Jual Rumah?</p>
-                        <Button pill color="amber" theme={myServiceButton}>
-                          Klik Disini
-                        </Button>
-                      </div>
-                      <div className="flex flex-col h-full items-center justify-center text-black">
-                        <img
-                          src="./image/material_icon.png"
-                          className="h-1/2"
-                        />
-                        <p className="py-3">Ingin Bahan Bangunan?</p>
-                        <Button pill color="amber" theme={myServiceButton}>
-                          Klik Disini
-                        </Button>
-                      </div>
-                      <div className="flex flex-col h-full items-center justify-center text-black">
-                        <img src="./image/kerja_icon.png" className="h-1/2" />
-                        <p className="py-3">Ingin info kerja?</p>
-                        <Button pill color="amber" theme={myServiceButton}>
-                          Klik Disini
-                        </Button>
-                      </div>
-                      <div className="flex flex-col h-full items-center justify-center text-black">
-                        <img
-                          src="./image/logo_Infinity.png"
-                          className="h-1/2"
-                        />
-                        <p className="py-3">
-                          Info detail tentang Infinity Project Property
-                        </p>
-                        <Button pill color="amber" theme={myServiceButton}>
-                          Klik Disini
-                        </Button>
-                      </div>
+                      ))}
                     </Carousel>
                   </div>
                 </div>

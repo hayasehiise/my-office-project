@@ -29,13 +29,4 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-  .agen-dashboard {
-    height: 50%;
-  }
-  .h-520p {
-    height: 520px;
-  }
-  .h-720p {
-    height: 720px;
-  }
 }
