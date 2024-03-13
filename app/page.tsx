@@ -144,7 +144,7 @@ export default function Home() {
                 <div className="flex flex-col items-center">
                   <div className="flex-initial">
                     <p className="font-mono font-semibold text-4xl text-black">
-                      My Service
+                      My Services
                     </p>
                   </div>
                   <div className="flex-auto w-screen sm:w-full h-96">
