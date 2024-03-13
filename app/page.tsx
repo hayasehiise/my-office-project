@@ -110,7 +110,7 @@ export default function Home() {
                   theme={fullScreenCarousel}
                 >
                   {carouselImageData.map((item, index) => (
-                    <img src={item.images} />
+                    <img src={item.images} key={index} />
                   ))}
                 </Carousel>
               </div>
