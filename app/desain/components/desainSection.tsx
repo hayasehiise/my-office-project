@@ -9,28 +9,30 @@ interface SectionProps {
 }
 
 const Section = ({ children }: SectionProps) => {
-  return <div className="flex flex-col">{children}</div>;
+  return(
+    <div className="flex flex-col">{children}</div>
+  );
 };
 
 export const SectionOne = () => {
   return (
     <Section>
-      <div className="static w-full h-screen max-h-screen bg-black items-center justify-center text-center">
+      <div className="static w-full h-[500px] xl:w-full sm:w-full xl:h-screen sm:h-screen bg-black items-center justify-center text-center">
         <img
           src="./image/infinity_logo.png"
           className="relative left-1/2 right-1/2 top-[15px] -translate-x-1/2 z-10 h-[70px] max-h-screen"
         />
-        <p className="text-white mt-10 text-[40px]/[52px] font-extrabold">
+        <p className="text-white mt-10 2xl:text-[40px]/[52px] sm:text-2xl font-extrabold">
           Wujudkan Rumah Impian Anda Yang
           <br />
           Nyaman Dengan Konsep Rumah Tumbuh
         </p>
-        <p className="text-white mt-5 text-[20px]/[32px] font-medium">
-          Karena rumah yang nyaman adalah rumah yang bikin bahagia{" "}
+        <p className="text-white mt-5 2xl:text-[20px]/[32px] text-xs sm:text-sm font-medium">
+          Karena rumah yang nyaman adalah rumah yang bikin bahagia
         </p>
         <motion.img
           initial={{ opacity: 0, x: "-100vh" }}
-          whileInView={{ opacity: 1, x: 0 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{
             type: "spring",
             duration: 1,
@@ -39,11 +41,10 @@ export const SectionOne = () => {
             stiffness: 300,
             damping: 20,
           }}
-          viewport={{ once: false }}
           src="./image/desain_dashboard.png"
-          className="relative z-10 left-1/3 h-[680px]"
+          className="relative z-10 left-24 2xl:left-1/3 sm:left-12 h-[250px] xl:h-[680px] sm:h-[550px]"
         />
-        <div className="absolute bottom-0 w-full z-0 h-[310px] bg-white"></div>
+        <div className="absolute bottom-80 xl:bottom-0 sm:bottom-0 w-full h-[210px] z-0 xl:h-[310px] sm:h-[310px] bg-white"></div>
       </div>
     </Section>
   );
@@ -51,9 +52,9 @@ export const SectionOne = () => {
 export const SectionTwo = () => {
   return (
     <Section>
-      <div className="w-full max-h-screen">
-        <div className="flex flex-row justify-center items-center mb-24">
-          <div className="">
+      <div className="w-full xl:w-full xl:h-screen sm:w-full sm:h-[800px]">
+        <div className="flex flex-col xl:flex-row sm:flex-col justify-center items-center mb-24">
+          <div className="xl:mt-10 sm:mt-0">
             <p className=" text-4xl font-extrabold mb-10">Kami Paham...</p>
             <p className=" text-lg mb-10">
               Menyediakan rumah yang nyaman untuk keluarga itu butuh
@@ -87,12 +88,12 @@ export const SectionTwo = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 2 }}
             src="./image/desain_asset1.png"
-            className="h-[500px] ml-10"
+            className="h-[300px] xl:h-[500px] sm:h-[500px] ml-10"
           />
         </div>
         <div className="flex flex-col justify-center items-center text-center">
-          <div className=" bg-amber-400 w-full h-[300px]">
-            <p className="mt-20 mb-10 text-4xl font-extrabold">Karena Itu,</p>
+          <div className=" bg-amber-400 w-full h-[270px]">
+            <p className="mt-14 mb-10 text-4xl font-extrabold">Karena Itu,</p>
             <p className="text-lg">
               Tim Infinity siap menjadi partner untuk membantu mewujudkan rumah
               impian Anda dan keluarga
@@ -109,21 +110,21 @@ export const SectionTwo = () => {
 export const SectionThree = () => {
   return (
     <Section>
-      <div className="w-full h-screen">
-        <div className="flex flex-col mt-5 justify-center items-center text-center">
+      <div className="w-full xl:w-full xl:h-screen sm:w-full sm:h-[2170px]">
+        <div className="flex flex-col xl:mt-5 sm:mt-[600px] justify-center items-center text-center">
           <div>
             <p className="text-4xl font-extrabold mb-5">Layanan Tim Kami</p>
             <p className="text-lg">
               Yang bisa Anda sesuaikan dengan kebutuhan Anda dan Keluarga
             </p>
           </div>
-          <div className="flex flex-row mt-96">
-            <div className="relative w-96 h-[420px] bg-amber-400 mr-10 pt-36 z-0 rounded-tl-lg rounded-tr-lg">
+          <div className="flex flex-col xl:flex-row sm:flex-col xl:mt-96 sm:mt-80">
+            <div className="relative xl:w-96 xl:h-[420px] sm:w-96 sm:h-[420px] bg-amber-400 xl:mr-10 pt-36 z-0 rounded-tl-lg rounded-tr-lg sm:mb-80">
               <motion.img
                 whileHover={{ rotate: 30 }}
                 transition={{ duration: 0.5 }}
                 src="./image/desain_lantai1.jpg"
-                className="absolute z-10 origin-center -top-[300px] left-[54px]  right-[54px] object-cover w-[280px] h-[420px] border-solid border-4 border-white rounded-2xl"
+                className="absolute z-10 origin-center xl:-top-[300px] xl:left-[54px] xl:right-[54px] sm:-top-[300px] sm:left-[54px] sm:right-[54px] object-cover sm:w-[280px] sm:h-[420px] xl:w-[280px] xl:h-[420px] border-solid border-4 border-white rounded-2xl"
               />
               <p className="text-3xl font-extrabold mb-10">Desain Lantai 1</p>
               <p className="text-lg">
@@ -131,12 +132,12 @@ export const SectionThree = () => {
                 1 lantai impian secara bertahap.
               </p>
             </div>
-            <div className="relative w-96 h-[420px] bg-amber-400 ml-10 pt-36 z-0 rounded-tl-lg rounded-tr-lg">
+            <div className="relative xl:w-96 xl:h-[420px] sm:w-96 sm:h-[420px] bg-amber-400 xl:ml-10 pt-36 z-0 rounded-tl-lg rounded-tr-lg">
               <motion.img
                 whileHover={{ rotate: 30 }}
                 transition={{ duration: 0.5 }}
                 src="./image/desain_lantai2.jpg"
-                className="absolute z-10 -top-[300px] left-[54px] right-[54px] object-cover w-[280px] h-[420px] border-solid border-4 border-white rounded-2xl"
+                className="absolute z-10 xl:-top-[300px] xl:left-[54px] xl:right-[54px] sm:-top-[300px] sm:left-[54px] sm:right-[54px] object-cover sm:w-[280px] sm:h-[420px] xl:w-[280px] xl:h-[420px] border-solid border-4 border-white rounded-2xl"
               />
               <p className="text-3xl font-extrabold mb-10">Desain Lantai 2</p>
               <p className="text-lg">
