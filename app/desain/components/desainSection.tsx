@@ -17,12 +17,12 @@ const Section = ({ children }: SectionProps) => {
 export const SectionOne = () => {
   return (
     <Section>
-      <div className="static w-full h-[500px] xl:w-full sm:w-full xl:h-screen sm:h-screen bg-black items-center justify-center text-center">
+      <div className="static w-full h-[579px] xl:w-full sm:w-full xl:h-screen sm:h-screen bg-black items-center justify-center text-center">
         <img
           src="./image/infinity_logo.png"
           className="relative left-1/2 right-1/2 top-[15px] -translate-x-1/2 z-10 h-[70px] max-h-screen"
         />
-        <p className="text-white mt-10 2xl:text-[40px]/[52px] sm:text-2xl font-extrabold">
+        <p className="text-white mt-10 xl:text-[40px]/[52px] sm:text-2xl font-extrabold">
           Wujudkan Rumah Impian Anda Yang
           <br />
           Nyaman Dengan Konsep Rumah Tumbuh
@@ -42,7 +42,7 @@ export const SectionOne = () => {
             damping: 20,
           }}
           src="./image/desain_dashboard.png"
-          className="relative z-10 left-24 2xl:left-1/3 sm:left-12 h-[250px] xl:h-[680px] sm:h-[550px]"
+          className="relative z-10 left-24 xl:left-[600px] sm:left-12 h-[250px] xl:h-[680px] sm:h-[550px]"
         />
         <div className="absolute bottom-80 xl:bottom-0 sm:bottom-0 w-full h-[210px] z-0 xl:h-[310px] sm:h-[310px] bg-white"></div>
       </div>
@@ -52,7 +52,7 @@ export const SectionOne = () => {
 export const SectionTwo = () => {
   return (
     <Section>
-      <div className="w-full xl:w-full xl:h-screen sm:w-full sm:h-[800px]">
+      <div className="w-full h-[1400px] xl:w-full xl:h-screen sm:w-full sm:h-[800px]">
         <div className="flex flex-col xl:flex-row sm:flex-col justify-center items-center mb-24">
           <div className="xl:mt-10 sm:mt-0">
             <p className=" text-4xl font-extrabold mb-10">Kami Paham...</p>
@@ -110,7 +110,7 @@ export const SectionTwo = () => {
 export const SectionThree = () => {
   return (
     <Section>
-      <div className="w-full xl:w-full xl:h-screen sm:w-full sm:h-[2170px]">
+      <div className="w-full h-[980px] xl:w-full xl:h-screen sm:w-full sm:h-[2170px]">
         <div className="flex flex-col xl:mt-5 sm:mt-[600px] justify-center items-center text-center">
           <div>
             <p className="text-4xl font-extrabold mb-5">Layanan Tim Kami</p>
@@ -118,29 +118,29 @@ export const SectionThree = () => {
               Yang bisa Anda sesuaikan dengan kebutuhan Anda dan Keluarga
             </p>
           </div>
-          <div className="flex flex-col xl:flex-row sm:flex-col xl:mt-96 sm:mt-80">
-            <div className="relative xl:w-96 xl:h-[420px] sm:w-96 sm:h-[420px] bg-amber-400 xl:mr-10 pt-36 z-0 rounded-tl-lg rounded-tr-lg sm:mb-80">
+          <div className="flex flex-col xl:flex-row sm:flex-col xl:mt-96 sm:mt-80 mt-40">
+            <div className="relative w-1/2 xl:w-96 xl:h-[420px] sm:w-96 sm:h-[420px] bg-amber-400 xl:mr-10 ml-[120px] xl:ml-0 sm:ml-6 pt-36 z-0 rounded-tl-lg rounded-tr-lg sm:mb-80 mb-40">
               <motion.img
                 whileHover={{ rotate: 30 }}
                 transition={{ duration: 0.5 }}
                 src="./image/desain_lantai1.jpg"
-                className="absolute z-10 origin-center xl:-top-[300px] xl:left-[54px] xl:right-[54px] sm:-top-[300px] sm:left-[54px] sm:right-[54px] object-cover sm:w-[280px] sm:h-[420px] xl:w-[280px] xl:h-[420px] border-solid border-4 border-white rounded-2xl"
+                className="absolute z-10 origin-center -top-[100px] left-[34px] right-[34px] w-[150px] h-[200px] xl:-top-[300px] xl:left-[54px] xl:right-[54px] sm:-top-[300px] sm:left-[54px] sm:right-[54px] object-cover sm:w-[280px] sm:h-[420px] xl:w-[280px] xl:h-[420px] border-solid border-4 border-white rounded-2xl"
               />
-              <p className="text-3xl font-extrabold mb-10">Desain Lantai 1</p>
-              <p className="text-lg">
+              <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold xl:mb-10 sm:mb-10 mb-5">Desain Lantai 1</p>
+              <p className="xl:text-lg sm:text-lg text-sm">
                 Buat desain perencanaan yg matang, sebelum mulai membangun rumah
                 1 lantai impian secara bertahap.
               </p>
             </div>
-            <div className="relative xl:w-96 xl:h-[420px] sm:w-96 sm:h-[420px] bg-amber-400 xl:ml-10 pt-36 z-0 rounded-tl-lg rounded-tr-lg">
+            <div className="relative w-1/2 xl:w-96 xl:h-[420px] sm:w-96 sm:h-[420px] bg-amber-400 xl:ml-10 sm:ml-6 ml-[120px] pt-36 z-0 rounded-tl-lg rounded-tr-lg">
               <motion.img
                 whileHover={{ rotate: 30 }}
                 transition={{ duration: 0.5 }}
                 src="./image/desain_lantai2.jpg"
-                className="absolute z-10 xl:-top-[300px] xl:left-[54px] xl:right-[54px] sm:-top-[300px] sm:left-[54px] sm:right-[54px] object-cover sm:w-[280px] sm:h-[420px] xl:w-[280px] xl:h-[420px] border-solid border-4 border-white rounded-2xl"
+                className="absolute z-10 -top-[100px] left-[34px] right-[34px] w-[150px] h-[200px] xl:-top-[300px] xl:left-[54px] xl:right-[54px] sm:-top-[300px] sm:left-[54px] sm:right-[54px] object-cover sm:w-[280px] sm:h-[420px] xl:w-[280px] xl:h-[420px] border-solid border-4 border-white rounded-2xl"
               />
-              <p className="text-3xl font-extrabold mb-10">Desain Lantai 2</p>
-              <p className="text-lg">
+              <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold xl:mb-10 sm:mb-10 mb-5">Desain Lantai 2</p>
+              <p className="xl:text-lg sm:text-lg text-sm">
                 Buat desain perencanaan yg matang, sebelum mulai membangun rumah
                 2 lantai impian secara bertahap.
               </p>
@@ -191,12 +191,12 @@ export const SectionContact = () => {
     <Section>
       <div className="w-full h-full max-h-screen">
         <div className="flex flex-col text-center">
-          <div className="bg-amber-400 h-[250px] py-20">
+          <div className="bg-amber-400 h-[250px] xl:py-20 sm:py-20 py-10">
             <p className="text-3xl font-extrabold mb-5">
               Klik tombol dibawah ini untuk mulai Konsultasi Gratis via WhatsApp
             </p>
             <Button variant="success" className="rounded-full p-6" asChild>
-              <Link href="#" className=" text-xl">
+              <Link href="https://api.whatsapp.com/send?phone=6281352294435&text=Saya%20ingin%20desain%20rumah%20" target="_blank" className=" text-xl">
                 Mulai Konsultasi
                 <img src="./image/wa_icon.png" className="h-8 ml-2" />
               </Link>
