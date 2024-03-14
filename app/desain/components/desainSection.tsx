@@ -17,7 +17,7 @@ const Section = ({ children }: SectionProps) => {
 export const SectionOne = () => {
   return (
     <Section>
-      <div className="static w-full h-[579px] xl:w-full sm:w-full xl:h-screen sm:h-screen bg-black items-center justify-center text-center">
+      <div className="static w-full h-full pb-[135px] xl:w-full sm:w-full xl:h-screen sm:h-screen bg-black items-center justify-center text-center">
         <img
           src="./image/infinity_logo.png"
           className="relative left-1/2 right-1/2 top-[15px] -translate-x-1/2 z-10 h-[70px] max-h-screen"
@@ -42,7 +42,7 @@ export const SectionOne = () => {
             damping: 20,
           }}
           src="./image/desain_dashboard.png"
-          className="relative z-10 left-24 xl:left-[600px] sm:left-12 h-[250px] xl:h-[680px] sm:h-[550px]"
+          className="relative z-10 left-0 right-0 transform -translate-x-1/2 mx-auto h-[250px] xl:h-[680px] sm:h-[550px]"
         />
         <div className="absolute bottom-80 xl:bottom-0 sm:bottom-0 w-full h-[210px] z-0 xl:h-[310px] sm:h-[310px] bg-white"></div>
       </div>
@@ -52,8 +52,8 @@ export const SectionOne = () => {
 export const SectionTwo = () => {
   return (
     <Section>
-      <div className="w-full h-[1400px] xl:w-full xl:h-screen sm:w-full sm:h-[800px]">
-        <div className="flex flex-col xl:flex-row sm:flex-col justify-center items-center mb-24">
+      <div className="w-full h-full xl:w-full xl:h-screen sm:w-full sm:h-full">
+        <div className="flex flex-col xl:flex-row sm:flex-col justify-center items-center mb-24 px-5">
           <div className="xl:mt-10 sm:mt-0">
             <p className=" text-4xl font-extrabold mb-10">Kami Paham...</p>
             <p className=" text-lg mb-10">
@@ -88,12 +88,12 @@ export const SectionTwo = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 2 }}
             src="./image/desain_asset1.png"
-            className="h-[300px] xl:h-[500px] sm:h-[500px] ml-10"
+            className="h-[300px] xl:h-[500px] sm:h-[500px] mx-auto"
           />
         </div>
         <div className="flex flex-col justify-center items-center text-center">
-          <div className=" bg-amber-400 w-full h-[270px]">
-            <p className="mt-14 mb-10 text-4xl font-extrabold">Karena Itu,</p>
+          <div className=" bg-amber-400 w-full h-full py-14">
+            <p className="text-4xl font-extrabold">Karena Itu,</p>
             <p className="text-lg">
               Tim Infinity siap menjadi partner untuk membantu mewujudkan rumah
               impian Anda dan keluarga
@@ -110,21 +110,21 @@ export const SectionTwo = () => {
 export const SectionThree = () => {
   return (
     <Section>
-      <div className="w-full h-[980px] xl:w-full xl:h-screen sm:w-full sm:h-[2170px]">
-        <div className="flex flex-col xl:mt-5 sm:mt-[600px] justify-center items-center text-center">
+      <div className="w-full h-full xl:w-full xl:h-full sm:w-full sm:h-full">
+        <div className="flex flex-col mt-5 xl:mt-5 sm:mt-5 justify-center items-center text-center">
           <div>
             <p className="text-4xl font-extrabold mb-5">Layanan Tim Kami</p>
             <p className="text-lg">
               Yang bisa Anda sesuaikan dengan kebutuhan Anda dan Keluarga
             </p>
           </div>
-          <div className="flex flex-col xl:flex-row sm:flex-col xl:mt-96 sm:mt-80 mt-40">
-            <div className="relative w-1/2 xl:w-96 xl:h-[420px] sm:w-96 sm:h-[420px] bg-amber-400 xl:mr-10 ml-[120px] xl:ml-0 sm:ml-6 pt-36 z-0 rounded-tl-lg rounded-tr-lg sm:mb-80 mb-40">
-              <motion.img
+          <div className="flex flex-col xl:flex-row sm:flex-col xl:mt-96 sm:mt-80 mt-72">
+            <div className="relative w-56 h-[320px] xl:w-96 xl:h-[420px] sm:w-96 sm:h-[420px] bg-amber-400 xl:mx-5 sm:mx-auto mx-auto xl:pt-36 sm:pt-36 pt-32 z-0 rounded-tl-lg rounded-tr-lg xl:mb-0 sm:mb-80 mb-72">
+               <motion.img
                 whileHover={{ rotate: 30 }}
                 transition={{ duration: 0.5 }}
                 src="./image/desain_lantai1.jpg"
-                className="absolute z-10 origin-center -top-[100px] left-[34px] right-[34px] w-[150px] h-[200px] xl:-top-[300px] xl:left-[54px] xl:right-[54px] sm:-top-[300px] sm:left-[54px] sm:right-[54px] object-cover sm:w-[280px] sm:h-[420px] xl:w-[280px] xl:h-[420px] border-solid border-4 border-white rounded-2xl"
+                className="absolute z-10 origin-center left-0 right-0 xl:-top-72 sm:-top-72 -top-56 -translate-x-1/2 -translate-y-1/2 mx-auto object-cover w-[180px] h-[320px] sm:w-[280px] sm:h-[420px] xl:w-[280px] xl:h-[420px] border-solid border-4 border-white rounded-2xl"
               />
               <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold xl:mb-10 sm:mb-10 mb-5">Desain Lantai 1</p>
               <p className="xl:text-lg sm:text-lg text-sm">
@@ -132,12 +132,12 @@ export const SectionThree = () => {
                 1 lantai impian secara bertahap.
               </p>
             </div>
-            <div className="relative w-1/2 xl:w-96 xl:h-[420px] sm:w-96 sm:h-[420px] bg-amber-400 xl:ml-10 sm:ml-6 ml-[120px] pt-36 z-0 rounded-tl-lg rounded-tr-lg">
-              <motion.img
+            <div className="relative w-56 h-[320px] xl:w-96 xl:h-[420px] sm:w-96 sm:h-[420px] bg-amber-400 xl:mx-5 sm:mx-auto mx-auto xl:pt-36 sm:pt-36 pt-32 z-0 rounded-tl-lg rounded-tr-lg">
+               <motion.img
                 whileHover={{ rotate: 30 }}
                 transition={{ duration: 0.5 }}
                 src="./image/desain_lantai2.jpg"
-                className="absolute z-10 -top-[100px] left-[34px] right-[34px] w-[150px] h-[200px] xl:-top-[300px] xl:left-[54px] xl:right-[54px] sm:-top-[300px] sm:left-[54px] sm:right-[54px] object-cover sm:w-[280px] sm:h-[420px] xl:w-[280px] xl:h-[420px] border-solid border-4 border-white rounded-2xl"
+                className="absolute z-10 origin-center left-0 right-0 xl:-top-72 sm:-top-72 -top-56 -translate-x-1/2 -translate-y-1/2 mx-auto object-cover w-[180px] h-[320px] sm:w-[280px] sm:h-[420px] xl:w-[280px] xl:h-[420px] border-solid border-4 border-white rounded-2xl"
               />
               <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold xl:mb-10 sm:mb-10 mb-5">Desain Lantai 2</p>
               <p className="xl:text-lg sm:text-lg text-sm">
