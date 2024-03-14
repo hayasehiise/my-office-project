@@ -9,7 +9,7 @@ import {
 const Desain = () => {
   return (
     <>
-      <main className="xl:container-xl sm:container-sm">
+      <main className="container-xl">
           <SectionOne />
           <SectionTwo />
           <SectionThree />
