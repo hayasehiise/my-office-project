@@ -28,6 +28,7 @@ export default function Home() {
 
   interface myServiceType {
     title: string;
+    links: string;
     images: string;
   }
 
@@ -42,13 +43,13 @@ export default function Home() {
   ]
 
   const myServiceData: myServiceType[] = [
-    {title: "Ingin Jadi Agen?", images: "./image/agen_icon.png"},
-    {title: "Ingin Desain Rumah?", images: "./image/desain_icon.png"},
-    {title: "Ingin Bangun Rumah?", images: "./image/bangun_rumah_icon.png"},
-    {title: "Ingin Jual Rumah?", images: "./image/jual_rumah_icon.png"},
-    {title: "Ingin Bahan Bangunan?", images: "./image/material_icon.png"},
-    {title: "Ingin info kerja?", images: "./image/kerja_icon.png"},
-    {title: "Ingin tau tentang infinity?", images: "./image/logo_Infinity.png"},
+    {title: "Ingin Jadi Agen?", images: "./image/agen_icon.png", links: "/agen"},
+    {title: "Ingin Desain Rumah?", images: "./image/desain_icon.png", links: "/desain"},
+    {title: "Ingin Bangun Rumah?", images: "./image/bangun_rumah_icon.png", links: "#"},
+    {title: "Ingin Jual Rumah?", images: "./image/jual_rumah_icon.png", links: "#"},
+    {title: "Ingin Bahan Bangunan?", images: "./image/material_icon.png", links: "#"},
+    {title: "Ingin info kerja?", images: "./image/kerja_icon.png", links: "#"},
+    {title: "Ingin tau tentang infinity?", images: "./image/logo_Infinity.png", links: "#"},
   ]
 
   return (
@@ -157,7 +158,7 @@ export default function Home() {
                         <div key={index} className="flex flex-col h-full items-center justify-center text-black">
                         <img src={item.images} className="h-1/2" />
                         <p className="py-3">{item.title}</p>
-                        <Link href="/agen">
+                        <Link href={item.links}>
                         <Button pill color="amber" theme={myServiceButton}>
                           Klik Disini
                         </Button>
