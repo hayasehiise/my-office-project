@@ -17,7 +17,7 @@ export const SectionOne = () => {
     <Section>
       <div className="static w-full h-screen max-h-screen bg-black items-center justify-center text-center">
         <img
-          src="/image/logo_infinity.png"
+          src="./image/infinity_logo.png"
           className="relative left-1/2 right-1/2 top-[15px] -translate-x-1/2 z-10 h-[70px] max-h-screen"
         />
         <p className="text-white mt-10 text-[40px]/[52px] font-extrabold">
@@ -210,7 +210,7 @@ export const SectionContact = () => {
               <p>infinityprojectproperty22@gmail.com</p>
             </div>
             <div>
-              <img src="./image/logo_infinity.png" className="h-[100px] mx-auto" />
+              <img src="./image/infinity_logo.png" className="h-[100px] mx-auto" />
             </div>
             <div>
               <p className="text-right">Copyright &copy; Hery Setiawan (Staff IT Infinity Project Property)</p>
