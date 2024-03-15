@@ -17,7 +17,7 @@ const Section = ({ children }: SectionProps) => {
 export const SectionOne = () => {
   return (
     <Section>
-      <div className="static w-full h-full pb-[135px] xl:w-full sm:w-full xl:h-screen sm:h-screen bg-black items-center justify-center text-center">
+      <div className="static w-full h-[690px] xl:w-full sm:w-full xl:h-screen sm:h-screen bg-black items-center justify-center text-center">
         <img
           src="./image/infinity_logo.png"
           className="relative left-1/2 right-1/2 top-[15px] -translate-x-1/2 z-10 h-[70px] max-h-screen"
@@ -44,7 +44,7 @@ export const SectionOne = () => {
           src="./image/desain_dashboard.png"
           className="relative z-10 left-0 right-0 transform -translate-x-1/2 mx-auto h-[250px] xl:h-[680px] sm:h-[550px]"
         />
-        <div className="absolute bottom-80 xl:bottom-0 sm:bottom-0 w-full h-[210px] z-0 xl:h-[310px] sm:h-[310px] bg-white"></div>
+        <div className="absolute bottom-0 -translate-y-full sm:-translate-y-0 xl:-translate-y-0 xl:bottom-0 sm:bottom-0 w-full h-[210px] z-0 xl:h-[310px] sm:h-[310px] bg-white"></div>
       </div>
     </Section>
   );
@@ -159,7 +159,7 @@ export const SectionProject = () => {
     <Section>
       <div className="w-full h-full bg-gray-400 text-center">
         <div className="flex flex-col mt-10">
-          <p className="text-3xl font-extrabold text-white">
+          <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold text-white">
             Rumah yg Kami Selesaikan Desain Perencanaannya
           </p>
         </div>
@@ -194,7 +194,7 @@ export const SectionContact = () => {
       <div className="w-full h-full max-h-screen">
         <div className="flex flex-col text-center">
           <div className="bg-amber-400 h-[250px] xl:py-20 sm:py-20 py-10">
-            <p className="text-3xl font-extrabold mb-5">
+            <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold mb-5">
               Klik tombol dibawah ini untuk mulai Konsultasi Gratis via WhatsApp
             </p>
             <Button variant="success" className="rounded-full p-6" asChild>
@@ -224,3 +224,6 @@ export const SectionContact = () => {
     </Section>
   );
 };
+  <div>
+    <img src="./image/infinity_logo.png" className="h-[200px] mx-auto" />
+  </div>
