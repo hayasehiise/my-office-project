@@ -52,8 +52,8 @@ export const SectionTwo = () => {
   return (
     <Section>
       <div className="w-full h-full xl:w-full xl:h-screen sm:w-full sm:h-full">
-        <div className="flex flex-col xl:flex-row sm:flex-col justify-center items-center mb-24 px-5">
-          <div className="xl:mt-10 sm:mt-0">
+        <div className="flex flex-col xl:flex-row sm:flex-col justify-center items-center mb-24">
+          <div className="xl:mt-10 sm:mt-0 xl:pl-56 xl:pt-10 sm:pl-16 sm:pt-10 xs:px-10 xs:pt-10">
             <p className=" text-4xl font-extrabold mb-10">Kami Paham...</p>
             <p className=" text-lg mb-10">
               Menyediakan rumah yang nyaman untuk keluarga itu butuh
