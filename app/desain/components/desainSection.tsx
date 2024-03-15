@@ -17,7 +17,7 @@ const Section = ({ children }: SectionProps) => {
 export const SectionOne = () => {
   return (
     <Section>
-      <div className="static w-full h-screen/2 xl:w-full sm:w-full xl:h-screen sm:h-screen bg-black items-center justify-center text-center">
+      <div className="static w-full h-full xl:w-full sm:w-full xl:h-screen sm:h-full bg-black items-center justify-center text-center">
         <img
           src="./image/infinity_logo.png"
           className="relative left-1/2 right-1/2 top-[15px] -translate-x-1/2 z-10 h-[70px] max-h-screen"
@@ -44,7 +44,6 @@ export const SectionOne = () => {
           src="./image/desain_dashboard.png"
           className="relative z-10 left-0 right-0 transform -translate-x-1/2 mx-auto h-[250px] xl:h-[680px] sm:h-[550px]"
         />
-        <div className="absolute -mb-3 xs:mb-1 sm:mb-0 xl:mb-0 bottom-1/2 xs:bottom-1/2 xl:bottom-0 sm:bottom-0 w-full h-32 z-0 xl:h-[310px] sm:h-[310px] bg-white"></div>
       </div>
     </Section>
   );
