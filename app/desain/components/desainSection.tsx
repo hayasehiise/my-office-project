@@ -1,12 +1,33 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
 interface SectionProps {
   children: React.ReactNode;
 }
+
+interface carouselLantaiSatuData {
+  image: string;
+}
+
+const carouselLantaiSatuItem: carouselLantaiSatuData[] = [
+  {image: "./image/project_01.png"},
+  {image: "./image/project_01.png"},
+  {image: "./image/project_01.png"},
+]
+
+interface carouselLantaiDuaData {
+  image: string;
+}
+
+const carouselLantaiDuaItem: carouselLantaiDuaData[] = [
+  {image: "./image/project_02.png"},
+  {image: "./image/project_02.png"},
+  {image: "./image/project_02.png"},
+]
 
 const Section = ({ children }: SectionProps) => {
   return(
@@ -158,28 +179,36 @@ export const SectionProject = () => {
     <Section>
       <div className="w-full h-full bg-gray-400 text-center">
         <div className="flex flex-col mt-10">
-          <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold text-white">
+          <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold text-white pb-10">
             Rumah yg Kami Selesaikan Desain Perencanaannya
           </p>
-        </div>
-        <div className="flex flex-initial justify-center items-center my-10">
-          <div className="grid grid-cols-2 gap-4">
-            <img
-              src="./image/project_01.png"
-              className="w-[500px] object-cover"
-            />
-            <img
-              src="./image/project_02.png"
-              className="w-[500px] object-cover"
-            />
-            <img
-              src="./image/project_01.png"
-              className="w-[500px] object-cover"
-            />
-            <img
-              src="./image/project_02.png"
-              className="w-[500px] object-cover"
-            />
+          <div className="mx-auto my-5">
+            <p className="text-2xl text-white font-bold pb-2">Desain 1 Lantai</p>
+            <Carousel className="xl:w-[700px] sm:w-96 xs:w-48 w-48">
+              <CarouselContent>
+                {carouselLantaiSatuItem.map((item, index) => (
+                  <CarouselItem key={index}>
+                    <img src={item.image} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselNext />
+              <CarouselPrevious />
+            </Carousel>
+          </div>
+          <div className="mx-auto my-5">
+            <p className="text-2xl text-white font-bold pb-2">Desain 2 Lantai</p>
+            <Carousel className="xl:w-[700px] sm:w-96 xs:w-48 w-48">
+              <CarouselContent>
+                {carouselLantaiDuaItem.map((item, index) => (
+                  <CarouselItem key={index}>
+                    <img src={item.image} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselNext />
+              <CarouselPrevious />
+            </Carousel>
           </div>
         </div>
       </div>
@@ -203,7 +232,7 @@ export const SectionContact = () => {
               </Link>
             </Button>
           </div>
-          <div className="grid grid-cols-3 gap-0 bg-black text-white justify-center items-center px-10 py-5">
+          <div className="grid grid-cols-3 gap-0 bg-black text-white justify-center items-center xl:px-10 sm:px-10 xs: py-5">
             <div className="text-left">
               <p>CV.Infinity Project Property</p>
               <p>Kantor Infinity</p>

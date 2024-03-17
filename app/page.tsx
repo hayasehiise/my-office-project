@@ -49,7 +49,7 @@ export default function Home() {
     {title: "Ingin Jual Rumah?", images: "./image/jual_rumah_icon.png", links: "#"},
     {title: "Ingin Bahan Bangunan?", images: "./image/material_icon.png", links: "#"},
     {title: "Ingin info kerja?", images: "./image/kerja_icon.png", links: "#"},
-    {title: "Ingin tau tentang infinity?", images: "./image/logo_Infinity.png", links: "#"},
+    {title: "Ingin tau tentang infinity?", images: "./image/infinity_logo.png", links: "#"},
   ]
 
   return (
@@ -106,8 +106,6 @@ export default function Home() {
               <div className="flex-auto h-52 sm:h-[720px]">
                 <Carousel
                   indicators={false}
-                  leftControl="<<"
-                  rightControl=">>"
                   theme={fullScreenCarousel}
                 >
                   {carouselImageData.map((item, index) => (
