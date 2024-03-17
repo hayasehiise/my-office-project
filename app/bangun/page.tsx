@@ -1,4 +1,4 @@
-import { SectionMain } from "./components/sectionBangun"
+import { SecondSection, SectionMain } from "./components/sectionBangun"
 
 
 
@@ -7,6 +7,7 @@ const Bangun = () => {
         <>
         <main className="container-xl">
             <SectionMain />
+            <SecondSection />
         </main>
         </>
     )

@@ -14,9 +14,9 @@ interface carouselLantaiSatuData {
 }
 
 const carouselLantaiSatuItem: carouselLantaiSatuData[] = [
-  {image: "./image/project_01.png"},
-  {image: "./image/project_01.png"},
-  {image: "./image/project_01.png"},
+  {image: "./image/desain/project_01.png"},
+  {image: "./image/desain/project_01.png"},
+  {image: "./image/desain/project_01.png"},
 ]
 
 interface carouselLantaiDuaData {
@@ -24,9 +24,9 @@ interface carouselLantaiDuaData {
 }
 
 const carouselLantaiDuaItem: carouselLantaiDuaData[] = [
-  {image: "./image/project_02.png"},
-  {image: "./image/project_02.png"},
-  {image: "./image/project_02.png"},
+  {image: "./image/desain/project_02.png"},
+  {image: "./image/desain/project_02.png"},
+  {image: "./image/desain/project_02.png"},
 ]
 
 const Section = ({ children }: SectionProps) => {
@@ -62,7 +62,7 @@ export const SectionOne = () => {
             stiffness: 300,
             damping: 20,
           }}
-          src="./image/desain_dashboard.png"
+          src="./image/desain/desain_dashboard.png"
           className="relative z-10 left-0 right-0 transform -translate-x-1/2 mx-auto h-[250px] xl:h-[680px] sm:h-[550px]"
         />
       </div>
@@ -107,7 +107,7 @@ export const SectionTwo = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 2 }}
-            src="./image/desain_asset1.png"
+            src="./image/desain/desain_asset1.png"
             className="h-[300px] xl:h-[500px] sm:h-[500px] mx-auto"
           />
         </div>
@@ -144,7 +144,7 @@ export const SectionThree = () => {
                initial={{ opacity: 0 }}
                whileInView={{ opacity: 1 }}
                transition={{ duration: 1 }}
-                src="./image/desain_lantai1.jpg"
+                src="./image/desain/desain_lantai1.jpg"
                 className="absolute z-10 origin-center left-1/2 right-1/2 xl:-top-20 sm:-top-20 -top-14 -translate-x-1/2 -translate-y-1/2 mx-auto object-cover w-[180px] h-[320px] sm:w-[280px] sm:h-[420px] xl:w-[280px] xl:h-[420px] border-solid border-4 border-white rounded-2xl"
               />
               <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold xl:mb-10 sm:mb-10 mb-5">Desain Lantai 1</p>
@@ -158,7 +158,7 @@ export const SectionThree = () => {
                initial={{ opacity: 0 }}
                whileInView={{ opacity: 1 }}
                transition={{ duration: 1 }}
-                src="./image/desain_lantai2.jpg"
+                src="./image/desain/desain_lantai2.jpg"
                 className="absolute z-10 origin-center left-1/2 right-1/2 xl:-top-20 sm:-top-20 -top-14 -translate-x-1/2 -translate-y-1/2 mx-auto object-cover w-[180px] h-[320px] sm:w-[280px] sm:h-[420px] xl:w-[280px] xl:h-[420px] border-solid border-4 border-white rounded-2xl"
               />
               <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold xl:mb-10 sm:mb-10 mb-5">Desain Lantai 2</p>

@@ -43,7 +43,7 @@ const Agen = () => {
               </div>
               <div className="flex-1">
                 <img
-                  src="./image/agen_dashboard.jpg"
+                  src="./image/agen/agen_dashboard.jpg"
                   className="object-cover w-screen sm:h-[520px] sm:w-full"
                 />
               </div>
@@ -102,7 +102,7 @@ const Agen = () => {
                         <Table.Cell>
                           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 2 }}>
                             <img
-                              src="./image/jasa1.jpg"
+                              src="./image/agen/jasa1.jpg"
                               className="rounded-md"
                             />
                           </motion.div>
@@ -121,7 +121,7 @@ const Agen = () => {
                         <Table.Cell>
                           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 2 }}>
                             <img
-                              src="./image/jasa2.jpg"
+                              src="./image/agen/jasa2.jpg"
                               className="rounded-md"
                             />
                           </motion.div>
@@ -140,7 +140,7 @@ const Agen = () => {
                         <Table.Cell>
                           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 2 }}>
                             <img
-                              src="./image/jasa3.jpg"
+                              src="./image/agen/jasa3.jpg"
                               className="rounded-md"
                             />
                           </motion.div>
@@ -158,7 +158,7 @@ const Agen = () => {
                         <Table.Cell>
                           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 2 }}>
                             <img
-                              src="./image/jasa4.jpg"
+                              src="./image/agen/jasa4.jpg"
                               className="rounded-md"
                             />
                           </motion.div>
@@ -176,7 +176,7 @@ const Agen = () => {
                         <Table.Cell>
                           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 2 }}>
                             <img
-                              src="./image/jasa5.jpg"
+                              src="./image/agen/jasa5.jpg"
                               className="rounded-md"
                             />
                           </motion.div>
