@@ -45,7 +45,7 @@ export default function Home() {
   const myServiceData: myServiceType[] = [
     {title: "Ingin Jadi Agen?", images: "./image/homepage/agen_icon.png", links: "/agen"},
     {title: "Ingin Desain Rumah?", images: "./image/homepage/desain_icon.png", links: "/desain"},
-    {title: "Ingin Bangun Rumah?", images: "./image/homepage/bangun_rumah_icon.png", links: "#"},
+    {title: "Ingin Bangun Rumah?", images: "./image/homepage/bangun_rumah_icon.png", links: "/bangun"},
     {title: "Ingin Jual Rumah?", images: "./image/homepage/jual_rumah_icon.png", links: "#"},
     {title: "Ingin Bahan Bangunan?", images: "./image/homepage/material_icon.png", links: "#"},
     {title: "Ingin info kerja?", images: "./image/homepage/kerja_icon.png", links: "#"},
