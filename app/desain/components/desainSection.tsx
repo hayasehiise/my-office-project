@@ -29,13 +29,13 @@ const carouselLantaiDuaItem: carouselLantaiDuaData[] = [
   {image: "./image/desain/project_02.png"},
 ]
 
-const Section = ({ children }: SectionProps) => {
+function Section({ children }: SectionProps) {
   return(
     <div className="flex flex-col">{children}</div>
   );
 };
 
-export const SectionOne = () => {
+export function SectionOne() {
   return (
     <Section>
       <div className="static w-full h-full xl:w-full sm:w-full xl:h-screen sm:h-full bg-black items-center justify-center text-center">
@@ -69,7 +69,7 @@ export const SectionOne = () => {
     </Section>
   );
 };
-export const SectionTwo = () => {
+export function SectionTwo(){
   return (
     <Section>
       <div className="w-full h-full xl:w-full xl:h-screen sm:w-full sm:h-full">
@@ -127,7 +127,7 @@ export const SectionTwo = () => {
   );
 };
 
-export const SectionThree = () => {
+export function SectionThree() {
   return (
     <Section>
       <div className="w-full h-full xl:w-full xl:h-full sm:w-full sm:h-full">
@@ -174,7 +174,7 @@ export const SectionThree = () => {
   );
 };
 
-export const SectionProject = () => {
+export function SectionProject() {
   return (
     <Section>
       <div className="w-full h-full bg-gray-400 text-center">
@@ -216,7 +216,7 @@ export const SectionProject = () => {
   );
 };
 
-export const SectionContact = () => {
+export function SectionContact() {
   return (
     <Section>
       <div className="w-full h-full max-h-screen">
@@ -252,6 +252,6 @@ export const SectionContact = () => {
     </Section>
   );
 };
-  <div>
-    <img src="./image/infinity_logo.png" className="h-[200px] mx-auto" />
-  </div>
+  // <div>
+  //   <img src="./image/infinity_logo.png" className="h-[200px] mx-auto" />
+  // </div>

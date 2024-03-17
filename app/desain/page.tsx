@@ -6,7 +6,7 @@ import {
   SectionTwo,
 } from "./components/desainSection";
 
-const Desain = () => {
+export default function Desain() {
   return (
     <>
       <main className="container-xl">
@@ -19,5 +19,3 @@ const Desain = () => {
     </>
   );
 };
-
-export default Desain;

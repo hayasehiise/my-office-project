@@ -23,11 +23,11 @@ const carouselMainItem: CarouselMainType[] = [
   { url: "./image/bangun/5.jpg" },
 ];
 
-const Section = ({ children }: SectionProps) => {
+function Section({ children }: SectionProps) {
   return <div className="flex flex-col">{children}</div>;
 };
 
-export const SectionMain = () => {
+export function SectionMain() {
   return (
     <Section>
       <div className="static bg-gradient-to-r from-amber-300 from-20% via-amber-200 via-40% to-white to-90% xl:w-full xl:h-screen">
@@ -56,7 +56,7 @@ export const SectionMain = () => {
   );
 };
 
-export const SecondSection = () => {
+export function SecondSection() {
   return(
     <Section>
       <div className="w-full h-full">

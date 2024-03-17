@@ -2,7 +2,7 @@ import { SecondSection, SectionMain } from "./components/sectionBangun"
 
 
 
-const Bangun = () => {
+export default function Bangun() {
     return(
         <>
         <main className="container-xl">
@@ -12,5 +12,3 @@ const Bangun = () => {
         </>
     )
 }
-
-export default Bangun
