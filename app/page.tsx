@@ -37,9 +37,11 @@ export default function Home() {
   }
 
   const carouselImageData: carouselImageType[] = [
-    {images: "https://fastly.picsum.photos/id/0/5000/3333.jpg?hmac=_j6ghY5fCfSD6tvtcV74zXivkJSPIfR9B8w34XeQmvU"},
-    {images: "https://fastly.picsum.photos/id/1/5000/3333.jpg?hmac=Asv2DU3rA_5D1xSe22xZK47WEAN0wjWeFOhzd13ujW4"},
-    {images: "https://fastly.picsum.photos/id/2/5000/3333.jpg?hmac=_KDkqQVttXw_nM-RyJfLImIbafFrqLsuGO5YuHqD-qQ"},
+    {images: "./image/homepage/carousel/1.jpg"},
+    {images: "./image/homepage/carousel/2.jpg"},
+    {images: "./image/homepage/carousel/3.jpg"},
+    {images: "./image/homepage/carousel/4.jpg"},
+    {images: "./image/homepage/carousel/5.jpg"},
   ]
 
   const myServiceData: myServiceType[] = [
@@ -116,7 +118,7 @@ export default function Home() {
             </div>
           </section>
           <section id="section3" className="">
-            <div className="flex flex-col sm:flex-row items-center justify-center mx-10 my-5 sm:my-5">
+            <div className="flex flex-col sm:flex-col xl:flex-row items-center justify-center xl:mx-10 sm:mx-5 mx-0 my-5 sm:my-0 ">
               <div className="flex-1">
                 <motion.div
                   initial={{ opacity: 0, scale: 0.5 }}
@@ -134,8 +136,8 @@ export default function Home() {
                   }}
                 >
                   <img
-                    src="./profile/awaludin.png"
-                    className="mx-auto w-1/2 sm:w-1/2"
+                    src="./image/homepage/pose_1.png"
+                    className="mx-auto w-full sm:w-full xl:w-full scale-x-[-1]"
                   />
                 </motion.div>
               </div>
@@ -146,7 +148,7 @@ export default function Home() {
                       My Services
                     </p>
                   </div>
-                  <div className="flex-auto w-screen sm:w-full h-96">
+                  <div className="flex-auto xl:w-full xl:h-96 sm:w-screen sm:h-96 w-screen h-96">
                     <Carousel
                       pauseOnHover
                       indicators={false}
@@ -154,14 +156,14 @@ export default function Home() {
                     >
                       {myServiceData.map((item, index) => (
                         <div key={index} className="flex flex-col h-full items-center justify-center text-black">
-                        <img src={item.images} className="h-1/2" />
+                        <img src={item.images} className="xl:w-60 sm:w-52 w-52" />
                         <p className="py-3">{item.title}</p>
                         <Link href={item.links}>
                         <Button pill color="amber" theme={myServiceButton}>
                           Klik Disini
                         </Button>
                         </Link>
-                      </div>
+                        </div>
                       ))}
                     </Carousel>
                   </div>
