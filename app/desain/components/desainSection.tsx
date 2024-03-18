@@ -1,7 +1,13 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -14,26 +20,24 @@ interface carouselLantaiSatuData {
 }
 
 const carouselLantaiSatuItem: carouselLantaiSatuData[] = [
-  {image: "./image/desain/project_01.png"},
-  {image: "./image/desain/project_01.png"},
-  {image: "./image/desain/project_01.png"},
-]
+  { image: "./image/desain/carousel/project_01.png" },
+  { image: "./image/desain/carousel/project_01.png" },
+  { image: "./image/desain/carousel/project_01.png" },
+];
 
 interface carouselLantaiDuaData {
   image: string;
 }
 
 const carouselLantaiDuaItem: carouselLantaiDuaData[] = [
-  {image: "./image/desain/project_02.png"},
-  {image: "./image/desain/project_02.png"},
-  {image: "./image/desain/project_02.png"},
-]
+  { image: "./image/desain/carousel/project_02.png" },
+  { image: "./image/desain/carousel/project_02.png" },
+  { image: "./image/desain/carousel/project_02.png" },
+];
 
 function Section({ children }: SectionProps) {
-  return(
-    <div className="flex flex-col">{children}</div>
-  );
-};
+  return <div className="flex flex-col">{children}</div>;
+}
 
 export function SectionOne() {
   return (
@@ -68,8 +72,8 @@ export function SectionOne() {
       </div>
     </Section>
   );
-};
-export function SectionTwo(){
+}
+export function SectionTwo() {
   return (
     <Section>
       <div className="w-full h-full xl:w-full xl:h-screen sm:w-full sm:h-full">
@@ -125,7 +129,7 @@ export function SectionTwo(){
       </div>
     </Section>
   );
-};
+}
 
 export function SectionThree() {
   return (
@@ -140,28 +144,32 @@ export function SectionThree() {
           </div>
           <div className="flex flex-col xl:flex-row sm:flex-col xl:mt-96 sm:mt-80 mt-72">
             <div className="relative w-56 h-[320px] xl:w-96 xl:h-[420px] sm:w-96 sm:h-[420px] bg-amber-400 xl:mx-5 sm:mx-auto mx-auto xl:pt-36 sm:pt-36 pt-32 z-0 rounded-tl-lg rounded-tr-lg xl:mb-0 sm:mb-80 mb-72">
-               <motion.img
-               initial={{ opacity: 0 }}
-               whileInView={{ opacity: 1 }}
-               transition={{ duration: 1 }}
+              <motion.img
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
                 src="./image/desain/desain_lantai1.jpg"
                 className="absolute z-10 origin-center left-1/2 right-1/2 xl:-top-20 sm:-top-20 -top-14 -translate-x-1/2 -translate-y-1/2 mx-auto object-cover w-[180px] h-[320px] sm:w-[280px] sm:h-[420px] xl:w-[280px] xl:h-[420px] border-solid border-4 border-white rounded-2xl"
               />
-              <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold xl:mb-10 sm:mb-10 mb-5">Desain Lantai 1</p>
+              <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold xl:mb-10 sm:mb-10 mb-5">
+                Desain Lantai 1
+              </p>
               <p className="xl:text-lg sm:text-lg text-sm">
                 Buat desain perencanaan yg matang, sebelum mulai membangun rumah
                 1 lantai impian secara bertahap.
               </p>
             </div>
             <div className="relative w-56 h-[320px] xl:w-96 xl:h-[420px] sm:w-96 sm:h-[420px] bg-amber-400 xl:mx-5 sm:mx-auto mx-auto xl:pt-36 sm:pt-36 pt-32 z-0 rounded-tl-lg rounded-tr-lg">
-               <motion.img
-               initial={{ opacity: 0 }}
-               whileInView={{ opacity: 1 }}
-               transition={{ duration: 1 }}
+              <motion.img
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1 }}
                 src="./image/desain/desain_lantai2.jpg"
                 className="absolute z-10 origin-center left-1/2 right-1/2 xl:-top-20 sm:-top-20 -top-14 -translate-x-1/2 -translate-y-1/2 mx-auto object-cover w-[180px] h-[320px] sm:w-[280px] sm:h-[420px] xl:w-[280px] xl:h-[420px] border-solid border-4 border-white rounded-2xl"
               />
-              <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold xl:mb-10 sm:mb-10 mb-5">Desain Lantai 2</p>
+              <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold xl:mb-10 sm:mb-10 mb-5">
+                Desain Lantai 2
+              </p>
               <p className="xl:text-lg sm:text-lg text-sm">
                 Buat desain perencanaan yg matang, sebelum mulai membangun rumah
                 2 lantai impian secara bertahap.
@@ -172,7 +180,7 @@ export function SectionThree() {
       </div>
     </Section>
   );
-};
+}
 
 export function SectionProject() {
   return (
@@ -183,7 +191,9 @@ export function SectionProject() {
             Rumah yg Kami Selesaikan Desain Perencanaannya
           </p>
           <div className="mx-auto my-5">
-            <p className="text-2xl text-white font-bold pb-2">Desain 1 Lantai</p>
+            <p className="text-2xl text-white font-bold pb-2">
+              Desain 1 Lantai
+            </p>
             <Carousel className="xl:w-[700px] sm:w-96 xs:w-48 w-48">
               <CarouselContent>
                 {carouselLantaiSatuItem.map((item, index) => (
@@ -197,7 +207,9 @@ export function SectionProject() {
             </Carousel>
           </div>
           <div className="mx-auto my-5">
-            <p className="text-2xl text-white font-bold pb-2">Desain 2 Lantai</p>
+            <p className="text-2xl text-white font-bold pb-2">
+              Desain 2 Lantai
+            </p>
             <Carousel className="xl:w-[700px] sm:w-96 xs:w-48 w-48">
               <CarouselContent>
                 {carouselLantaiDuaItem.map((item, index) => (
@@ -214,7 +226,7 @@ export function SectionProject() {
       </div>
     </Section>
   );
-};
+}
 
 export function SectionContact() {
   return (
@@ -226,7 +238,11 @@ export function SectionContact() {
               Klik tombol dibawah ini untuk mulai Konsultasi Gratis via WhatsApp
             </p>
             <Button variant="success" className="rounded-full p-6" asChild>
-              <Link href="https://api.whatsapp.com/send?phone=6281352294435&text=Saya%20ingin%20desain%20rumah%20" target="_blank" className=" text-xl">
+              <Link
+                href="https://api.whatsapp.com/send?phone=6281352294435&text=Saya%20ingin%20desain%20rumah%20"
+                target="_blank"
+                className=" text-xl"
+              >
                 Mulai Konsultasi
                 <img src="./image/wa_icon.png" className="h-8 ml-2" />
               </Link>
@@ -241,17 +257,20 @@ export function SectionContact() {
               <p>infinityprojectproperty22@gmail.com</p>
             </div>
             <div>
-              <img src="./image/infinity_logo.png" className="h-[100px] mx-auto" />
+              <img
+                src="./image/infinity_logo.png"
+                className="h-[100px] mx-auto"
+              />
             </div>
             <div>
-              <p className="text-right">Copyright &copy; Hery Setiawan (Staff IT Infinity Project Property)</p>
+              <p className="text-right">
+                Copyright &copy; Hery Setiawan (Staff IT Infinity Project
+                Property)
+              </p>
             </div>
           </div>
         </div>
       </div>
     </Section>
   );
-};
-  // <div>
-  //   <img src="./image/infinity_logo.png" className="h-[200px] mx-auto" />
-  // </div>
+}
