@@ -111,8 +111,8 @@ export function SectionProject() {
       <div className="w-full h-full xl:mt-24 sm:mt-10 xs:mt-10 mt-10">
         <div className="flex flex-col justify-center items-center text-center">
           <p className="font-extrabold xl:text-5xl sm:text-3xl xs:text-xl text-xl">Proyek Rumah Yang Telah Selesai Dibuat Tim Infinity</p>
-          <div className="mx-auto my-10">
-          <Carousel className="xl:w-[700px] sm:w-96 xs:w-48 w-48">
+          <div className="my-10">
+          <Carousel className="xl:w-1/3 sm:w-1/2 xs:w-1/2 w-1/2 mx-auto">
               <CarouselContent>
                 {carouselProjectItem.map((item, index) => (
                   <CarouselItem key={index}>
