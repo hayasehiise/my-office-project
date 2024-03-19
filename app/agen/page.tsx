@@ -4,11 +4,14 @@ import { Button, Table, TableHead, TableHeadCell } from "flowbite-react";
 import styles from "./agenPage.module.css";
 import Link from "next/link";
 import { motion } from "framer-motion";
+// import ContactForm from "./components/contactForm";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import ContactEmail from "./components/contactFormEmail";
 
 const Agen = () => {
   const slideInVariants = {
-    hidden: { x: '-100%' },
-    visible: { x: 0, transition: { duration: 0.8, ease: 'easeOut' } },
+    hidden: { x: "-100%" },
+    visible: { x: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
   return (
     <>
@@ -30,7 +33,11 @@ const Agen = () => {
                     ultrices. Sed a felis sagittis, tempus leo.
                   </p>
                   <Link href="#">
-                    <Button color="light" className="flex-initial mb-5 sm:mb-0" pill>
+                    <Button
+                      color="light"
+                      className="flex-initial mb-5 sm:mb-0"
+                      pill
+                    >
                       Lets Check out
                       <img
                         src="./icons/arrow-upright.svg"
@@ -83,7 +90,9 @@ const Agen = () => {
           </section>
           <section className=" flex-1 bg-slate-950 text-white">
             <div className="flex flex-col px-10 py-10">
-              <p className="flex-initial font-sans font-semibold text-2xl mb-4">Jasa</p>
+              <p className="flex-initial font-sans font-semibold text-2xl mb-4">
+                Jasa
+              </p>
               <p className="flex-initial font-sans font-black text-5xl">
                 Jasa yang kami sediakan
               </p>
@@ -100,7 +109,10 @@ const Agen = () => {
                       <Table.Row>
                         <Table.Cell>Penjualan Properti</Table.Cell>
                         <Table.Cell>
-                          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 2 }}>
+                          <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 2 }}
+                          >
                             <img
                               src="./image/agen/jasa1.jpg"
                               className="rounded-md"
@@ -119,7 +131,10 @@ const Agen = () => {
                       <Table.Row>
                         <Table.Cell>Pembelian Properti</Table.Cell>
                         <Table.Cell>
-                          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 2 }}>
+                          <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 2 }}
+                          >
                             <img
                               src="./image/agen/jasa2.jpg"
                               className="rounded-md"
@@ -138,7 +153,10 @@ const Agen = () => {
                       <Table.Row>
                         <Table.Cell>Penyewaan Properti</Table.Cell>
                         <Table.Cell>
-                          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 2 }}>
+                          <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 2 }}
+                          >
                             <img
                               src="./image/agen/jasa3.jpg"
                               className="rounded-md"
@@ -156,7 +174,10 @@ const Agen = () => {
                       <Table.Row>
                         <Table.Cell>Manajemen Properti</Table.Cell>
                         <Table.Cell>
-                          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 2 }}>
+                          <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 2 }}
+                          >
                             <img
                               src="./image/agen/jasa4.jpg"
                               className="rounded-md"
@@ -174,7 +195,10 @@ const Agen = () => {
                       <Table.Row>
                         <Table.Cell>Pengembangan Properti</Table.Cell>
                         <Table.Cell>
-                          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 2 }}>
+                          <motion.div
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 2 }}
+                          >
                             <img
                               src="./image/agen/jasa5.jpg"
                               className="rounded-md"
@@ -197,14 +221,37 @@ const Agen = () => {
             </div>
           </section>
           <section className="flex-1 text-black">
-            <motion.div initial="hidden" whileInView="visible" variants={slideInVariants} >
-            <div className="flex flex-col py-10 px-5 sm:px-10">
-                <p className="flex-auto font-sans font-black text-4xl sm:text-8xl">Apakah Kamu Tertarik? <br/>Daftar Sekarang!</p>
-                <p className="flex-auto font-serif my-5 font-medium">Mari kita bersama menciptakan ide menjadi nyata dan hasil yang memuaskan</p>
-                <div className="flex-auto">
-                <Button pill color="light" className="w-auto">Register Now <img src="./icons/resume.svg" className="ml-2 h-7" /></Button>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              variants={slideInVariants}
+            >
+              <div className="flex flex-col py-10 px-5 sm:px-10">
+                <p className="flex-auto font-sans font-black text-4xl sm:text-8xl">
+                  Apakah Kamu Tertarik? <br />
+                  Daftar Sekarang!
+                </p>
+                <p className="flex-auto font-serif my-5 font-medium">
+                  Mari kita bersama menciptakan ide menjadi nyata dan hasil yang
+                  memuaskan
+                </p>
+                <div className="flex-initial">
+                  <div className="flex flex-col">
+                    <Tabs defaultValue="email" className="w-1/2">
+                      <TabsList>
+                        <TabsTrigger value="email">Email</TabsTrigger>
+                        <TabsTrigger value="whatsapp">WhatsApp</TabsTrigger>
+                      </TabsList>
+                      <TabsContent value="email">
+                        <ContactEmail />
+                      </TabsContent>
+                      <TabsContent value="whatsapp">
+                        Change your password here.
+                      </TabsContent>
+                    </Tabs>
+                  </div>
                 </div>
-            </div>
+              </div>
             </motion.div>
           </section>
         </main>
