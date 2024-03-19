@@ -24,6 +24,9 @@ const config = {
       },
     },
     extend: {
+      listStyleImage: {
+        checkmark: 'url("/icons/checkmark.svg")',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -80,7 +83,7 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("flowbite/plugin")],
+  plugins: [require("tailwindcss-animate"), require("flowbite/plugin"),require('@tailwindcss/forms'),],
 } satisfies Config;
 
 export default config;

@@ -1,4 +1,4 @@
-import { SecondSection, SectionMain, SectionProject, SectionTahap } from "./components/sectionBangun"
+import { SecondSection, SectionMain, SectionProject, SectionTahap, SectionLast, SectionKonsul } from "./components/sectionBangun"
 
 
 
@@ -10,6 +10,8 @@ export default function Bangun() {
             <SecondSection />
             <SectionProject />
             <SectionTahap />
+            <SectionLast />
+            <SectionKonsul />
         </main>
         </>
     )
