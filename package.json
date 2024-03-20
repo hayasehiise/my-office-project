@@ -24,6 +24,7 @@
     "dotenv": "^16.4.5",
     "embla-carousel-autoplay": "^8.0.0",
     "embla-carousel-react": "^8.0.0",
+    "embla-carousel-wheel-gestures": "^8.0.0-rc05",
     "flowbite-react": "^0.7.2",
     "framer-motion": "^11.0.8",
     "lucide-react": "^0.356.0",
