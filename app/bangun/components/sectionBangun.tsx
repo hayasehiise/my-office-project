@@ -60,10 +60,10 @@ function Section({ children }: SectionProps) {
 export function SectionMain() {
   return (
     <Section>
-      <div className="static bg-gradient-to-r from-amber-300 from-20% via-amber-200 via-40% to-white to-90% xl:w-full xl:h-screen">
+      <div className="static bg-gradient-to-r from-yellow-300 from-20% via-amber-200 via-40% to-white to-90% xl:w-full xl:h-screen sm:w-full sm:h-full xs:w-full xs:h-full w-full h-full">
         <img
           src="./image/infinity_logo.png"
-          className="relative left-1/2 right-1/2 top-[15px] -translate-x-1/2 z-10 h-[100px] max-h-screen"
+          className="relative left-1/2 right-1/2 top-[15px] -translate-x-1/2 z-10 xl:h-[100px] sm:h-16 xs:h-16 h-16 max-h-screen"
         />
         <div className="flex xl:flex-row sm:flex-row xs:flex-col flex-col justify-center items-center text-center xl:mt-32 sm:mt-5 xs:mt-10 mt-5">
           <div className="xl:p-10 sm:p-16 xl:w-1/2 sm:w-1/2">
