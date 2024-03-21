@@ -108,10 +108,10 @@ export default function SectionCarousel() {
               </motion.p>
             </div>
             <div className="xl:mt-5 xl:w-full sm:w-full sm:mt-5 xs:mt-5 sm:mb-auto xs:mb-auto justify-center items-center">
-              <Carousel className="w-full xl:max-w-5xl sm:max-w-xl xs:max-w-[280px] mx-auto" plugins={[Autoplay({ delay: 3000 })]}>
+              <Carousel className="w-full xl:max-w-5xl sm:max-w-xl xs:max-w-64 mx-auto" plugins={[Autoplay({ delay: 3000 })]}>
                 <CarouselContent>
                   {carouselProjectItem.map((item, index) => (
-                    <CarouselItem className="basis-1/2" key={index}>
+                    <CarouselItem className="xl:basis-1/2 sm:basis-1/2" key={index}>
                       <Image
                         src={item.image}
                         alt={item.alt}
