@@ -1,6 +1,7 @@
 import {
   SectionContact,
   SectionOne,
+  SectionPaket,
   SectionProject,
   SectionThree,
   SectionTwo,
@@ -14,6 +15,7 @@ export default function Desain() {
           <SectionTwo />
           <SectionThree />
           <SectionProject />
+          <SectionPaket />
           <SectionContact />
       </main>
     </>

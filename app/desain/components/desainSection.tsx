@@ -8,6 +8,19 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -190,37 +203,215 @@ export function SectionProject() {
           <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold text-white pb-10">
             Rumah yg Kami Selesaikan Desain Perencanaannya
           </p>
-          <div className="mx-auto my-5">
-            <p className="text-2xl text-white font-bold pb-2">
-              Desain 1 Lantai
-            </p>
-            <Carousel className="xl:w-[700px] sm:w-96 xs:w-48 w-48">
-              <CarouselContent>
-                {carouselLantaiSatuItem.map((item, index) => (
-                  <CarouselItem key={index}>
-                    <img src={item.image} />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselNext />
-              <CarouselPrevious />
-            </Carousel>
+          <div className="flex xl:flex-row flex-col pb-10">
+            <div className="mx-auto my-5">
+              <p className="text-2xl text-white font-bold pb-2">
+                Desain 1 Lantai
+              </p>
+              <Carousel className="xl:w-[700px] sm:w-96 xs:w-48 w-48">
+                <CarouselContent>
+                  {carouselLantaiSatuItem.map((item, index) => (
+                    <CarouselItem key={index}>
+                      <img src={item.image} />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselNext />
+                <CarouselPrevious />
+              </Carousel>
+            </div>
+            <div className="mx-auto my-5">
+              <p className="text-2xl text-white font-bold pb-2">
+                Desain 2 Lantai
+              </p>
+              <Carousel className="xl:w-[700px] sm:w-96 xs:w-48 w-48">
+                <CarouselContent>
+                  {carouselLantaiDuaItem.map((item, index) => (
+                    <CarouselItem key={index}>
+                      <img src={item.image} />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselNext />
+                <CarouselPrevious />
+              </Carousel>
+            </div>
           </div>
-          <div className="mx-auto my-5">
-            <p className="text-2xl text-white font-bold pb-2">
-              Desain 2 Lantai
-            </p>
-            <Carousel className="xl:w-[700px] sm:w-96 xs:w-48 w-48">
-              <CarouselContent>
-                {carouselLantaiDuaItem.map((item, index) => (
-                  <CarouselItem key={index}>
-                    <img src={item.image} />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselNext />
-              <CarouselPrevious />
-            </Carousel>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+export function SectionPaket() {
+  return (
+    <Section>
+      <div className="w-full h-full">
+        <div className="flex xl:flex-row flex-col justify-center xl:items-start sm:items-center">
+          <div className="xl:my-10 xl:p-5 my-2 p-4">
+            <Card className="w-fit">
+              <CardHeader>
+                <CardTitle>
+                  <p className="text-center">Paket Hemat</p>
+                </CardTitle>
+              </CardHeader>
+              <hr/>
+              <CardContent>
+                <div>
+                  <p className="font-semibold py-2">Visualisasi 3D Eksterior</p>
+                  <ul className="list-outside list-disc px-4">
+                    <li>Fasad Bangunan 2 View</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold py-2">Arsitektur</p>
+                  <ul className="list-outside list-disc px-4">
+                    <li>Gambar Bangunan</li>
+                    <li>Gambar Denah</li>
+                    <li>Gambar Tampak</li>
+                    <li>Gambar Potongan Melintang Membujur</li>
+                  </ul>
+                </div>
+              </CardContent>
+              <CardFooter>
+                <p className="font-bold text-xl">
+                  Rp.37.000/M<sup>2</sup>
+                </p>
+              </CardFooter>
+            </Card>
+          </div>
+          <div className="xl:my-10 xl:p-5 my-2 p-4">
+            <Card className="w-fit">
+              <CardHeader>
+                <CardTitle>
+                  <p className="text-center">Paket Pas</p>
+                </CardTitle>
+              </CardHeader>
+              <hr/>
+              <CardContent>
+                <div>
+                  <p className="font-semibold py-2">Visualisasi 3D Eksterior</p>
+                  <ul className="list-outside list-disc px-4">
+                    <li>Fasad Bangunan 4 View</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold py-2">Arsitektur</p>
+                  <ul className="list-outside list-disc px-4">
+                    <li>Gambar Bangunan</li>
+                    <li>Gambar Denah</li>
+                    <li>Gambar Tampak</li>
+                    <li>Gambar Potongan Melintang Membujur</li>
+                    <li>Gambar Denah Rencana Pola Keramik</li>
+                    <li>Gambar Denah Rencana Plafond</li>
+                    <li>Gambar Denah Rencana Atap</li>
+                    <li>Gambar Denah Rencana Kusen, Pintu & Jendela</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold py-2">Mekanikal Elektrikal</p>
+                  <ul className="list-outside list-disc px-4">
+                    <li>Gambar Instalasi Listrik</li>
+                    <li>Gambar Instalasi Air Bersih</li>
+                    <li>Gambar Instalasi Air Kotor</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold py-2">Struktur</p>
+                  <ul className="list-outside list-disc px-4">
+                    <li>Gambar Denah Pondasi</li>
+                    <li>Gambar Denah Sloof</li>
+                    <li>Gambar Denah Balok Lantai</li>
+                    <li>Gambar Denah Ringbalk</li>
+                    <li>Gambar Denah Kolom</li>
+                    <li>Gambar Denah Plat Lantai</li>
+                    <li>Gambar Detail Pondasi</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold py-2">Estimasi Biaya</p>
+                  <ul className="list-outside list-disc px-4">
+                    <li>3D Interior 1 View</li>
+                  </ul>
+                </div>
+              </CardContent>
+              <CardFooter>
+                <p className="font-bold text-xl">
+                  Rp.63.000/M<sup>2</sup>
+                </p>
+              </CardFooter>
+            </Card>
+          </div>
+          <div className="xl:m-10 xl:p-5 my-2 p-4">
+            <Card className="w-fit">
+              <CardHeader>
+                <CardTitle>
+                  <p className="text-center">Paket Lengkap</p>
+                </CardTitle>
+              </CardHeader>
+              <hr/>
+              <CardContent>
+                <div>
+                  <p className="font-semibold py-2">Visualisasi 3D Eksterior</p>
+                  <ul className="list-outside list-disc px-4">
+                    <li>Fasad Bangunan 6 View</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold py-2">Arsitektur</p>
+                  <ul className="list-outside list-disc px-4">
+                    <li>Gambar Bangunan</li>
+                    <li>Gambar Denah</li>
+                    <li>Gambar Tampak</li>
+                    <li>Gambar Potongan Melintang Membujur</li>
+                    <li>Gambar Denah Rencana Pola Keramik</li>
+                    <li>Gambar Denah Rencana Plafond</li>
+                    <li>Gambar Denah Rencana Atap</li>
+                    <li>Gambar Denah Rencana Kusen, Pintu & Jendela</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold py-2">Mekanikal Elektrikal</p>
+                  <ul className="list-outside list-disc px-4">
+                    <li>Gambar Instalasi Listrik</li>
+                    <li>Gambar Instalasi Air Bersih</li>
+                    <li>Gambar Instalasi Air Kotor</li>
+                    <li>Gambar Detail Septictank</li>
+                    <li>Gambar Detail Sumur Resapan</li>
+                    <li>Gambar Detail Bak Kontrol</li>
+                    <li>Gambar Detail Resapan Air Hujan</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold py-2">Struktur</p>
+                  <ul className="list-outside list-disc px-4">
+                    <li>Gambar Denah Pondasi</li>
+                    <li>Gambar Denah Sloof</li>
+                    <li>Gambar Denah Balok Lantai</li>
+                    <li>Gambar Denah Ringbalk</li>
+                    <li>Gambar Denah Kolom</li>
+                    <li>Gambar Denah Plat Lantai</li>
+                    <li>Gambar Detail Pondasi</li>
+                    <li>Gambar Detail Penulangan Kolom</li>
+                    <li>Gambar Detail Penulangan Sloof</li>
+                    <li>Gambar Detail Balok</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold py-2">Estimasi Biaya</p>
+                  <ul className="list-outside list-disc px-4">
+                    <li>Rencana Anggaran Biaya (RAB)</li>
+                    <li>3D Interior 3 View</li>
+                    <li>Animasi</li>
+                  </ul>
+                </div>
+              </CardContent>
+              <CardFooter>
+                <p className="text-xl font-bold">
+                  Rp.98.000/M<sup>2</sup>
+                </p>
+              </CardFooter>
+            </Card>
           </div>
         </div>
       </div>
