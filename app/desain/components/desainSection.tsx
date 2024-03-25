@@ -208,7 +208,7 @@ export function SectionProject() {
               <p className="text-2xl text-white font-bold pb-2">
                 Desain 1 Lantai
               </p>
-              <Carousel className="xl:w-[700px] sm:w-96 xs:w-48 w-48">
+              <Carousel className="xl:w-[700px] sm:w-96 xs:w-64 w-64">
                 <CarouselContent>
                   {carouselLantaiSatuItem.map((item, index) => (
                     <CarouselItem key={index}>
@@ -224,7 +224,7 @@ export function SectionProject() {
               <p className="text-2xl text-white font-bold pb-2">
                 Desain 2 Lantai
               </p>
-              <Carousel className="xl:w-[700px] sm:w-96 xs:w-48 w-48">
+              <Carousel className="xl:w-[700px] sm:w-96 xs:w-64 w-64">
                 <CarouselContent>
                   {carouselLantaiDuaItem.map((item, index) => (
                     <CarouselItem key={index}>
