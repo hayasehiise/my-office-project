@@ -21,7 +21,7 @@ export default function ContactEmail() {
       formData.append("file", file);
     }
     try {
-      await axios.post("/api/email", formData);
+      await axios.post(process.env.API_URL + "/api/email", formData);
       alert("Email sent successfully");
       setName("");
       setEmail("");
