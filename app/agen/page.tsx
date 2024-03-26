@@ -246,7 +246,7 @@ const Agen = () => {
                         <ContactEmail />
                       </TabsContent>
                       <TabsContent value="whatsapp">
-                        Change your password here.
+                        Coming Soon
                       </TabsContent>
                     </Tabs>
                   </div>
