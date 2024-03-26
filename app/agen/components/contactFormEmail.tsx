@@ -5,14 +5,18 @@ import { Button } from "@/components/ui/button";
 export default function ContactEmail() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setLoading(true)
 
     const formData = new FormData();
     formData.append("name", name);
     formData.append("email", email);
+    formData.append("phone", phone);
     formData.append("message", message);
     const fileInput = document.getElementById("file") as HTMLInputElement;
     const file =
@@ -21,14 +25,17 @@ export default function ContactEmail() {
       formData.append("file", file);
     }
     try {
-      await axios.post(process.env.API_URL + "/api/email", formData);
-      alert("Email sent successfully");
+      const res = await axios.post(process.env.API_URL + "/api/email", formData);
+      console.log(res);
+      alert(res.data.message);
       setName("");
       setEmail("");
+      setPhone("");
       setMessage("");
       if (fileInput.value) {
         fileInput.value = "";
       }
+      setLoading(false)
     } catch (error) {
       console.error(error);
       alert("Error sending email");
@@ -39,7 +46,7 @@ export default function ContactEmail() {
     <>
       <form onSubmit={handleSubmit}>
         <div className="flex flex-col p-5">
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Nama Lengkap:</label>
           <input
             type="text"
             id="name"
@@ -57,7 +64,17 @@ export default function ContactEmail() {
             onChange={(event) => setEmail(event.target.value)}
             className="w-72 mb-5"
           />
-          <label htmlFor="message">Message:</label>
+          <label htmlFor="phone">No. Telp (WhatsApp):</label>
+          <input
+            type="text"
+            id="phone"
+            name="phone"
+            maxLength={13}
+            value={phone}
+            onChange={(event) => setPhone(event.target.value)}
+            className="w-72 mb-5"
+          />
+          <label htmlFor="message">Deskripsikan Dirimu:</label>
           <textarea
             id="message"
             name="message"
@@ -69,6 +86,9 @@ export default function ContactEmail() {
           <input type="file" id="file" name="file" />
           <Button type="submit" className="w-24 mt-5">
             Send
+            {loading && (
+              <img src="/image/agen/loading.gif" className="h-10 p-2" />
+            )}
           </Button>
         </div>
       </form>
