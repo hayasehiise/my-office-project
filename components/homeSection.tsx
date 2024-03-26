@@ -12,13 +12,13 @@ interface SectionProps {
 
 const fullScreenCarousel: CustomFlowbiteTheme["carousel"] = {
   scrollContainer: {
-    base: "flex h-full snap-mandatory overflow-y-hidden overflow-x-scroll scroll-smooth",
+    base: "flex w-full xl:h-[700px] sm:h-96 xs:h-56 snap-mandatory overflow-y-hidden overflow-x-scroll scroll-smooth",
   },
 };
 
 const myServiceCarousel: CustomFlowbiteTheme["carousel"] = {
   control: {
-    base: "inline-flex h-8 w-8 items-center justify-center rounded-full bg-black group-hover:bg-slate-400 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70 sm:h-10 sm:w-10",
+    base: "inline-flex h-8 w-8 items-center justify-center rounded-full bg-black group-hover:bg-slate-400 group-focus:outline-none group-focus:ring-4 group-focus:ring-white dark:bg-gray-800/30 dark:group-hover:bg-gray-800/60 dark:group-focus:ring-gray-800/70",
   },
 };
 
@@ -107,19 +107,75 @@ export function SectionMain() {
             />
           </div>
           <div className="absolute w-full h-screen xl:bg-gradient-to-r sm:bg-gradient-to-t xs:bg-gradient-to-t from-black xl:from-55% sm:from-30% xs:from-55% z-20 flex flex-col xl:justify-center xl:items-start sm:justify-end sm:items-center xs:justify-end xs:items-center">
-            <p className="text-white xl:text-7xl sm:text-7xl xs:text-4xl font-extrabold xl:mx-24 sm:-ml-28 xs:-ml-16">AWALUDIN</p>
+            <p className="text-white xl:text-7xl sm:text-7xl xs:text-4xl font-extrabold xl:mx-24 sm:-ml-28 xs:-ml-16">
+              AWALUDIN
+            </p>
             <p className="text-white xl:text-7xl sm:text-7xl xs:text-4xl font-extrabold xl:mx-36 sm:ml-20 xs:ml-16">
               DG. MALEWA
             </p>
             <p className="text-white xl:text-lg sm:text-lg xs:text-sm xl:mx-24 sm:mx-24 xl:my-10 sm:my-10 xs:my-5 xl:w-[30%] sm:w-96 xs:w-[300px] border-l-8 xl:px-3 sm:px-3 xs:px-4 border-white">
               Awaludin Dg. Malewa adalah seorang broker properti dengan
-              pengalaman yang luas dan sekaligus CEO dari CV Infinity Project Property yang
-              bergerak aktif dalam industri properti. Kami tidak hanya berfokus
-              pada jual beli properti, tetapi juga terlibat dalam tahapan desain
-              dan konstruksi. Dengan dedikasi kami dalam menciptakan solusi
-              properti yang inovatif dan berkualitas, kami berkomitmen untuk
-              memberikan layanan terbaik kepada klien-klien kami.
+              pengalaman yang luas dan sekaligus CEO dari CV Infinity Project
+              Property yang bergerak aktif dalam industri properti. Kami tidak
+              hanya berfokus pada jual beli properti, tetapi juga terlibat dalam
+              tahapan desain dan konstruksi. Dengan dedikasi kami dalam
+              menciptakan solusi properti yang inovatif dan berkualitas, kami
+              berkomitmen untuk memberikan layanan terbaik kepada klien-klien
+              kami.
             </p>
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+export function SectionCarousel() {
+  return (
+    <Section>
+      <Carousel indicators={false} theme={fullScreenCarousel}>
+        {carouselImageData.map((item, index) => (
+          <img src={item.images} key={index} className="h-full object-cover" />
+        ))}
+      </Carousel>
+    </Section>
+  );
+}
+
+export function SectionService() {
+  return (
+    <Section>
+      <div className="w-full max-h-screen">
+        <div className="relative">
+          <img
+            src="/image/homepage/service.jpg"
+            className="absolute w-fit xl:h-[700px] object-contain scale-x-[-1] xl:left-0 z-10"
+          />
+          <div className="absolute w-full xl:h-[700px] sm:h-[900px] xs:h-[500px] xl:bg-gradient-to-l sm:bg-gradient-to-t xs:bg-gradient-to-t from-gray-100 xl:from-50% sm:from-50% xs:from-60% z-20 flex flex-col xl:justify-center xl:items-end sm:justify-end sm:items-center xs:justify-end xs:items-center">
+            <div className="xl:w-1/2 sm:w-1/2 xs:w-full flex flex-col justify-center items-center p-5">
+              <p className="xl:text-5xl sm:text-5xl xs:text-2xl font-extrabold">MY SERVICE</p>
+              <Carousel
+                pauseOnHover
+                indicators={false}
+                theme={myServiceCarousel}
+                className="xl:h-96 sm:h-96 xs:h-64 p-5"
+              >
+                {myServiceData.map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex flex-col items-center justify-center text-black"
+                  >
+                    <img src={item.images} className="xl:w-60 sm:w-52 xs:w-32" />
+                    <p className="py-3">{item.title}</p>
+                    <Link href={item.links}>
+                      <Button pill color="amber" theme={myServiceButton}>
+                        Klik Disini
+                      </Button>
+                    </Link>
+                  </div>
+                ))}
+              </Carousel>
+            </div>
           </div>
         </div>
       </div>
