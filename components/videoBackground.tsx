@@ -24,6 +24,7 @@ export default function VideoBackground({
       width={width}
       height={height}
       loop={true}
+      playsinline={true}
     />
   );
 }
