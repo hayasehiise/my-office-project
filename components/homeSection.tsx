@@ -135,7 +135,7 @@ export function SectionCarousel() {
   );
 }
 
-export function SectionService() {
+export function SectionServiceCarousel() {
   return (
     <Section>
       <div className="w-full h-full border-t-[10px] border-white">
@@ -148,6 +148,7 @@ export function SectionService() {
             <p className="xl:text-5xl sm:text-5xl xs:text-2xl font-extrabold">
               MY SERVICE
             </p>
+            {/* Ini Untuk Versi Carousel */}
             <Carousel
               pauseOnHover
               indicators={false}
@@ -176,40 +177,70 @@ export function SectionService() {
   );
 }
 
+export function SectionServiceBlock() {
+  return (
+    <Section>
+      <div className="w-full h-full xl:p-10 sm:p-5 xs:p-2">
+        <div className="flex justify-center">
+          <div className="grid grid-cols-2 gap-4">
+            {myServiceData.map((item, index) => (
+              <div key={index}>
+                <Link href={item.links}>
+                  <div className="flex flex-col border-solid border-4 rounded-3xl">
+                    <div className="relative w-full xl:h-[380px] sm:h-[220px] xs:h-[145px] justify-center items-center text-center">
+                      <img
+                        src={item.images}
+                        className="xl:h-96 sm:h-56 xs:h-36 mx-auto"
+                      />
+                      <div className="absolute xl:px-24 sm:px-10 xs:px-2 xl:bottom-14 sm:bottom-10 xs:bottom-5 bg-slate-400 bg-opacity-70 w-full">
+                        <p className="xl:text-2xl sm:text-sm xs:text-sm font-bold">
+                          {item.title}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
 export function SectionFooter() {
   return (
     <Section>
       <div className="w-full h-full bg-amber-400">
-        <div className="flex flex-row justify-center">
-          <div className="flex flex-col m-5">
+        <div className="flex flex-row xl:justify-center sm:justify-center xs:justify-center xs:items-end">
+          <div className="flex flex-col xl:m-5 sm:m-5 xs:m-2">
             <p className="xl:text-3xl sm:text-3xl xs:text-lg font-bold border-b-4 border-black">
               My Social Media
             </p>
             <div className="flex flex-row justify-center mt-2">
-            <Link
-              href={"https://www.instagram.com/awaludin_infinity/"}
-              target="_blank"
-              className="mx-2"
-            >
-              <img src="/image/homepage/instagram.png" className="h-10" />
-            </Link>
-            <Link
-              href={"https://www.youtube.com/@awaludin1832"}
-              target="_blank"
-              className="mx-2"
-            >
-              <img src="/image/homepage/youtube.png" className="h-10" />
-            </Link>
-            <Link
-              href={"https://www.tiktok.com/@awaludin_infinity?lang=id-ID"}
-              target="_blank"
-              className="mx-2"
-            >
-              <img src="/image/homepage/tiktok.png" className="h-10" />
-            </Link>
+              <Link
+                href={"https://www.instagram.com/awaludin_infinity/"}
+                target="_blank"
+              >
+                <img src="/image/homepage/instagram.png" className="h-10" />
+              </Link>
+              <Link
+                href={"https://www.youtube.com/@awaludin1832"}
+                target="_blank"
+                className="mx-2"
+              >
+                <img src="/image/homepage/youtube.png" className="h-10" />
+              </Link>
+              <Link
+                href={"https://www.tiktok.com/@awaludin_infinity?lang=id-ID"}
+                target="_blank"
+              >
+                <img src="/image/homepage/tiktok.png" className="h-10" />
+              </Link>
             </div>
           </div>
-          <div className="flex flex-col m-5">
+          <div className="flex flex-col xl:m-5 sm:m-5 xs:m-2">
             <p className="xl:text-3xl sm:text-3xl xs:text-lg font-bold border-b-4 border-black">
               My Contact
             </p>
@@ -225,13 +256,16 @@ export function SectionFooter() {
 }
 
 export function SectionCopyright() {
-  return(
+  return (
     <Section>
       <div className="w-full h-full bg-white">
         <div className="flex justify-center">
-          <p>&copy; <span className="font-bold">2024</span> Infinity Project Property - Staff IT</p>
+          <p>
+            &copy; <span className="font-bold">2024</span> Infinity Project
+            Property - Staff IT
+          </p>
         </div>
       </div>
     </Section>
-  )
+  );
 }
