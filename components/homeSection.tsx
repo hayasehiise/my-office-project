@@ -118,9 +118,17 @@ export function SectionMain() {
 export function SectionCarousel() {
   return (
     <Section>
-      <Carousel indicators={false} theme={fullScreenCarousel} className=" border-t-[10px] border-b-[10px] border-amber-400">
+      <Carousel
+        indicators={false}
+        theme={fullScreenCarousel}
+        className=" border-t-[10px] border-b-[10px] border-amber-400"
+      >
         {carouselImageData.map((item, index) => (
-          <img src={item.images} key={index} className="h-full object-cover object-center" />
+          <img
+            src={item.images}
+            key={index}
+            className="h-full object-cover object-center"
+          />
         ))}
       </Carousel>
     </Section>
@@ -130,12 +138,12 @@ export function SectionCarousel() {
 export function SectionService() {
   return (
     <Section>
-      <div className="w-full h-full">
+      <div className="w-full h-full border-t-[10px] border-white">
         <img
           src="/image/homepage/service.jpg"
           className="absolute w-fit xl:h-[700px] object-contain scale-x-[-1] xl:left-0 z-10"
         />
-        <div className="relative w-full xl:h-[700px] sm:h-[900px] xs:h-[500px] xl:bg-gradient-to-l sm:bg-gradient-to-t xs:bg-gradient-to-t from-gray-100 xl:from-50% sm:from-50% xs:from-60% z-20 flex flex-col xl:justify-center xl:items-end sm:justify-end sm:items-center xs:justify-end xs:items-center">
+        <div className="relative w-full xl:h-[700px] sm:h-[900px] xs:h-[500px] xl:bg-gradient-to-l sm:bg-gradient-to-t xs:bg-gradient-to-t from-white xl:from-50% sm:from-50% xs:from-60% z-20 flex flex-col xl:justify-center xl:items-end sm:justify-end sm:items-center xs:justify-end xs:items-center">
           <div className="xl:w-1/2 sm:w-1/2 xs:w-full flex flex-col justify-center items-center p-5">
             <p className="xl:text-5xl sm:text-5xl xs:text-2xl font-extrabold">
               MY SERVICE
@@ -172,35 +180,40 @@ export function SectionFooter() {
   return (
     <Section>
       <div className="w-full h-full bg-amber-400">
-        <div className="flex flex-row">
+        <div className="flex flex-row justify-center">
           <div className="flex flex-col m-5">
-            <p className="text-3xl font-bold border-b-4 border-black">
+            <p className="xl:text-3xl sm:text-3xl xs:text-lg font-bold border-b-4 border-black">
               My Social Media
             </p>
-            <Link href={"https://www.instagram.com/awaludin_infinity/"} target="_blank">
-            <p className="flex items-center mt-3">
-              <img src="/image/homepage/instagram.png" className="h-10 pr-2" />
-              awaludin_infinity
-            </p>
+            <div className="flex flex-row justify-center mt-2">
+            <Link
+              href={"https://www.instagram.com/awaludin_infinity/"}
+              target="_blank"
+              className="mx-2"
+            >
+              <img src="/image/homepage/instagram.png" className="h-10" />
             </Link>
-            <Link href={"https://www.youtube.com/@awaludin1832"} target="_blank">
-            <p className="flex items-center mt-3">
-              <img src="/image/homepage/youtube.png" className="h-10 pr-2" />
-              @awaludin1832
-            </p>
+            <Link
+              href={"https://www.youtube.com/@awaludin1832"}
+              target="_blank"
+              className="mx-2"
+            >
+              <img src="/image/homepage/youtube.png" className="h-10" />
             </Link>
-            <Link href={"https://www.tiktok.com/@awaludin_infinity?lang=id-ID"} target="_blank">
-            <p className="flex items-center mt-3">
-              <img src="/image/homepage/tiktok.png" className="h-10 pr-2" />
-              @awaludin_infinity
-            </p>
+            <Link
+              href={"https://www.tiktok.com/@awaludin_infinity?lang=id-ID"}
+              target="_blank"
+              className="mx-2"
+            >
+              <img src="/image/homepage/tiktok.png" className="h-10" />
             </Link>
+            </div>
           </div>
           <div className="flex flex-col m-5">
-            <p className="text-3xl font-bold border-b-4 border-black">
+            <p className="xl:text-3xl sm:text-3xl xs:text-lg font-bold border-b-4 border-black">
               My Contact
             </p>
-            <p className="flex items-center mt-3">
+            <p className="flex items-center mt-2">
               <img src="/image/homepage/whatsapp.png" className="h-10 pr-2" />
               0822-2319-9958
             </p>
@@ -209,4 +222,16 @@ export function SectionFooter() {
       </div>
     </Section>
   );
+}
+
+export function SectionCopyright() {
+  return(
+    <Section>
+      <div className="w-full h-full bg-white">
+        <div className="flex justify-center">
+          <p>&copy; <span className="font-bold">2024</span> Infinity Project Property - Staff IT</p>
+        </div>
+      </div>
+    </Section>
+  )
 }
