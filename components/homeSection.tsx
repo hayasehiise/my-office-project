@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { Button, Carousel, Flowbite } from "flowbite-react";
+
 import styles from "./dashboardPage.module.css";
 import type { CustomFlowbiteTheme } from "flowbite-react";
 import { motion } from "framer-motion";
@@ -30,7 +31,6 @@ const myServiceButton: CustomFlowbiteTheme["button"] = {
 };
 
 interface myServiceType {
-  title: string;
   links: string;
   images: string;
 }
@@ -49,36 +49,34 @@ const carouselImageData: carouselImageType[] = [
 
 const myServiceData: myServiceType[] = [
   {
-    title: "Ingin Jadi Agen?",
     images: "./image/homepage/agen.png",
     links: "/agen",
   },
   {
-    title: "Ingin Desain Rumah?",
-    images: "./image/homepage/desain.png",
+    images: "./image/homepage/desain.jpg",
     links: "/desain",
   },
   {
-    title: "Ingin Bangun Rumah?",
     images: "./image/homepage/bangun.png",
     links: "/bangun",
   },
   {
-    title: "Ingin Desain & Bangun Interior?",
     images: "./image/homepage/interior.png",
     links: "/interior",
   },
   {
-    title: "Ingin tau tentang infinity?",
     images: "./image/infinity_logo.png",
     links: "#",
   },
 ];
 
 function Section({ children }: SectionProps) {
-  return <div className="flex flex-col">{children}</div>;
+  return (
+    <div className="flex flex-col">
+      {children}
+    </div>
+  )
 }
-
 export function SectionMain() {
   return (
     <Section>
@@ -91,14 +89,14 @@ export function SectionMain() {
               height="100%"
             />
           </div>
-          <div className="relative w-full h-screen xl:bg-gradient-to-r sm:bg-gradient-to-t xs:bg-gradient-to-t from-black xl:from-55% sm:from-30% xs:from-55% z-20 flex flex-col xl:justify-center xl:items-start sm:justify-end sm:items-center xs:justify-end xs:items-center">
-            <p className="text-white xl:text-7xl sm:text-7xl xs:text-4xl font-extrabold xl:mx-24 sm:-ml-28 xs:-ml-16">
+          <div className="relative w-full h-screen xl:bg-gradient-to-r sm:bg-gradient-to-t xs:bg-gradient-to-t from-white xl:from-55% sm:from-30% xs:from-55% z-20 flex flex-col xl:justify-center xl:items-start sm:justify-end sm:items-center xs:justify-end xs:items-center">
+            <p className="text-black xl:text-7xl sm:text-7xl xs:text-4xl font-extrabold xl:mx-24 sm:-ml-28 xs:-ml-16">
               AWALUDIN
             </p>
-            <p className="text-white xl:text-7xl sm:text-7xl xs:text-4xl font-extrabold xl:mx-36 sm:ml-20 xs:ml-16">
+            <p className="text-black xl:text-7xl sm:text-7xl xs:text-4xl font-extrabold xl:mx-36 sm:ml-20 xs:ml-16">
               DG. MALEWA
             </p>
-            <p className="text-white xl:text-lg sm:text-lg xs:text-sm xl:mx-24 sm:mx-24 xl:my-10 sm:my-10 xs:my-5 xl:w-[30%] sm:w-96 xs:w-[300px] border-l-8 xl:px-3 sm:px-3 xs:px-4 border-white">
+            <p className="text-black xl:text-lg sm:text-lg xs:text-sm xl:mx-24 sm:mx-24 xl:my-10 sm:my-10 xs:my-5 xl:w-[30%] sm:w-96 xs:w-[300px] border-l-8 xl:px-3 sm:px-3 xs:px-4 border-black">
               Awaludin Dg. Malewa adalah seorang broker properti dengan
               pengalaman yang luas dan sekaligus CEO dari CV Infinity Project
               Property yang bergerak aktif dalam industri properti. Kami tidak
@@ -161,7 +159,6 @@ export function SectionServiceCarousel() {
                   className="flex flex-col items-center justify-center text-black"
                 >
                   <img src={item.images} className="xl:h-80 sm:h-56 xs:h-32" />
-                  <p className="py-3">{item.title}</p>
                   <Link href={item.links}>
                     <Button pill color="amber" theme={myServiceButton}>
                       Klik Disini
@@ -182,21 +179,16 @@ export function SectionServiceBlock() {
     <Section>
       <div className="w-full h-full xl:p-10 sm:p-5 xs:p-2">
         <div className="flex justify-center">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid sm:grid-cols-2 xs:grid-cols-1 gap-4">
             {myServiceData.map((item, index) => (
               <div key={index}>
                 <Link href={item.links}>
-                  <div className="flex flex-col border-solid border-4 rounded-3xl">
-                    <div className="relative w-full xl:h-[380px] sm:h-[220px] xs:h-[145px] justify-center items-center text-center">
+                  <div className="flex flex-col">
+                    <div className="relative w-full h-full justify-center items-center text-center">
                       <img
                         src={item.images}
                         className="xl:h-96 sm:h-56 xs:h-36 mx-auto"
                       />
-                      <div className="absolute xl:px-24 sm:px-10 xs:px-2 xl:bottom-14 sm:bottom-10 xs:bottom-5 bg-slate-400 bg-opacity-70 w-full">
-                        <p className="xl:text-2xl sm:text-sm xs:text-sm font-bold">
-                          {item.title}
-                        </p>
-                      </div>
                     </div>
                   </div>
                 </Link>
@@ -212,42 +204,31 @@ export function SectionServiceBlock() {
 export function SectionFooter() {
   return (
     <Section>
-      <div className="w-full h-full bg-amber-400">
-        <div className="flex flex-row xl:justify-center sm:justify-center xs:justify-center xs:items-end">
-          <div className="flex flex-col xl:m-5 sm:m-5 xs:m-2">
-            <p className="xl:text-3xl sm:text-3xl xs:text-lg font-bold border-b-4 border-black">
-              My Social Media
-            </p>
-            <div className="flex flex-row justify-center mt-2">
-              <Link
-                href={"https://www.instagram.com/awaludin_infinity/"}
-                target="_blank"
-              >
-                <img src="/image/homepage/instagram.png" className="h-10" />
-              </Link>
-              <Link
-                href={"https://www.youtube.com/@awaludin1832"}
-                target="_blank"
-                className="mx-2"
-              >
-                <img src="/image/homepage/youtube.png" className="h-10" />
-              </Link>
-              <Link
-                href={"https://www.tiktok.com/@awaludin_infinity?lang=id-ID"}
-                target="_blank"
-              >
-                <img src="/image/homepage/tiktok.png" className="h-10" />
-              </Link>
-            </div>
+      <div className="w-full h-full bg-amber-400 pb-2">
+        <div className="grid grid-rows-1 divide-y-4 divide-black justify-center items-center">
+          <div className="flex flex-row p-3">
+            <Link href={"https://www.instagram.com/awaludin_infinity/"} className=" inline-flex" target="_blank">
+            <img src="/image/homepage/instagram.png" className="h-10" />
+            <p className="p-2">Instagram</p>
+            </Link>
           </div>
-          <div className="flex flex-col xl:m-5 sm:m-5 xs:m-2">
-            <p className="xl:text-3xl sm:text-3xl xs:text-lg font-bold border-b-4 border-black">
-              My Contact
-            </p>
-            <p className="flex items-center mt-2">
-              <img src="/image/homepage/whatsapp.png" className="h-10 pr-2" />
-              0822-2319-9958
-            </p>
+          <div className="flex flex-row p-3">
+          <Link href={"https://www.tiktok.com/@awaludin_infinity?lang=id-ID"} className=" inline-flex" target="_blank">
+            <img src="/image/homepage/tiktok.png" className="h-10" />
+            <p className="p-2">Tiktok</p>
+            </Link>
+          </div>
+          <div className="flex flex-row p-3">
+          <Link href={"https://www.youtube.com/@awaludin1832"} className=" inline-flex" target="_blank">
+            <img src="/image/homepage/youtube.png" className="h-10" />
+            <p className="p-2">Youtube</p>
+            </Link>
+          </div>
+          <div className="flex flex-row p-3">
+          <Link href={"https://api.whatsapp.com/send?phone=6282223199958&text=Assalamualaikum"} className=" inline-flex" target="_blank">
+            <img src="/image/homepage/whatsapp.png" className="h-10" />
+            <p className="p-2">Whatsapp</p>
+            </Link>
           </div>
         </div>
       </div>
