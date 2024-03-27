@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/carousel";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import Autoplay from "embla-carousel-autoplay";
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import React from "react";
@@ -112,13 +111,7 @@ export default function SectionCarousel() {
                 <CarouselContent>
                   {carouselProjectItem.map((item, index) => (
                     <CarouselItem className="xl:basis-1/2 sm:basis-1/2" key={index}>
-                      <Image
-                        src={item.image}
-                        alt={item.alt}
-                        width={1000}
-                        height={1000}
-                        className="object-cover rounded-full"
-                      />
+                      <img src={item.image} alt={item.alt} className="object-cover rounded-full h-full" />
                     </CarouselItem>
                   ))}
                 </CarouselContent>
