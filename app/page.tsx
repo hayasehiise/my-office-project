@@ -1,13 +1,14 @@
 "use client";
-import { SectionCarousel, SectionMain, SectionService, SectionFooter } from "@/components/homeSection";
+import { SectionCarousel, SectionMain, SectionService, SectionFooter, SectionCopyright } from "@/components/homeSection";
 
 export default function Home() {
   return (
     <>
       <SectionMain />
-      <SectionCarousel />
       <SectionService />
+      <SectionCarousel />
       <SectionFooter />
+      <SectionCopyright />
     </>
   );
 }
