@@ -118,7 +118,7 @@ export function SectionMain() {
 export function SectionCarousel() {
   return (
     <Section>
-      <Carousel indicators={false} theme={fullScreenCarousel}>
+      <Carousel indicators={false} theme={fullScreenCarousel} className=" border-t-[10px] border-b-[10px] border-amber-400">
         {carouselImageData.map((item, index) => (
           <img src={item.images} key={index} className="h-full object-cover object-center" />
         ))}
