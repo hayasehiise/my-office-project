@@ -1,0 +1,62 @@
+"use client";
+import Link from "next/link";
+import { Navbar, Dropdown } from "flowbite-react";
+import { useEffect, useState } from "react";
+
+export default function NavMenu() {
+  const [showBackground, setShowBackground] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= 50) {
+        setShowBackground(true);
+      } else {
+        setShowBackground(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <Navbar fluid rounded className={`fixed top-0 z-40 w-full ${showBackground ? "bg-white" : "bg-transparent"}`}>
+      <Navbar.Brand as={Link} href="https://flowbite-react.com">
+        <span className="self-center whitespace-nowrap text-4xl font-extrabold dark:text-white">
+          AWL
+        </span>
+      </Navbar.Brand>
+      <div className="xs:hidden sm:block">
+        <Link href="#" className="px-3 text-xl">
+          Home
+        </Link>
+        <Link href="#" className="px-3 text-xl">
+          About
+        </Link>
+        <Dropdown label="" renderTrigger={() => <p className="inline-block px-3 text-xl">Service</p>} className="z-50" dismissOnClick={false}>
+          <Dropdown.Item as="a" href="/desain" className="text-lg">Desain</Dropdown.Item>
+          <Dropdown.Item className="text-lg">Konstruksi</Dropdown.Item>
+          <Dropdown.Item className="text-lg">Interior</Dropdown.Item>
+          <Dropdown.Item className="text-lg">Jual Beli</Dropdown.Item>
+        </Dropdown>
+        <Link href="#" className="px-3 text-xl">
+          Contact
+        </Link>
+      </div>
+      <Navbar.Toggle className="sm:invisible" />
+      <Navbar.Collapse className="bg-white">
+        <Link href="#" className=" border-b-2 p-2">Home</Link>
+        <Link href="#" className=" border-b-2 p-2">About</Link>
+        <Dropdown label="" renderTrigger={() => <p className="border-b-2 p-2">Service</p>} className=" w-96 z-50" dismissOnClick={false}>
+          <Dropdown.Item as="a" href="/desain">Desain</Dropdown.Item>
+          <Dropdown.Item>Konstruksi</Dropdown.Item>
+          <Dropdown.Item>Interior</Dropdown.Item>
+          <Dropdown.Item>Jual Beli</Dropdown.Item>
+        </Dropdown>
+        <Link href="#" className=" p-2">Contact</Link>
+      </Navbar.Collapse>
+    </Navbar>
+  );
+}
