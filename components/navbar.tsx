@@ -22,26 +22,26 @@ export default function NavMenu() {
   }, []);
 
   return (
-    <Navbar fluid rounded className={`fixed top-0 z-40 w-full ${showBackground ? "bg-white" : "bg-transparent"}`}>
-      <Navbar.Brand as={Link} href="https://flowbite-react.com">
-        <span className="self-center whitespace-nowrap text-4xl font-extrabold dark:text-white">
+    <Navbar fluid className={`fixed top-0 z-40 w-full bg-[#4b3621]`}>
+      <Navbar.Brand href="#">
+        <span className="self-center whitespace-nowrap italic text-4xl font-extrabold text-[#ffffff]">
           AWL
         </span>
       </Navbar.Brand>
       <div className="xs:hidden sm:block">
-        <Link href="#" className="px-3 text-xl">
+        <Link href="#" className="px-3 text-xl text-white">
           Home
         </Link>
-        <Link href="#" className="px-3 text-xl">
+        <Link href="#" className="px-3 text-xl text-white">
           About
         </Link>
-        <Dropdown label="" renderTrigger={() => <p className="inline-block px-3 text-xl">Service</p>} className="z-50" dismissOnClick={false}>
+        <Dropdown label="" renderTrigger={() => <Link href="#" className="inline-block px-3 text-xl text-white">Service</Link>} className="z-50" dismissOnClick={false}>
           <Dropdown.Item as="a" href="/desain" className="text-lg">Desain</Dropdown.Item>
           <Dropdown.Item className="text-lg">Konstruksi</Dropdown.Item>
           <Dropdown.Item className="text-lg">Interior</Dropdown.Item>
           <Dropdown.Item className="text-lg">Jual Beli</Dropdown.Item>
         </Dropdown>
-        <Link href="#" className="px-3 text-xl">
+        <Link href="#" className="px-3 text-xl text-white">
           Contact
         </Link>
       </div>
