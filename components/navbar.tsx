@@ -49,7 +49,7 @@ export default function NavMenu() {
       <Navbar.Collapse className="bg-white">
         <Link href="#" className=" border-b-2 p-2">Home</Link>
         <Link href="#" className=" border-b-2 p-2">About</Link>
-        <Dropdown label="" renderTrigger={() => <p className="border-b-2 p-2">Service</p>} className=" w-96 z-50" dismissOnClick={false}>
+        <Dropdown label="" renderTrigger={() => <p className="border-b-2 p-2">Service</p>} className="w-72 z-50" dismissOnClick={false}>
           <Dropdown.Item as="a" href="/desain">Desain</Dropdown.Item>
           <Dropdown.Item>Konstruksi</Dropdown.Item>
           <Dropdown.Item>Interior</Dropdown.Item>
