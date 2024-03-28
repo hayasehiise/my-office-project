@@ -210,11 +210,11 @@ export function SectionServiceBlock() {
             variants={slideInVariants}
             initial="hidden"
             animate={showMore ? "visible" : "hidden"}
-            className={`${showMore ? 'block': 'hidden'} grid grid-cols-2 gap-4`}
+            className={`${showMore ? 'block': 'hidden'} grid grid-cols-2 sm:gap-10 xs:gap-4`}
           >
             {myServiceDataGrid.map((item, index) => (
               <div key={index}>
-                <img src={item.images} className="w-full" />
+                <img src={item.images} className="sm:w-3/4 xs:w-full sm:mx-auto" />
               </div>
             ))}
           </motion.div>
