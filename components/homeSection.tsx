@@ -171,7 +171,19 @@ export function SectionServiceBlock() {
 
   const handlerClick = () => {
     setShowMore(!showMore);
-  }
+  };
+
+  const slideInVariants = {
+    hidden: {
+      x: "-100%",
+      transition: { type: "spring", stiffness: 100 },
+    },
+    visible: {
+      x: 0,
+      transition: { type: "spring", stiffness: 100 },
+      
+    },
+  };
 
   return (
     <Section>
@@ -194,13 +206,18 @@ export function SectionServiceBlock() {
               className="h-16 mx-auto"
             />
           </div>
-          <div className={`${showMore ? "block": "hidden"} grid grid-cols-2 gap-4`}>
+          <motion.div
+            variants={slideInVariants}
+            initial="hidden"
+            animate={showMore ? "visible" : "hidden"}
+            className={`${showMore ? 'block': 'hidden'} grid grid-cols-2 gap-4`}
+          >
             {myServiceDataGrid.map((item, index) => (
               <div key={index}>
                 <img src={item.images} className="w-full" />
               </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
     </Section>
