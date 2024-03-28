@@ -74,7 +74,7 @@ export function SectionMain() {
     <Section>
       <div className="w-full h-full bg-[#6f4e37]">
         <div className="flex flex-col xs:mt-24">
-          <img src="/image/homepage/profile_pic2.png" className=" w-28 mx-auto" />
+          <img src="/image/homepage/profile_pic2.png" className="w-28 mx-auto" />
           <div className="text-center">
             <p className="text-white sm:text-4xl xs:text-xl font-black">
               Awaludin Dg. Malewa
@@ -175,7 +175,7 @@ export function SectionFooter() {
       <div className="w-full h-full py-2">
         <Link
           href={"https://www.instagram.com/awaludin_infinity/"}
-          className="flex justify-between xl:mx-96 p-3 bg-[#6f4e37] mb-2"
+          className="flex justify-between xl:mx-96 p-3 bg-[#4b3621] mb-2"
           target="_blank"
         >
           <img src="/image/homepage/instagram.png" className="h-10" />
@@ -183,7 +183,7 @@ export function SectionFooter() {
         </Link>
         <Link
           href={"https://www.tiktok.com/@awaludin_infinity?lang=id-ID"}
-          className="flex justify-between xl:mx-96 p-3 bg-[#6f4e37] mb-2"
+          className="flex justify-between xl:mx-96 p-3 bg-[#4b3621] mb-2"
           target="_blank"
         >
           <img src="/image/homepage/tiktok.png" className="h-10" />
@@ -191,7 +191,7 @@ export function SectionFooter() {
         </Link>
         <Link
           href={"https://www.youtube.com/@awaludin1832"}
-          className="flex justify-between xl:mx-96 p-3 bg-[#6f4e37] mb-2"
+          className="flex justify-between xl:mx-96 p-3 bg-[#4b3621] mb-2"
           target="_blank"
         >
           <img src="/image/homepage/youtube.png" className="h-10" />
@@ -201,7 +201,7 @@ export function SectionFooter() {
           href={
             "https://api.whatsapp.com/send?phone=6282223199958&text=Assalamualaikum"
           }
-          className="flex justify-between xl:mx-96 p-3 bg-[#6f4e37] mb-2"
+          className="flex justify-between xl:mx-96 p-3 bg-[#4b3621] mb-2"
           target="_blank"
         >
           <img src="/image/homepage/whatsapp.png" className="h-10" />
