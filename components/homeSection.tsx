@@ -115,7 +115,7 @@ export function SectionCarousel() {
       <Carousel
         indicators={false}
         theme={fullScreenCarousel}
-        className=" border-t-[10px] border-b-[10px] border-amber-400"
+        className=" border-t-[10px] border-b-[10px] border-amber-400 mt-2"
       >
         {carouselImageData.map((item, index) => (
           <img
@@ -173,7 +173,7 @@ export function SectionServiceCarousel() {
 export function SectionServiceBlock() {
   return (
     <Section>
-      <div className="w-full h-full xl:p-10 sm:p-5 xs:p-2">
+      <div className="w-full h-full bg-amber-400 xl:p-10 sm:p-5 xs:p-2">
         <div className="flex flex-col w-full justify-center">
           {myServiceData.map((item, index) => (
             <div key={index} className="p-5">
@@ -192,19 +192,19 @@ export function SectionFooter() {
       <div className="w-full h-full py-2">
             <Link href={"https://www.instagram.com/awaludin_infinity/"} className="flex justify-between xl:mx-96 p-3 bg-amber-400 mb-2" target="_blank">
             <img src="/image/homepage/instagram.png" className="h-10" />
-            <p className="p-2">Instagram</p>
+            <p className="p-2 font-bold">Instagram</p>
             </Link>
           <Link href={"https://www.tiktok.com/@awaludin_infinity?lang=id-ID"} className="flex justify-between xl:mx-96 p-3 bg-amber-400 mb-2" target="_blank">
             <img src="/image/homepage/tiktok.png" className="h-10" />
-            <p className="p-2">Tiktok</p>
+            <p className="p-2 font-bold">Tiktok</p>
             </Link>
           <Link href={"https://www.youtube.com/@awaludin1832"} className="flex justify-between xl:mx-96 p-3 bg-amber-400 mb-2" target="_blank">
             <img src="/image/homepage/youtube.png" className="h-10" />
-            <p className="p-2">Youtube</p>
+            <p className="p-2 font-bold">Youtube</p>
             </Link>
           <Link href={"https://api.whatsapp.com/send?phone=6282223199958&text=Assalamualaikum"} className="flex justify-between xl:mx-96 p-3 bg-amber-400 mb-2" target="_blank">
             <img src="/image/homepage/whatsapp.png" className="h-10" />
-            <p className="p-2">Whatsapp</p>
+            <p className="p-2 font-bold">Whatsapp</p>
             </Link>
         </div>
     </Section>
