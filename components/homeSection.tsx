@@ -6,6 +6,7 @@ import styles from "./dashboardPage.module.css";
 import type { CustomFlowbiteTheme } from "flowbite-react";
 import { motion } from "framer-motion";
 import VideoBackground from "./videoBackground";
+import { useEffect, useState } from "react";
 
 interface SectionProps {
   children: React.ReactNode;
@@ -57,32 +58,47 @@ const myServiceData: myServiceType[] = [
     links: "/bangun",
   },
   {
-    images: "./image/homepage/agen.png",
-    links: "/agen",
+    images: "./image/homepage/interior.jpg",
+    links: "/interior",
   },
   {
-    images: "./image/homepage/interior.png",
+    images: "./image/homepage/agen.jpg",
+    links: "/agen",
+  },
+];
+
+const myServiceDataGrid: myServiceType[] = [
+  {
+    images: "./image/homepage/desain.jpg",
+    links: "/desain",
+  },
+  {
+    images: "./image/homepage/bangun.jpg",
+    links: "/bangun",
+  },
+  {
+    images: "./image/homepage/interior.jpg",
     links: "/interior",
+  },
+  {
+    images: "./image/homepage/agen.jpg",
+    links: "/agen",
   },
 ];
 
 function Section({ children }: SectionProps) {
   return <div className="flex flex-col">{children}</div>;
 }
+
 export function SectionMain() {
   return (
     <Section>
-      <div className="w-full h-full bg-[#6f4e37]">
+      <div className="w-full h-full">
         <div className="flex flex-col xs:mt-20">
-          <img src="/image/homepage/profile_pic2.png" className="w-28 mx-auto" />
-          <div className="text-center">
-            <p className="text-white sm:text-4xl xs:text-xl font-black">
-              Awaludin Dg. Malewa
-            </p>
-            <p className="text-white sm:text-xl xs:text-lg font-semibold">
-              CEO Infinity Project
-            </p>
-          </div>
+          <img
+            src="/image/homepage/profile_pic.png"
+            className="xs:w-3/4 sm:w-1/3 mx-auto"
+          />
         </div>
       </div>
     </Section>
@@ -151,9 +167,15 @@ export function SectionServiceCarousel() {
 }
 
 export function SectionServiceBlock() {
+  const [showMore, setShowMore] = useState(false);
+
+  const handlerClick = () => {
+    setShowMore(!showMore);
+  }
+
   return (
     <Section>
-      <div className="w-full h-full bg-[#6f4e37] xl:p-10 sm:p-5 xs:p-2">
+      <div className="w-full h-full xl:p-10 sm:p-5 xs:p-2">
         <div className="flex flex-col w-full justify-center">
           {myServiceData.map((item, index) => (
             <div key={index} className="p-5">
@@ -163,6 +185,22 @@ export function SectionServiceBlock() {
               />
             </div>
           ))}
+          <div className="mx-auto" onClick={handlerClick}>
+            <p className="text-xl font-bold text-white -mb-4">
+              Click for more...
+            </p>
+            <img
+              src="/image/homepage/arrow-down.svg"
+              className="h-16 mx-auto"
+            />
+          </div>
+          <div className={`${showMore ? "block": "hidden"} grid grid-cols-2 gap-4`}>
+            {myServiceDataGrid.map((item, index) => (
+              <div key={index}>
+                <img src={item.images} className="w-full" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </Section>
