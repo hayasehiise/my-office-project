@@ -191,10 +191,12 @@ export function SectionServiceBlock() {
         <div className="flex flex-col w-full justify-center">
           {myServiceData.map((item, index) => (
             <div key={index} className="p-5">
+              <Link href={item.links}>
               <img
                 src={item.images}
                 className="xs:w-full sm:w-1/2 mx-auto rounded-lg"
               />
+              </Link>
             </div>
           ))}
           <div className="mx-auto" onClick={handlerClick}>
@@ -214,7 +216,9 @@ export function SectionServiceBlock() {
           >
             {myServiceDataGrid.map((item, index) => (
               <div key={index}>
+                <Link href={item.links}>
                 <img src={item.images} className="sm:w-3/4 xs:w-full sm:mx-auto" />
+                </Link>
               </div>
             ))}
           </motion.div>
