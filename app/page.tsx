@@ -16,7 +16,7 @@ export default function Home() {
       <NavMenu />
       <SectionMain />
       <SectionServiceBlock />
-      <SectionCarousel />
+      {/* <SectionCarousel /> */}
       <SectionFooter />
       <SectionCopyright />
     </>

@@ -49,12 +49,12 @@ const carouselImageData: carouselImageType[] = [
 
 const myServiceData: myServiceType[] = [
   {
-    images: "./image/homepage/agen.png",
-    links: "/agen",
-  },
-  {
     images: "./image/homepage/desain.jpg",
     links: "/desain",
+  },
+  {
+    images: "./image/homepage/agen.png",
+    links: "/agen",
   },
   {
     images: "./image/homepage/bangun.png",
@@ -67,40 +67,20 @@ const myServiceData: myServiceType[] = [
 ];
 
 function Section({ children }: SectionProps) {
-  return (
-    <div className="flex flex-col">
-      {children}
-    </div>
-  )
+  return <div className="flex flex-col">{children}</div>;
 }
 export function SectionMain() {
   return (
     <Section>
-      <div className="w-full h-screen">
-        <div className="relative">
-          <div className="absolute xl:right-0 z-10 xl:h-screen xl:w-fit sm:w-full xs:w-full sm:top-0 xs:top-0">
-            <VideoBackground
-              src="/image/homepage/backvideo.mp4"
-              width="100%"
-              height="100%"
-            />
-          </div>
-          <div className="relative w-full h-screen xl:bg-gradient-to-r sm:bg-gradient-to-t xs:bg-gradient-to-t from-amber-400 xs:from-20% via-white xs:60% z-20 flex flex-col xl:justify-center xl:items-start sm:justify-end sm:items-center xs:justify-end xs:items-center">
-            <p className="text-black xl:text-7xl sm:text-7xl xs:text-4xl font-black xl:mx-24 sm:-ml-28 xs:-ml-16">
-              AWALUDIN
+      <div className="w-full h-full bg-[#6f4e37]">
+        <div className="flex flex-col xs:mt-24">
+          <img src="/image/homepage/profile_pic2.png" className=" w-28 mx-auto" />
+          <div className="text-center">
+            <p className="text-white sm:text-4xl xs:text-xl font-black">
+              Awaludin Dg. Malewa
             </p>
-            <p className="text-black xl:text-7xl sm:text-7xl xs:text-4xl font-black xl:mx-36 sm:ml-20 xs:ml-16">
-              DG. MALEWA
-            </p>
-            <p className="text-black xl:text-lg sm:text-lg xs:text-sm xl:mx-24 sm:mx-24 xl:my-10 sm:my-10 xs:my-5 xl:w-[30%] sm:w-96 xs:w-[300px] border-l-8 xl:px-3 sm:px-3 xs:px-4 border-black">
-              Awaludin Dg. Malewa adalah seorang broker properti dengan
-              pengalaman yang luas dan sekaligus CEO dari CV Infinity Project
-              Property yang bergerak aktif dalam industri properti. Kami tidak
-              hanya berfokus pada jual beli properti, tetapi juga terlibat dalam
-              tahapan desain dan konstruksi. Dengan dedikasi kami dalam
-              menciptakan solusi properti yang inovatif dan berkualitas, kami
-              berkomitmen untuk memberikan layanan terbaik kepada klien-klien
-              kami.
+            <p className="text-white sm:text-xl xs:text-lg font-semibold">
+              CEO Infinity Project
             </p>
           </div>
         </div>
@@ -115,7 +95,7 @@ export function SectionCarousel() {
       <Carousel
         indicators={false}
         theme={fullScreenCarousel}
-        className=" border-t-[10px] border-b-[10px] border-amber-400 mt-2"
+        className=" border-t-[10px] border-b-[10px] border-[#6f4e37] mt-2"
       >
         {carouselImageData.map((item, index) => (
           <img
@@ -173,11 +153,14 @@ export function SectionServiceCarousel() {
 export function SectionServiceBlock() {
   return (
     <Section>
-      <div className="w-full h-full bg-amber-400 xl:p-10 sm:p-5 xs:p-2">
+      <div className="w-full h-full bg-[#6f4e37] xl:p-10 sm:p-5 xs:p-2">
         <div className="flex flex-col w-full justify-center">
           {myServiceData.map((item, index) => (
             <div key={index} className="p-5">
-              <img src={item.images} className="xs:w-full sm:w-96 xl:w-1/2 mx-auto" />
+              <img
+                src={item.images}
+                className="xs:w-full sm:w-3/4 mx-auto rounded-xl"
+              />
             </div>
           ))}
         </div>
@@ -190,23 +173,41 @@ export function SectionFooter() {
   return (
     <Section>
       <div className="w-full h-full py-2">
-            <Link href={"https://www.instagram.com/awaludin_infinity/"} className="flex justify-between xl:mx-96 p-3 bg-amber-400 mb-2" target="_blank">
-            <img src="/image/homepage/instagram.png" className="h-10" />
-            <p className="p-2 font-bold">Instagram</p>
-            </Link>
-          <Link href={"https://www.tiktok.com/@awaludin_infinity?lang=id-ID"} className="flex justify-between xl:mx-96 p-3 bg-amber-400 mb-2" target="_blank">
-            <img src="/image/homepage/tiktok.png" className="h-10" />
-            <p className="p-2 font-bold">Tiktok</p>
-            </Link>
-          <Link href={"https://www.youtube.com/@awaludin1832"} className="flex justify-between xl:mx-96 p-3 bg-amber-400 mb-2" target="_blank">
-            <img src="/image/homepage/youtube.png" className="h-10" />
-            <p className="p-2 font-bold">Youtube</p>
-            </Link>
-          <Link href={"https://api.whatsapp.com/send?phone=6282223199958&text=Assalamualaikum"} className="flex justify-between xl:mx-96 p-3 bg-amber-400 mb-2" target="_blank">
-            <img src="/image/homepage/whatsapp.png" className="h-10" />
-            <p className="p-2 font-bold">Whatsapp</p>
-            </Link>
-        </div>
+        <Link
+          href={"https://www.instagram.com/awaludin_infinity/"}
+          className="flex justify-between xl:mx-96 p-3 bg-[#6f4e37] mb-2"
+          target="_blank"
+        >
+          <img src="/image/homepage/instagram.png" className="h-10" />
+          <p className="p-2 font-bold text-white">Instagram</p>
+        </Link>
+        <Link
+          href={"https://www.tiktok.com/@awaludin_infinity?lang=id-ID"}
+          className="flex justify-between xl:mx-96 p-3 bg-[#6f4e37] mb-2"
+          target="_blank"
+        >
+          <img src="/image/homepage/tiktok.png" className="h-10" />
+          <p className="p-2 font-bold text-white">Tiktok</p>
+        </Link>
+        <Link
+          href={"https://www.youtube.com/@awaludin1832"}
+          className="flex justify-between xl:mx-96 p-3 bg-[#6f4e37] mb-2"
+          target="_blank"
+        >
+          <img src="/image/homepage/youtube.png" className="h-10" />
+          <p className="p-2 font-bold text-white">Youtube</p>
+        </Link>
+        <Link
+          href={
+            "https://api.whatsapp.com/send?phone=6282223199958&text=Assalamualaikum"
+          }
+          className="flex justify-between xl:mx-96 p-3 bg-[#6f4e37] mb-2"
+          target="_blank"
+        >
+          <img src="/image/homepage/whatsapp.png" className="h-10" />
+          <p className="p-2 font-bold text-white">Whatsapp</p>
+        </Link>
+      </div>
     </Section>
   );
 }
