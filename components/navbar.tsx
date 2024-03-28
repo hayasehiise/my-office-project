@@ -45,7 +45,7 @@ export default function NavMenu() {
           Contact
         </Link>
       </div>
-      <Navbar.Toggle className="sm:invisible" />
+      <Navbar.Toggle className="sm:invisible bg-white" />
       <Navbar.Collapse className="bg-white">
         <Link href="#" className=" border-b-2 p-2">Home</Link>
         <Link href="#" className=" border-b-2 p-2">About</Link>
