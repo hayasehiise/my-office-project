@@ -159,7 +159,7 @@ export function SectionServiceBlock() {
             <div key={index} className="p-5">
               <img
                 src={item.images}
-                className="xs:w-full sm:w-3/4 mx-auto rounded-xl"
+                className="xs:w-full sm:w-1/2 mx-auto rounded-lg"
               />
             </div>
           ))}
