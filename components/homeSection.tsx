@@ -64,10 +64,6 @@ const myServiceData: myServiceType[] = [
     images: "./image/homepage/interior.png",
     links: "/interior",
   },
-  {
-    images: "./image/infinity_logo.png",
-    links: "#",
-  },
 ];
 
 function Section({ children }: SectionProps) {
@@ -89,11 +85,11 @@ export function SectionMain() {
               height="100%"
             />
           </div>
-          <div className="relative w-full h-screen xl:bg-gradient-to-r sm:bg-gradient-to-t xs:bg-gradient-to-t from-white xl:from-55% sm:from-30% xs:from-55% z-20 flex flex-col xl:justify-center xl:items-start sm:justify-end sm:items-center xs:justify-end xs:items-center">
-            <p className="text-black xl:text-7xl sm:text-7xl xs:text-4xl font-extrabold xl:mx-24 sm:-ml-28 xs:-ml-16">
+          <div className="relative w-full h-screen xl:bg-gradient-to-r sm:bg-gradient-to-t xs:bg-gradient-to-t from-amber-400 xs:from-20% via-white xs:60% z-20 flex flex-col xl:justify-center xl:items-start sm:justify-end sm:items-center xs:justify-end xs:items-center">
+            <p className="text-black xl:text-7xl sm:text-7xl xs:text-4xl font-black xl:mx-24 sm:-ml-28 xs:-ml-16">
               AWALUDIN
             </p>
-            <p className="text-black xl:text-7xl sm:text-7xl xs:text-4xl font-extrabold xl:mx-36 sm:ml-20 xs:ml-16">
+            <p className="text-black xl:text-7xl sm:text-7xl xs:text-4xl font-black xl:mx-36 sm:ml-20 xs:ml-16">
               DG. MALEWA
             </p>
             <p className="text-black xl:text-lg sm:text-lg xs:text-sm xl:mx-24 sm:mx-24 xl:my-10 sm:my-10 xs:my-5 xl:w-[30%] sm:w-96 xs:w-[300px] border-l-8 xl:px-3 sm:px-3 xs:px-4 border-black">
@@ -178,23 +174,12 @@ export function SectionServiceBlock() {
   return (
     <Section>
       <div className="w-full h-full xl:p-10 sm:p-5 xs:p-2">
-        <div className="flex justify-center">
-          <div className="grid sm:grid-cols-2 xs:grid-cols-1 gap-4">
-            {myServiceData.map((item, index) => (
-              <div key={index}>
-                <Link href={item.links}>
-                  <div className="flex flex-col">
-                    <div className="relative w-full h-full justify-center items-center text-center">
-                      <img
-                        src={item.images}
-                        className="xl:h-96 sm:h-56 xs:h-36 mx-auto"
-                      />
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            ))}
-          </div>
+        <div className="flex flex-col w-full justify-center">
+          {myServiceData.map((item, index) => (
+            <div key={index} className="p-5">
+              <img src={item.images} className="xs:w-full sm:w-96 xl:w-1/2 mx-auto" />
+            </div>
+          ))}
         </div>
       </div>
     </Section>
@@ -204,34 +189,24 @@ export function SectionServiceBlock() {
 export function SectionFooter() {
   return (
     <Section>
-      <div className="w-full h-full bg-amber-400 pb-2">
-        <div className="grid grid-rows-1 divide-y-4 divide-black justify-center items-center">
-          <div className="flex flex-row p-3">
-            <Link href={"https://www.instagram.com/awaludin_infinity/"} className=" inline-flex" target="_blank">
+      <div className="w-full h-full py-2">
+            <Link href={"https://www.instagram.com/awaludin_infinity/"} className="flex justify-between xl:mx-96 p-3 bg-amber-400 mb-2" target="_blank">
             <img src="/image/homepage/instagram.png" className="h-10" />
             <p className="p-2">Instagram</p>
             </Link>
-          </div>
-          <div className="flex flex-row p-3">
-          <Link href={"https://www.tiktok.com/@awaludin_infinity?lang=id-ID"} className=" inline-flex" target="_blank">
+          <Link href={"https://www.tiktok.com/@awaludin_infinity?lang=id-ID"} className="flex justify-between xl:mx-96 p-3 bg-amber-400 mb-2" target="_blank">
             <img src="/image/homepage/tiktok.png" className="h-10" />
             <p className="p-2">Tiktok</p>
             </Link>
-          </div>
-          <div className="flex flex-row p-3">
-          <Link href={"https://www.youtube.com/@awaludin1832"} className=" inline-flex" target="_blank">
+          <Link href={"https://www.youtube.com/@awaludin1832"} className="flex justify-between xl:mx-96 p-3 bg-amber-400 mb-2" target="_blank">
             <img src="/image/homepage/youtube.png" className="h-10" />
             <p className="p-2">Youtube</p>
             </Link>
-          </div>
-          <div className="flex flex-row p-3">
-          <Link href={"https://api.whatsapp.com/send?phone=6282223199958&text=Assalamualaikum"} className=" inline-flex" target="_blank">
+          <Link href={"https://api.whatsapp.com/send?phone=6282223199958&text=Assalamualaikum"} className="flex justify-between xl:mx-96 p-3 bg-amber-400 mb-2" target="_blank">
             <img src="/image/homepage/whatsapp.png" className="h-10" />
             <p className="p-2">Whatsapp</p>
             </Link>
-          </div>
         </div>
-      </div>
     </Section>
   );
 }
