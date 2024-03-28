@@ -53,12 +53,12 @@ const myServiceData: myServiceType[] = [
     links: "/desain",
   },
   {
-    images: "./image/homepage/agen.png",
-    links: "/agen",
+    images: "./image/homepage/bangun.jpg",
+    links: "/bangun",
   },
   {
-    images: "./image/homepage/bangun.png",
-    links: "/bangun",
+    images: "./image/homepage/agen.png",
+    links: "/agen",
   },
   {
     images: "./image/homepage/interior.png",
@@ -73,7 +73,7 @@ export function SectionMain() {
   return (
     <Section>
       <div className="w-full h-full bg-[#6f4e37]">
-        <div className="flex flex-col xs:mt-24">
+        <div className="flex flex-col xs:mt-20">
           <img src="/image/homepage/profile_pic2.png" className="w-28 mx-auto" />
           <div className="text-center">
             <p className="text-white sm:text-4xl xs:text-xl font-black">
