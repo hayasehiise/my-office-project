@@ -35,11 +35,11 @@ export default function NavMenu() {
         <Link href="#" className="px-3 text-xl text-white">
           About
         </Link>
-        <Dropdown label="" renderTrigger={() => <Link href="#" className="inline-block px-3 text-xl text-white">Service</Link>} className="z-50" dismissOnClick={false}>
+        <Dropdown label="" renderTrigger={() => <p className="inline-block px-3 text-xl text-white cursor-pointer">Service</p>} className="z-50" dismissOnClick={false}>
           <Dropdown.Item as="a" href="/desain" className="text-lg">Desain</Dropdown.Item>
-          <Dropdown.Item className="text-lg">Konstruksi</Dropdown.Item>
-          <Dropdown.Item className="text-lg">Interior</Dropdown.Item>
-          <Dropdown.Item className="text-lg">Jual Beli</Dropdown.Item>
+          <Dropdown.Item className="text-lg" href="/bangun">Konstruksi</Dropdown.Item>
+          <Dropdown.Item className="text-lg" href="/interior">Interior</Dropdown.Item>
+          <Dropdown.Item className="text-lg" href="#">Jual Beli</Dropdown.Item>
         </Dropdown>
         <Link href="#" className="px-3 text-xl text-white">
           Contact
@@ -51,9 +51,9 @@ export default function NavMenu() {
         <Link href="#" className=" border-b-2 p-2">About</Link>
         <Dropdown label="" renderTrigger={() => <p className="border-b-2 p-2">Service</p>} className="w-72 z-50" dismissOnClick={false}>
           <Dropdown.Item as="a" href="/desain">Desain</Dropdown.Item>
-          <Dropdown.Item>Konstruksi</Dropdown.Item>
-          <Dropdown.Item>Interior</Dropdown.Item>
-          <Dropdown.Item>Jual Beli</Dropdown.Item>
+          <Dropdown.Item as="a" href="/bangun">Konstruksi</Dropdown.Item>
+          <Dropdown.Item as="a" href="/interior">Interior</Dropdown.Item>
+          <Dropdown.Item as="a" href="#">Jual Beli</Dropdown.Item>
         </Dropdown>
         <Link href="#" className=" p-2">Contact</Link>
       </Navbar.Collapse>

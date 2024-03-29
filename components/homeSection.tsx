@@ -53,18 +53,6 @@ const myServiceData: myServiceType[] = [
     images: "./image/homepage/desain.jpg",
     links: "/desain",
   },
-  {
-    images: "./image/homepage/bangun.jpg",
-    links: "/bangun",
-  },
-  {
-    images: "./image/homepage/interior.jpg",
-    links: "/interior",
-  },
-  {
-    images: "./image/homepage/agen.jpg",
-    links: "/agen",
-  },
 ];
 
 const myServiceDataGrid: myServiceType[] = [
@@ -199,7 +187,7 @@ export function SectionServiceBlock() {
               </Link>
             </div>
           ))}
-          <div className="mx-auto" onClick={handlerClick}>
+          <div className="mx-auto cursor-pointer" onClick={handlerClick}>
             <p className="text-xl font-bold text-white -mb-4">
               Click for more...
             </p>
