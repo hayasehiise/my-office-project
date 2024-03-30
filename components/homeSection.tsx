@@ -163,11 +163,13 @@ export function SectionServiceBlock() {
 
   const slideInVariants = {
     hidden: {
-      x: "-100%",
+      x: "-200%",
+      height: 1,
       transition: { type: "spring", stiffness: 100 },
     },
     visible: {
       x: 0,
+      height: "100%",
       transition: { type: "spring", stiffness: 100 },
       
     },
@@ -200,7 +202,7 @@ export function SectionServiceBlock() {
             variants={slideInVariants}
             initial="hidden"
             animate={showMore ? "visible" : "hidden"}
-            className={`${showMore ? 'block': 'hidden'} grid grid-cols-2 sm:gap-10 xs:gap-4`}
+            className={` overflow-hidden grid grid-cols-2 sm:gap-10 xs:gap-4`}
           >
             {myServiceDataGrid.map((item, index) => (
               <div key={index}>

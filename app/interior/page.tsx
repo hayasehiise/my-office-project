@@ -1,7 +1,5 @@
 import SectionCarousel from "./components/sectionInterior";
 
-
-
 export default function Interior() {
     return(
         <>
