@@ -82,7 +82,7 @@ export function SectionMain() {
   return (
     <Section>
       <div className="w-full h-full">
-        <div className="flex flex-col xs:mt-20">
+        <div className="flex flex-col xs:mt-20 mt-20">
           <img
             src="/image/homepage/profile_pic.png"
             className="xs:w-3/4 sm:w-1/3 mx-auto"
@@ -177,7 +177,7 @@ export function SectionServiceBlock() {
 
   return (
     <Section>
-      <div className="w-full h-full xl:p-10 sm:p-5 xs:p-2">
+      <div className="w-full h-full xl:p-10 sm:p-5 xs:p-2 p-2">
         <div className="flex flex-col w-full justify-center">
           {myServiceData.map((item, index) => (
             <div key={index} className="p-5">
