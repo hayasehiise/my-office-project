@@ -28,7 +28,7 @@ export default function NavMenu() {
           AWL
         </span>
       </Navbar.Brand>
-      <div className="xs:hidden sm:block">
+      <div className="hidden xs:hidden sm:block">
         <Link href="#" className="px-3 text-xl text-white">
           Home
         </Link>
