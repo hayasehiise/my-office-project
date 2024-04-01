@@ -50,8 +50,8 @@ const carouselImageData: carouselImageType[] = [
 
 const myServiceData: myServiceType[] = [
   {
-    images: "./image/homepage/desain.jpg",
-    links: "/desain",
+    images: "./image/homepage/agen.jpg",
+    links: "/agen",
   },
 ];
 
@@ -69,8 +69,28 @@ const myServiceDataGrid: myServiceType[] = [
     links: "/interior",
   },
   {
-    images: "./image/homepage/agen.jpg",
-    links: "/agen",
+    images: "./image/homepage/freelance.jpg",
+    links: "/freelance",
+  },
+  {
+    images: "./image/homepage/bahan_bangun.jpg",
+    links: "#",
+  },
+  {
+    images: "./image/homepage/jual.jpg",
+    links: "#",
+  },
+  {
+    images: "./image/homepage/iklan.jpg",
+    links: "#",
+  },
+  {
+    images: "./image/homepage/website.jpg",
+    links: "#",
+  },
+  {
+    images: "./image/homepage/lowongan.jpg",
+    links: "#",
   },
 ];
 

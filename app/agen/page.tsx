@@ -15,29 +15,26 @@ const Agen = () => {
   };
   return (
     <>
-      <div className="container-lg">
-        <main className="flex flex-col">
-          <section className="flex-1">
+        <main className="flex flex-col w-full">
+          <section className="flex">
             <div className="flex flex-col mt-10">
-              <div className="flex-1 mx-10">
+              <div className="flex mx-10">
                 <p className="font-medium text-4xl sm:text-8xl mb-5 sm:mb-12">
                   Desain Masa depan, <br />
                   Buat Pengalaman
                 </p>
               </div>
-              <div className="flex-1 mx-10">
+              <div className="flex mx-10 mb-5 sm:mb-10">
                 <div className="flex flex-col sm:flex-row justify-between">
-                  <p className="flex-initial w-full sm:w-1/4 mb-5 sm:mb-12">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus at urna sapien. Duis et justo id sem finibus
-                    ultrices. Sed a felis sagittis, tempus leo.
+                  <p className="sm:w-1/2 w-full">
+                    Tingkatkan dirimu dengan menjadi agen, di mana Anda tidak
+                    hanya menjadi perantara tetapi juga mengembangkan
+                    keterampilan komunikasi, negosiasi, dan penjualan yang kuat.
+                    Sebagai agen, Anda akan belajar untuk beradaptasi dengan
+                    berbagai situasi dan membangun jaringan yang luas.
                   </p>
-                  <Link href="#">
-                    <Button
-                      color="light"
-                      className="flex-initial mb-5 sm:mb-0"
-                      pill
-                    >
+                  <Link href="#" className="flex justify-center items-center">
+                    <Button color="light" className="sm:mx-10 sm:my-auto my-5" pill>
                       Lets Check out
                       <img
                         src="./icons/arrow-upright.svg"
@@ -48,7 +45,7 @@ const Agen = () => {
                   </Link>
                 </div>
               </div>
-              <div className="flex-1">
+              <div className="flex">
                 <img
                   src="./image/agen/agen_dashboard.jpg"
                   className="object-cover w-screen sm:h-[520px] sm:w-full"
@@ -58,10 +55,7 @@ const Agen = () => {
           </section>
           <section className=" text-black flex-1" id="section2">
             <div className="flex flex-col p-5 sm:p-10">
-              <div className="flex-1">
-                <p className="mb-4 font-sans font-medium text-2xl">About Us</p>
-              </div>
-              <div className="flex-1">
+              <div className="flex">
                 <p className="font-sans font-semibold text-4xl sm:text-7xl">
                   Selamat Datang di Landing Page Agen. Tim kami adalah{" "}
                   <span className="text-amber-500">
@@ -72,53 +66,38 @@ const Agen = () => {
               </div>
               <div className="flex-1 mb-10 sm:mb-0">
                 <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x items-center justify-center text-center font-bold font-mono mt-16 sm:mt-36">
-                  <p className="text-6xl">
+                  <p className="sm:text-6xl text-4xl">
                     Rp.100 Juta <br />
-                    <span className="text-3xl">Penghasilan Proyek</span>
+                    <span className="sm:text-3xl text-xl">Penghasilan Proyek</span>
                   </p>
-                  <p className="text-6xl">
+                  <p className="sm:text-6xl text-4xl">
                     100+ <br />
-                    <span className="text-3xl">Klien</span>
+                    <span className="sm:text-3xl text-xl">Klien</span>
                   </p>
-                  <p className="text-6xl">
+                  <p className="sm:text-6xl text-4xl">
                     500+ <br />
-                    <span className="text-3xl">Testimoni</span>
+                    <span className="sm:text-3xl text-xl">Testimoni</span>
                   </p>
                 </div>
               </div>
             </div>
           </section>
-          <section className=" flex-1 bg-slate-950 text-white">
+          <section className="flex-1 bg-slate-950 text-white">
             <div className="flex flex-col px-10 py-10">
-              <p className="flex-initial font-sans font-semibold text-2xl mb-4">
-                Jasa
-              </p>
-              <p className="flex-initial font-sans font-black text-5xl">
+              <p className="flex font-sans font-black text-5xl">
                 Jasa yang kami sediakan
               </p>
               <br />
-              <div className="flex-initial">
+              <div className="flex">
                 <div className="overflow-x-auto sm:overflow-x-auto">
                   <Table>
                     <TableHead className="text-lg">
                       <Table.HeadCell className="">Nama Jasa</Table.HeadCell>
-                      <Table.HeadCell className="w-96">Display</Table.HeadCell>
                       <Table.HeadCell className="">Detail Jasa</Table.HeadCell>
                     </TableHead>
                     <Table.Body className="divide-y bg-white">
                       <Table.Row>
                         <Table.Cell>Penjualan Properti</Table.Cell>
-                        <Table.Cell>
-                          <motion.div
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 2 }}
-                          >
-                            <img
-                              src="./image/agen/jasa1.jpg"
-                              className="rounded-md"
-                            />
-                          </motion.div>
-                        </Table.Cell>
                         <Table.Cell>
                           <p>
                             Membantu pemilik properti dalam menjual rumah,
@@ -131,17 +110,6 @@ const Agen = () => {
                       <Table.Row>
                         <Table.Cell>Pembelian Properti</Table.Cell>
                         <Table.Cell>
-                          <motion.div
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 2 }}
-                          >
-                            <img
-                              src="./image/agen/jasa2.jpg"
-                              className="rounded-md"
-                            />
-                          </motion.div>
-                        </Table.Cell>
-                        <Table.Cell>
                           <p>
                             Membantu calon pembeli dalam mencari properti yang
                             sesuai dengan kebutuhan dan anggaran mereka.
@@ -153,17 +121,6 @@ const Agen = () => {
                       <Table.Row>
                         <Table.Cell>Penyewaan Properti</Table.Cell>
                         <Table.Cell>
-                          <motion.div
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 2 }}
-                          >
-                            <img
-                              src="./image/agen/jasa3.jpg"
-                              className="rounded-md"
-                            />
-                          </motion.div>
-                        </Table.Cell>
-                        <Table.Cell>
                           <p>
                             Membantu pemilik properti dalam mencari penyewa,
                             menyusun perjanjian sewa, dan mengelola aspek-aspek
@@ -174,17 +131,6 @@ const Agen = () => {
                       <Table.Row>
                         <Table.Cell>Manajemen Properti</Table.Cell>
                         <Table.Cell>
-                          <motion.div
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 2 }}
-                          >
-                            <img
-                              src="./image/agen/jasa4.jpg"
-                              className="rounded-md"
-                            />
-                          </motion.div>
-                        </Table.Cell>
-                        <Table.Cell>
                           <p>
                             Menyediakan layanan manajemen properti harian,
                             termasuk pemeliharaan, komunikasi dengan penyewa,
@@ -194,17 +140,6 @@ const Agen = () => {
                       </Table.Row>
                       <Table.Row>
                         <Table.Cell>Pengembangan Properti</Table.Cell>
-                        <Table.Cell>
-                          <motion.div
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 2 }}
-                          >
-                            <img
-                              src="./image/agen/jasa5.jpg"
-                              className="rounded-md"
-                            />
-                          </motion.div>
-                        </Table.Cell>
                         <Table.Cell>
                           <p>
                             Memberikan layanan konsultasi dan manajemen proyek
@@ -220,22 +155,22 @@ const Agen = () => {
               </div>
             </div>
           </section>
-          <section className="flex-1 text-black">
+          <section className="w-full text-black">
             <motion.div
               initial="hidden"
               whileInView="visible"
               variants={slideInVariants}
             >
               <div className="flex flex-col py-10 px-5 sm:px-10">
-                <p className="flex-auto font-sans font-black text-4xl sm:text-8xl">
+                <p className="flex font-sans font-black text-4xl sm:text-8xl">
                   Apakah Kamu Tertarik? <br />
                   Daftar Sekarang!
                 </p>
-                <p className="flex-auto font-serif my-5 font-medium">
+                <p className="flex font-serif my-5 font-medium">
                   Mari kita bersama menciptakan ide menjadi nyata dan hasil yang
                   memuaskan
                 </p>
-                <div className="flex-initial">
+                <div className="flex-1">
                   <div className="flex flex-col">
                     <Tabs defaultValue="email" className="w-1/2">
                       <TabsList>
@@ -245,9 +180,7 @@ const Agen = () => {
                       <TabsContent value="email">
                         <ContactEmail />
                       </TabsContent>
-                      <TabsContent value="whatsapp">
-                        Coming Soon
-                      </TabsContent>
+                      <TabsContent value="whatsapp">Coming Soon</TabsContent>
                     </Tabs>
                   </div>
                 </div>
@@ -255,7 +188,6 @@ const Agen = () => {
             </motion.div>
           </section>
         </main>
-      </div>
     </>
   );
 };

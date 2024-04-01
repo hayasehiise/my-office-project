@@ -10,14 +10,12 @@ import {
 export default function Desain() {
   return (
     <>
-      <main className="container-xl">
-          <SectionOne />
-          <SectionTwo />
-          <SectionThree />
-          <SectionProject />
-          <SectionPaket />
-          <SectionContact />
-      </main>
+      <SectionOne />
+      <SectionTwo />
+      <SectionThree />
+      <SectionProject />
+      <SectionPaket />
+      <SectionContact />
     </>
   );
-};
+}

@@ -80,7 +80,7 @@ export default function ContactEmail() {
             name="message"
             value={message}
             onChange={(event) => setMessage(event.target.value)}
-            className="w-96 mb-5"
+            className="w-80 mb-5"
           />
           <label htmlFor="file">CV:</label>
           <input type="file" id="file" name="file" />

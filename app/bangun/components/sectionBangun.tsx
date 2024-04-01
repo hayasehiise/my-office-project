@@ -60,32 +60,16 @@ function Section({ children }: SectionProps) {
 export function SectionMain() {
   return (
     <Section>
-      <div className="static bg-gradient-to-r from-yellow-300 from-20% via-amber-200 via-40% to-white to-90% xl:w-full xl:h-screen sm:w-full sm:h-full xs:w-full xs:h-full w-full h-full">
-        <img
-          src="./image/infinity_logo.png"
-          className="relative left-1/2 right-1/2 top-[15px] -translate-x-1/2 z-10 xl:h-[100px] sm:h-16 xs:h-16 h-16 max-h-screen"
-        />
-        <div className="flex xl:flex-row sm:flex-row xs:flex-col flex-col justify-center items-center text-center xl:mt-32 sm:mt-5 xs:mt-10 mt-5">
-          <div className="xl:p-10 sm:p-16 xl:w-1/2 sm:w-1/2">
-            <p className="xl:text-5xl sm:text-xl font-black xl:p-0 sm:p-0 xs:p-2 p-2">
-              Bangun Rumah Impian Keluarga dengan Konsep Rumah Tumbuh tanpa
-              Ribet, Mau?
-            </p>
-          </div>
-          <div className=" xl:p-5 sm:p-5 xs:p-5 p-5 xl:w-1/2 sm:w-1/2 xs:w-96 w-76">
-            <Carousel
-              plugins={[Autoplay({ delay: 2000 })]}
-              className="xl:w-full sm:w-full"
-            >
-              <CarouselContent>
-                {carouselMainItem.map((item, index) => (
-                  <CarouselItem key={index}>
-                    <img src={item.url} className="object-cover rounded-lg" />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
-          </div>
+      <div className="flex flex-col w-full h-screen bg-[url(/image/bangun/background.jpg)] bg-center sm:bg-cover xl:bg-cover justify-center items-center">
+        <div className={`bg-white w-fit p-4 bg-opacity-70`}>
+        <p className="text-black text-center mx-auto xl:text-6xl sm:text-5xl font-black xl:p-0 sm:p-0 xs:p-2 p-2 xl:w-1/2 sm:w-fit">
+          Bangun Rumah Impian Keluarga dengan Konsep Rumah Tumbuh tanpa Ribet,
+          Mau?
+        </p>
+        <div className={`text-center justify-center`}>
+        <p className="text-2xl font-bold mt-10">Scroll for more</p>
+        <img src={`/image/bangun/arrow-down.svg`} className={`h-10 mx-auto`} />
+        </div>
         </div>
       </div>
     </Section>
@@ -408,10 +392,10 @@ export function SectionLast() {
 }
 
 export function SectionKonsul() {
-  return(
+  return (
     <Section>
       <div className="w-full h-full">
-      <div className="flex flex-col text-center">
+        <div className="flex flex-col text-center">
           <div className="bg-amber-400 h-[250px] xl:py-20 sm:py-20 py-10">
             <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold mb-5">
               Klik tombol dibawah ini untuk mulai Konsultasi Gratis via WhatsApp
@@ -451,5 +435,5 @@ export function SectionKonsul() {
         </div>
       </div>
     </Section>
-  )
+  );
 }

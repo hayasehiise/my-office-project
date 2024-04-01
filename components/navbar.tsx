@@ -39,7 +39,7 @@ export default function NavMenu() {
           <Dropdown.Item as="a" href="/desain" className="text-lg">Desain</Dropdown.Item>
           <Dropdown.Item className="text-lg" href="/bangun">Konstruksi</Dropdown.Item>
           <Dropdown.Item className="text-lg" href="/interior">Interior</Dropdown.Item>
-          <Dropdown.Item className="text-lg" href="#">Jual Beli</Dropdown.Item>
+          <Dropdown.Item className="text-lg" href="/agen">Agen</Dropdown.Item>
         </Dropdown>
         <Link href="#" className="px-3 text-xl text-white">
           Contact
@@ -53,7 +53,7 @@ export default function NavMenu() {
           <Dropdown.Item as="a" href="/desain">Desain</Dropdown.Item>
           <Dropdown.Item as="a" href="/bangun">Konstruksi</Dropdown.Item>
           <Dropdown.Item as="a" href="/interior">Interior</Dropdown.Item>
-          <Dropdown.Item as="a" href="#">Jual Beli</Dropdown.Item>
+          <Dropdown.Item as="a" href="/agen">Agen</Dropdown.Item>
         </Dropdown>
         <Link href="#" className=" p-2">Contact</Link>
       </Navbar.Collapse>
