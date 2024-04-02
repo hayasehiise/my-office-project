@@ -56,7 +56,7 @@ export function SectionMain() {
         </div>
         <img
           src="/image/agen/agen_main.jpg"
-          className="w-full sm:h-[650px] object-cover"
+          className="w-full xl:h-[650px] sm:h-[450px] object-cover"
         />
       </div>
     </Section>
