@@ -39,6 +39,7 @@ const carouselProjectItem: carouselProjectType[] = [
   { url: "./image/bangun/carousel/proyek1.jpg" },
   { url: "./image/bangun/carousel/proyek2.jpg" },
   { url: "./image/bangun/carousel/proyek3.jpg" },
+  { url: "./image/bangun/carousel/proyek4.jpg" },
 ];
 
 function Section({ children }: SectionProps) {

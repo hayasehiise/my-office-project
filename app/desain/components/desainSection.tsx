@@ -36,6 +36,7 @@ const carouselProyekItem: carouselProyekData[] = [
   { image: "./image/desain/carousel/proyek1.jpg" },
   { image: "./image/desain/carousel/proyek2.jpg" },
   { image: "./image/desain/carousel/proyek3.jpg" },
+  { image: "./image/desain/carousel/proyek4.jpg" },
 ];
 
 function Section({ children }: SectionProps) {
