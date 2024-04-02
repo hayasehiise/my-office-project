@@ -67,7 +67,7 @@ const benefitDataItem: benefitDataType[] = [
 ];
 
 const agenDataItem: agenDataType[] = [
-  { name: "Heru Nisa", url: "#", image: "/image/freelance/agen/agen_1.jpg" },
+  { name: "Heru Nisa", url: "https://api.whatsapp.com/send?phone=6282223199957&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Jadi%20Freelance.", image: "/image/freelance/agen/agen_1.jpg" },
 ];
 
 function Section({ children }: SectionProps) {
