@@ -13,16 +13,33 @@ function Counter({ from, to }: { from: number, to: number }) {
   const ref = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    const controls = animate(from, to, {
-      duration: 1,
-      onUpdate(value) {
-        if (ref.current) {
-          const valueString = value.toFixed(1);
-          ref.current.textContent = value % 1 === 0 ? valueString.slice(0, -2) : valueString;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const controls = animate(from, to, {
+            duration: 1,
+            onUpdate(value) {
+              if (ref.current) {
+                const valueString = value.toFixed(1);
+                ref.current.textContent = value % 1 === 0 ? valueString.slice(0, -2) : valueString;
+              }
+            }
+          });
+          return () => controls.stop();
         }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
       }
-    });
-    return () => controls.stop();
+    };
   }, [from, to]);
 
   return <span ref={ref} />;
