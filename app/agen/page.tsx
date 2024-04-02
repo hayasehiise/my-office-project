@@ -3,10 +3,30 @@
 import { Button, Table, TableHead, TableHeadCell } from "flowbite-react";
 import styles from "./agenPage.module.css";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, animate } from "framer-motion";
 // import ContactForm from "./components/contactForm";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import ContactEmail from "./components/contactFormEmail";
+import React, { useEffect, useRef } from "react";
+
+function Counter({ from, to }: { from: number, to: number }) {
+  const ref = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    const controls = animate(from, to, {
+      duration: 1,
+      onUpdate(value) {
+        if (ref.current) {
+          const valueString = value.toFixed(1);
+          ref.current.textContent = value % 1 === 0 ? valueString.slice(0, -2) : valueString;
+        }
+      }
+    });
+    return () => controls.stop();
+  }, [from, to]);
+
+  return <span ref={ref} />;
+}
 
 const Agen = () => {
   const slideInVariants = {
@@ -20,22 +40,18 @@ const Agen = () => {
             <div className="flex flex-col mt-10">
               <div className="flex mx-10">
                 <p className="font-medium text-4xl sm:text-8xl mb-5 sm:mb-12">
-                  Desain Masa depan, <br />
-                  Buat Pengalaman
+                  Awaludin Agen <br />
+                  Berani Melangkah, Lebih Produktif Bersama Kami
                 </p>
               </div>
               <div className="flex mx-10 mb-5 sm:mb-10">
                 <div className="flex flex-col sm:flex-row justify-between">
-                  <p className="sm:w-1/2 w-full">
-                    Tingkatkan dirimu dengan menjadi agen, di mana Anda tidak
-                    hanya menjadi perantara tetapi juga mengembangkan
-                    keterampilan komunikasi, negosiasi, dan penjualan yang kuat.
-                    Sebagai agen, Anda akan belajar untuk beradaptasi dengan
-                    berbagai situasi dan membangun jaringan yang luas.
+                  <p className="sm:w-1/2 w-full text-3xl">
+                    Cari tau lebih detail tentang program ini
                   </p>
-                  <Link href="#" className="flex justify-center items-center">
+                  <Link href="#form" className="flex">
                     <Button color="light" className="sm:mx-10 sm:my-auto my-5" pill>
-                      Lets Check out
+                      Daftar Sekarang
                       <img
                         src="./icons/arrow-upright.svg"
                         alt="next section"
@@ -57,25 +73,21 @@ const Agen = () => {
             <div className="flex flex-col p-5 sm:p-10">
               <div className="flex">
                 <p className="font-sans font-semibold text-4xl sm:text-7xl">
-                  Selamat Datang di Landing Page Agen. Tim kami adalah{" "}
-                  <span className="text-amber-500">
-                    Tim yang penuh semangat untuk berkreasi dalam pembuatan
-                    marketing digital.
-                  </span>
+                  Hasil Yang Telah Dicapai Oleh Tim Agen Kami
                 </p>
               </div>
               <div className="flex-1 mb-10 sm:mb-0">
                 <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x items-center justify-center text-center font-bold font-mono mt-16 sm:mt-36">
                   <p className="sm:text-6xl text-4xl">
-                    Rp.100 Juta <br />
+                    Rp.<Counter from={0} to={100} /><span>+ Juta</span> <br />
                     <span className="sm:text-3xl text-xl">Penghasilan Proyek</span>
                   </p>
                   <p className="sm:text-6xl text-4xl">
-                    100+ <br />
+                  <Counter from={0} to={10} />+ <br />
                     <span className="sm:text-3xl text-xl">Klien</span>
                   </p>
                   <p className="sm:text-6xl text-4xl">
-                    500+ <br />
+                  <Counter from={0} to={250} />+ <br />
                     <span className="sm:text-3xl text-xl">Testimoni</span>
                   </p>
                 </div>
@@ -90,7 +102,7 @@ const Agen = () => {
               <br />
               <div className="flex">
                 <div className="overflow-x-auto sm:overflow-x-auto">
-                  <Table>
+                  <Table className="w-full">
                     <TableHead className="text-lg">
                       <Table.HeadCell className="">Nama Jasa</Table.HeadCell>
                       <Table.HeadCell className="">Detail Jasa</Table.HeadCell>
@@ -155,7 +167,7 @@ const Agen = () => {
               </div>
             </div>
           </section>
-          <section className="w-full text-black">
+          <section className="w-full text-black" id="form">
             <motion.div
               initial="hidden"
               whileInView="visible"

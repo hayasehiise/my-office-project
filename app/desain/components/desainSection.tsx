@@ -28,24 +28,14 @@ interface SectionProps {
   children: React.ReactNode;
 }
 
-interface carouselLantaiSatuData {
+interface carouselProyekData {
   image: string;
 }
 
-const carouselLantaiSatuItem: carouselLantaiSatuData[] = [
-  { image: "./image/desain/carousel/project_01.png" },
-  { image: "./image/desain/carousel/project_01.png" },
-  { image: "./image/desain/carousel/project_01.png" },
-];
-
-interface carouselLantaiDuaData {
-  image: string;
-}
-
-const carouselLantaiDuaItem: carouselLantaiDuaData[] = [
-  { image: "./image/desain/carousel/project_02.png" },
-  { image: "./image/desain/carousel/project_02.png" },
-  { image: "./image/desain/carousel/project_02.png" },
+const carouselProyekItem: carouselProyekData[] = [
+  { image: "./image/desain/carousel/proyek1.jpg" },
+  { image: "./image/desain/carousel/proyek2.jpg" },
+  { image: "./image/desain/carousel/proyek3.jpg" },
 ];
 
 function Section({ children }: SectionProps) {
@@ -205,28 +195,9 @@ export function SectionProject() {
           </p>
           <div className="flex xl:flex-row flex-col pb-10">
             <div className="mx-auto my-5">
-              <p className="text-2xl text-white font-bold pb-2">
-                Desain 1 Lantai
-              </p>
               <Carousel className="xl:w-[700px] sm:w-96 xs:w-64 w-64">
                 <CarouselContent>
-                  {carouselLantaiSatuItem.map((item, index) => (
-                    <CarouselItem key={index}>
-                      <img src={item.image} />
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselNext />
-                <CarouselPrevious />
-              </Carousel>
-            </div>
-            <div className="mx-auto my-5">
-              <p className="text-2xl text-white font-bold pb-2">
-                Desain 2 Lantai
-              </p>
-              <Carousel className="xl:w-[700px] sm:w-96 xs:w-64 w-64">
-                <CarouselContent>
-                  {carouselLantaiDuaItem.map((item, index) => (
+                  {carouselProyekItem.map((item, index) => (
                     <CarouselItem key={index}>
                       <img src={item.image} />
                     </CarouselItem>

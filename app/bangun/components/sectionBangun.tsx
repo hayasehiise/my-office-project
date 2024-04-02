@@ -30,27 +30,15 @@ import Image from "next/image";
 interface SectionProps {
   children: React.ReactNode;
 }
-type CarouselMainType = {
-  url: string;
-};
 
 type carouselProjectType = {
   url: string;
 };
 
-const carouselMainItem: CarouselMainType[] = [
-  { url: "./image/bangun/1.jpg" },
-  { url: "./image/bangun/2.jpg" },
-  { url: "./image/bangun/3.jpg" },
-  { url: "./image/bangun/4.jpg" },
-  { url: "./image/bangun/5.jpg" },
-];
-
 const carouselProjectItem: carouselProjectType[] = [
-  { url: "./image/bangun/carousel/project_01.png" },
-  { url: "./image/bangun/carousel/project_01.png" },
-  { url: "./image/bangun/carousel/project_01.png" },
-  { url: "./image/bangun/carousel/project_01.png" },
+  { url: "./image/bangun/carousel/proyek1.jpg" },
+  { url: "./image/bangun/carousel/proyek2.jpg" },
+  { url: "./image/bangun/carousel/proyek3.jpg" },
 ];
 
 function Section({ children }: SectionProps) {
@@ -60,7 +48,7 @@ function Section({ children }: SectionProps) {
 export function SectionMain() {
   return (
     <Section>
-      <div className="flex flex-col w-full h-screen bg-[url(/image/bangun/background.jpg)] bg-center sm:bg-cover xl:bg-cover justify-center items-center">
+      <div className="flex flex-col w-full h-screen sm:bg-[url(/image/bangun/background.jpg)] bg-[url(/image/bangun/bg-small.jpg)] bg-center sm:bg-cover bg-cover justify-center items-center">
         <div className={`bg-white w-fit p-4 bg-opacity-70`}>
         <p className="text-black text-center mx-auto xl:text-6xl sm:text-5xl font-black xl:p-0 sm:p-0 xs:p-2 p-2 xl:w-1/2 sm:w-fit">
           Bangun Rumah Impian Keluarga dengan Konsep Rumah Tumbuh tanpa Ribet,
@@ -155,7 +143,7 @@ export function SectionProject() {
             Proyek Rumah Yang Telah Selesai Dibuat Tim Infinity
           </p>
           <div className="my-10">
-            <Carousel className="xl:w-1/3 sm:w-1/2 xs:w-1/2 w-1/2 mx-auto">
+            <Carousel className="xl:w-1/3 sm:w-1/2 w-2/3 mx-auto">
               <CarouselContent>
                 {carouselProjectItem.map((item, index) => (
                   <CarouselItem key={index}>
@@ -202,8 +190,8 @@ export function SectionTahap() {
               </AccordionItem>
               <Image
                 src="./icons/arrow-down.svg"
-                width={50}
-                height={50}
+                width={30}
+                height={30}
                 className="mx-auto my-5"
                 alt="Arrow Down"
               />
@@ -223,8 +211,8 @@ export function SectionTahap() {
               </AccordionItem>
               <Image
                 src="./icons/arrow-down.svg"
-                width={50}
-                height={50}
+                width={30}
+                height={30}
                 className="mx-auto my-5"
                 alt="Arrow Down"
               />
@@ -244,8 +232,8 @@ export function SectionTahap() {
               </AccordionItem>
               <Image
                 src="./icons/arrow-down.svg"
-                width={50}
-                height={50}
+                width={30}
+                height={30}
                 className="mx-auto my-5"
                 alt="Arrow Down"
               />
@@ -265,8 +253,8 @@ export function SectionTahap() {
               </AccordionItem>
               <Image
                 src="./icons/arrow-down.svg"
-                width={50}
-                height={50}
+                width={30}
+                height={30}
                 className="mx-auto my-5"
                 alt="Arrow Down"
               />
@@ -286,8 +274,8 @@ export function SectionTahap() {
               </AccordionItem>
               <Image
                 src="./icons/arrow-down.svg"
-                width={50}
-                height={50}
+                width={30}
+                height={30}
                 className="mx-auto my-5"
                 alt="Arrow Down"
               />
@@ -307,8 +295,8 @@ export function SectionTahap() {
               </AccordionItem>
               <Image
                 src="./icons/arrow-down.svg"
-                width={50}
-                height={50}
+                width={30}
+                height={30}
                 className="mx-auto my-5"
                 alt="Arrow Down"
               />
@@ -328,8 +316,8 @@ export function SectionTahap() {
               </AccordionItem>
               <Image
                 src="./icons/arrow-down.svg"
-                width={50}
-                height={50}
+                width={30}
+                height={30}
                 className="mx-auto my-5"
                 alt="Arrow Down"
               />
