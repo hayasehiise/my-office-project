@@ -1,4 +1,4 @@
-import {SectionMain, SectionDesc, SectionFormAgen} from './components/sectionAgen'
+import {SectionMain, SectionDesc, SectionFormAgen} from '@/components/agen/sectionAgen'
 export default function AgenPage() {
     return(
         <>

@@ -1,4 +1,4 @@
-import {SectionOne, SectionTwo, SectionAgen, SectionFooter} from './components/freelanceSection'
+import {SectionOne, SectionTwo, SectionAgen, SectionFooter} from '@/components/freelance/freelanceSection'
 export default function FreelancePage() {
     return(
         <>

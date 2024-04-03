@@ -5,7 +5,7 @@ import {
   SectionProject,
   SectionThree,
   SectionTwo,
-} from "./components/desainSection";
+} from "@/components/desain/desainSection";
 
 export default function Desain() {
   return (

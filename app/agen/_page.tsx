@@ -6,7 +6,7 @@ import Link from "next/link";
 import { motion, animate } from "framer-motion";
 // import ContactForm from "./components/contactForm";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import ContactEmail from "./components/contactFormEmail";
+import ContactEmail from "../../components/agen/contactFormEmail";
 import React, { useEffect, useRef } from "react";
 
 function Counter({ from, to }: { from: number, to: number }) {

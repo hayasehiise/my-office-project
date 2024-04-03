@@ -1,11 +1,9 @@
-import SectionCarousel from "./components/sectionInterior";
+import SectionCarousel from "@/components/interior/sectionInterior";
 
 export default function Interior() {
     return(
         <>
-        <main className="container-xl">
             <SectionCarousel />
-        </main>
         </>
     )
 }
