@@ -42,8 +42,8 @@ export function SectionMain() {
             Berani Melangkah, Lebih Produktif Bersama Kami
           </p>
         </div>
-        <div className={`flex sm:flex-row flex-col justify-between px-5 pb-10`}>
-          <p className="sm:w-1/2 w-full sm:text-3xl text-xl">
+        <div className={`flex flex-col px-5 pb-10`}>
+          <p className="sm:w-fit w-full sm:text-3xl text-xl pb-3">
             Cari tau lebih detail tentang program ini
           </p>
           <Link href="#desc" className="flex">
@@ -79,19 +79,25 @@ export function SectionDesc() {
     <Section>
       <div className="w-full h-full bg-slate-800" id="desc">
         <div className="px-5 py-5">
-          <p className="sm:text-6xl text-4xl font-semibold underline text-white">
-            Selamat Datang Di Area Awaludin Agen
+          <p className="sm:text-6xl text-4xl font-bold text-white">
+            Selamat Datang Di Area <br/>Awaludin Agen
           </p>
         </div>
         <div className="px-5 py-1">
-          <p className="sm:text-2xl text-sm font-semibold text-white">
+          <p className="sm:text-2xl text-sm font-normal text-white">
             Kami Mengundang Teman teman, Para Calon Agen Sukses, Insya Allah,
             Dunia Akhirat.
           </p>
-          <p className="sm:text-2xl text-sm font-semibold w-full text-white">
+          <p className="sm:text-2xl text-sm font-normal w-full text-white">
             Siapkan Diri Teman teman, bergabung di komunitas kecil kami, Kami
             menerima Siapapun yang Ingin Memiliki Penghasilan yang Halal dan
             Berkah,
+          </p>
+        </div>
+        <hr className=""/>
+        <div className="flex px-5 py-5 justify-center">
+        <p className="sm:text-3xl text-sm font-semibold w-1/2 text-white text-center">
+            Adapun kami mengadakan Webinar untuk memberikan wawasan kepada kalian yang ingin/tertarik untuk bergabung
           </p>
         </div>
         <div className="px-5 my-5">

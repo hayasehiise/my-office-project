@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
 
+
+
 export default function ContactEmail() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -25,7 +27,7 @@ export default function ContactEmail() {
       formData.append("file", file);
     }
     try {
-      const res = await axios.post("/api/email", formData);
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}` , formData);
       console.log(res);
       alert(res.data.message);
       setName("");
@@ -39,6 +41,7 @@ export default function ContactEmail() {
     } catch (error) {
       console.error(error);
       alert("Error sending email");
+      setLoading(false)
     }
   };
 

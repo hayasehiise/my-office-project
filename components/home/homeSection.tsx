@@ -81,7 +81,7 @@ const myServiceDataGrid: myServiceType[] = [
   },
   {
     images: "./image/homepage/iklan.jpg",
-    links: "#",
+    links: "/iklan",
   },
   {
     images: "./image/homepage/website.jpg",
