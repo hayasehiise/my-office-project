@@ -24,7 +24,7 @@ export function SectionMain() {
           </div>
           <img
             src="/image/iklan/iklan_main.png"
-            className="sm:h-[600px] h-72"
+            className="xl:h-[600px] sm:h-96 h-72"
           />
         </div>
       </div>
@@ -35,17 +35,45 @@ export function SectionMain() {
 export function SectionSecond() {
   return (
     <Section>
-      <div className="w-full h-full bg-[#00041f]">
+      <div className="w-full h-full bg-gradient-to-b from-[#00041f] from-50% to-[#bf0000] to-100%">
         <div className="flex sm:flex-row flex-col justify-center">
           <img
             src="/image/iklan/iklan_second.png"
-            className="sm:h-[600px] sm:w-[600px] w-72 h-72 mx-auto"
+            className="xl:h-[600px] xl:w-[600px] sm:h-96 sm:w-96 w-72 h-72 mx-auto"
           />
           <div className="my-auto sm:w-1/2 w-full">
             <p className="text-white sm:text-4xl text-xl font-semibold p-10">
               Tim kami dapat memberikan solusi untuk anda yang ingin membuat
               video iklan/konten sesuai keinginan anda.
             </p>
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+export function SectionThird() {
+  return (
+    <Section>
+      <div className="w-full h-full bg-gradient-to-t from-[#00041f] from-50% to-[#bf0000] to-100%">
+        <div className="flex sm:flex-row-reverse flex-col justify-center p-10">
+          <img
+            src="/image/iklan/iklan_third.jpg"
+            className="xl:h-[500px] xl:w-[500px] sm:h-80 sm:w-80 w-64 h-64 object-cover sm:mx-0 mx-auto rounded-full"
+          />
+          <div className="my-auto sm:w-fit w-full sm:pt-0 pt-5">
+            <div className="flex flex-row">
+              <div className="flex flex-col">
+                <img src="/image/iklan/movie_script.png" className="h-16 w-16 mx-auto" />
+                <p className="sm:text-xl text-lg text-white text-center xl:w-1/2 sm:w-52 mx-auto">Mulai Dari Pembuatan Skrip/Naskah</p>
+              </div>
+              <img src="/image/iklan/right_arrow.png" className="h-10 w-10 my-auto" />
+              <div className="flex flex-col">
+                <img src="/image/iklan/edting.png" className="h-16 w-16 mx-auto" />
+                <p className="sm:text-xl text-lg text-white text-center xl:w-1/2 sm:w-52 mx-auto">Mulai Dari Pembuatan Skrip/Naskah</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
