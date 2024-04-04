@@ -83,19 +83,17 @@ export function SectionSecond() {
 export function SectionProject() {
   return (
     <Section>
-      <div className="w-full h-screen max-h-screen bg-gray-400">
-        <div className="flex flex-col w-full h-screen">
-          <div className="xl:mt-16 sm:mt-auto xs:mt-auto mt-auto w-full ">
-            <motion.p
+      <div className="w-full sm:h-screen h-full max-h-screen bg-gray-400">
+        <div className="flex flex-col w-full sm:h-screen h-full sm:my-0 my-16">
+          <div className="xl:w-full sm:w-full my-auto">
+          <motion.p
               initial={{ y: "-100%", opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ delay: 1, duration: 0.5 }}
-              className="text-black xl:text-4xl sm:text-4xl xs:text-2xl text-2xl font-black text-center"
+              className="text-black xl:text-4xl sm:text-4xl xs:text-2xl text-2xl mb-10 font-black text-center"
             >
               Project Interior
             </motion.p>
-          </div>
-          <div className="xl:mt-5 xl:w-full sm:w-full my-auto">
             <Carousel
               className="w-full xl:max-w-5xl sm:max-w-xl xs:max-w-64 max-w-64 mx-auto"
               plugins={[Autoplay({ delay: 3000 })]}
@@ -103,7 +101,7 @@ export function SectionProject() {
               <CarouselContent>
                 {carouselProjectItem.map((item, index) => (
                   <CarouselItem
-                    className="xl:basis-1/2 sm:basis-1/2"
+                    className="xl:basis-1/2"
                     key={index}
                   >
                     <img
