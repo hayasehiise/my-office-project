@@ -12,7 +12,6 @@ import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import React from "react";
 
 interface SectionProps {
   children: React.ReactNode;
