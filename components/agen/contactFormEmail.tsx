@@ -27,7 +27,7 @@ export default function ContactEmail() {
       formData.append("file", file);
     }
     try {
-      const res = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}` , formData);
+      const res = await axios.post(`${process.env.API_URL}` , formData);
       console.log(res);
       alert(res.data.message);
       setName("");
