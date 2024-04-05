@@ -29,15 +29,15 @@ export function SectionMain() {
     <Section>
       <div className="w-full max-h-screen">
         <div className="p-5">
-        <div className="flex ">
-        <img src="/image/awaludin_logo.png" className="sm:h-16 h-9" />
-          <p className="sm:text-7xl text-4xl font-bold italic text-[#bf9b30]">
-            Awaludin{" "}
-            <span className="sm:text-7xl text-4xl font-bold italic text-gray-600">
-              Agen
-            </span>
-          </p>
-        </div>
+          <div className="flex ">
+            <img src="/image/awaludin_logo.png" className="sm:h-16 h-9" />
+            <p className="sm:text-7xl text-4xl font-bold italic text-[#bf9b30]">
+              Awaludin{" "}
+              <span className="sm:text-7xl text-4xl font-bold italic text-gray-600">
+                Agen
+              </span>
+            </p>
+          </div>
           <p className="font-medium text-2xl sm:text-7xl">
             Berani Melangkah, Lebih Produktif Bersama Kami
           </p>
@@ -72,7 +72,7 @@ export function SectionDesc() {
     time: "16.00 - 18.00",
     via: "Zoom Meeting",
     url: `#`,
-    price: '250.000',
+    price: "250.000",
     free: true,
   };
   return (
@@ -80,7 +80,8 @@ export function SectionDesc() {
       <div className="w-full h-full bg-slate-800" id="desc">
         <div className="px-5 py-5">
           <p className="sm:text-6xl text-4xl font-bold text-white">
-            Selamat Datang Di Area <br/>Awaludin Agen
+            Selamat Datang Di Area <br />
+            Awaludin Agen
           </p>
         </div>
         <div className="px-5 py-1">
@@ -94,10 +95,11 @@ export function SectionDesc() {
             Berkah,
           </p>
         </div>
-        <hr className=""/>
+        <hr className="" />
         <div className="flex px-5 py-5 justify-center">
-        <p className="sm:text-3xl text-xl font-semibold sm:w-1/2 w-full text-white text-center">
-            Adapun kami mengadakan Webinar untuk memberikan wawasan kepada kalian yang ingin/tertarik untuk bergabung
+          <p className="sm:text-3xl text-xl font-semibold sm:w-1/2 w-full text-white text-center">
+            Adapun kami mengadakan Webinar untuk memberikan wawasan kepada
+            kalian yang ingin/tertarik untuk bergabung
           </p>
         </div>
         <div className="px-5 my-5">
@@ -123,14 +125,14 @@ export function SectionDesc() {
             </CardContent>
             <CardFooter className="justify-between">
               <p className="text-2xl mr-2">
-                <span className={webinar.free ? `line-through` : ``}>Rp.{webinar.price}</span>{" "}
-                {webinar.free && 
-                <span className="font-bold">Gratis</span>
-                }
+                <span className={webinar.free ? `line-through` : ``}>
+                  Rp.{webinar.price}
+                </span>{" "}
+                {webinar.free && <span className="font-bold">Gratis</span>}
               </p>
               <Link href={webinar.url} className="flex">
                 <Button color="success" className="" pill>
-                Saya Mau Gabung
+                  Saya Mau Gabung
                 </Button>
               </Link>
             </CardFooter>
@@ -151,44 +153,51 @@ export function SectionDesc() {
 }
 
 export function SectionFormAgen() {
-    const slideInVariants = {
-        hidden: { x: "-100%" },
-        visible: { x: 0, transition: { duration: 0.8, ease: "easeOut" } },
-      };
-    return(
-        <Section>
-            <div className="w-full h-full">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              variants={slideInVariants}
-            >
-              <div className="flex flex-col py-10 px-5 sm:px-10">
-                <p className="flex font-sans font-black text-4xl sm:text-6xl">
-                  Apakah Kamu Tertarik Menjadi Agen? <br />
-                  Daftar Sekarang!
-                </p>
-                <p className="flex font-serif my-5 font-medium">
-                  Mari kita bersama menciptakan ide menjadi nyata dan hasil yang
-                  memuaskan
-                </p>
-                <div className="flex-1">
-                  <div className="flex flex-col">
-                    <Tabs defaultValue="email" className="w-1/2">
-                      <TabsList>
-                        <TabsTrigger value="email">Email</TabsTrigger>
-                        <TabsTrigger value="whatsapp">WhatsApp</TabsTrigger>
-                      </TabsList>
-                      <TabsContent value="email">
-                        <ContactEmail />
-                      </TabsContent>
-                      <TabsContent value="whatsapp">Coming Soon</TabsContent>
-                    </Tabs>
-                  </div>
-                </div>
+  const slideInVariants = {
+    hidden: { x: "-100%" },
+    visible: { x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
+  return (
+    <Section>
+      <div className="w-full h-full">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={slideInVariants}
+        >
+          <div className="flex flex-col py-10 px-5 sm:px-10">
+            <p className="flex font-sans font-black text-4xl sm:text-6xl">
+              Apakah Kamu Tertarik Menjadi Agen? <br />
+              Daftar Sekarang!
+            </p>
+            <p className="flex font-serif my-5 font-medium">
+              Mari kita bersama menciptakan ide menjadi nyata dan hasil yang
+              memuaskan
+            </p>
+            <div className="flex-1">
+              <div className="flex flex-col">
+                <Tabs defaultValue="email" className="w-1/2">
+                  <TabsList>
+                    <TabsTrigger value="email">Email</TabsTrigger>
+                    <TabsTrigger value="whatsapp">WhatsApp</TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="email">
+                    <ContactEmail />
+                  </TabsContent>
+                  <TabsContent value="whatsapp">
+                    <Link href={`https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Jadi%20Agen.`} target="_blank">
+                      <Button color="light" className="" pill>
+                        <img src="/image/agen/whatsapp.png" className="h-8 mr-2" />
+                        Hubungi Saya
+                      </Button>
+                    </Link>
+                  </TabsContent>
+                </Tabs>
               </div>
-            </motion.div>
             </div>
-        </Section>
-    )
+          </div>
+        </motion.div>
+      </div>
+    </Section>
+  );
 }
