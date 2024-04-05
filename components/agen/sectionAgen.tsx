@@ -71,7 +71,7 @@ export function SectionDesc() {
     date: "Senin 15 April",
     time: "16.00 - 18.00",
     via: "Zoom Meeting",
-    url: `#`,
+    url: `https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Ikut%20Webinar.`,
     price: "250.000",
     free: true,
   };
