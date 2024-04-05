@@ -2,7 +2,8 @@ import {
   SectionMain,
   SectionSecond,
   SectionThird,
-  SectionProjects
+  SectionProjects,
+  SectionLast
 } from "@/components/iklan/sectionIklan";
 
 export default function IklanPage() {
@@ -13,6 +14,7 @@ export default function IklanPage() {
         <SectionSecond />
         <SectionThird />
         <SectionProjects />
+        <SectionLast />
       </main>
     </>
   );

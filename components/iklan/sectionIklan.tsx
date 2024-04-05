@@ -49,7 +49,7 @@ export function SectionMain() {
 export function SectionSecond() {
   return (
     <Section>
-      <div className="w-full h-full bg-gradient-to-b from-[#00041f] from-50% to-[#bf0000] to-100%">
+      <div className="w-full h-full bg-gradient-to-tl from-[#00041f] from-50% to-[#73091f] to-100%">
         <div className="flex sm:flex-row flex-col justify-center">
           <img
             src="/image/iklan/iklan_second.png"
@@ -70,7 +70,7 @@ export function SectionSecond() {
 export function SectionThird() {
   return (
     <Section>
-      <div className="w-full h-full bg-gradient-to-t from-[#00041f] from-50% to-[#bf0000] to-100%">
+      <div className="w-full h-full bg-gradient-to-br from-[#00041f] from-50% to-[#73091f] to-100%">
         <div className="flex sm:flex-row-reverse flex-col justify-center p-10">
           <img
             src="/image/iklan/iklan_third.jpg"
@@ -111,7 +111,7 @@ export function SectionThird() {
 export function SectionProjects() {
   return (
     <Section>
-      <div className="w-full h-full bg-[#00041f] p-10">
+      <div className="w-full h-full bg-gradient-to-tr from-[#00041f] from-50% to-[#73091f] to-100% p-10">
         <div className="flex flex-col">
           <p className="text-white text-3xl font-semibold mx-auto mb-10">Project yang telah tim kami buat</p>
           <div className="grid xl:grid-cols-4 sm:grid-cols-2 gap-4">
@@ -144,4 +144,14 @@ export function SectionProjects() {
       </div>
     </Section>
   );
+}
+
+export function SectionLast() {
+  return(
+    <Section>
+      <div className="w-full h-screen bg-gradient-to-bl from-[#00041f] from-50% to-[#73091f] to-100%">
+        <p className="text-white">Last Section</p>
+      </div>
+    </Section>
+  )
 }
