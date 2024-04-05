@@ -15,5 +15,5 @@ export default function IklanLayout({
   }: {
     children: React.ReactNode
   }) {
-    return <main className={montserrat.className}>{children}</main>
+    return <div className={montserrat.className}>{children}</div>
   }

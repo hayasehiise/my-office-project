@@ -1,11 +1,19 @@
-import { SectionMain, SectionSecond, SectionThird } from "@/components/iklan/sectionIklan";
+import {
+  SectionMain,
+  SectionSecond,
+  SectionThird,
+  SectionProjects
+} from "@/components/iklan/sectionIklan";
 
 export default function IklanPage() {
-    return(
-        <>
-            <SectionMain />
-            <SectionSecond />
-            <SectionThird />
-        </>
-    )
+  return (
+    <>
+      <main className="">
+        <SectionMain />
+        <SectionSecond />
+        <SectionThird />
+        <SectionProjects />
+      </main>
+    </>
+  );
 }

@@ -1,6 +1,20 @@
+"use client";
+import { useRef } from "react";
+
 interface SectionProps {
   children: React.ReactNode;
 }
+
+type projectVideoType = {
+  url: string;
+}
+
+const projectVideoData: projectVideoType[] = [
+  {url : '/image/iklan/project_video/project1.mp4'},
+  {url : '/image/iklan/project_video/project2.mp4'},
+  {url : '/image/iklan/project_video/project3.mp4'},
+  {url : '/image/iklan/project_video/project4.mp4'},
+]
 
 function Section({ children }: SectionProps) {
   return <section className="flex flex-col">{children}</section>;
@@ -65,16 +79,67 @@ export function SectionThird() {
           <div className="my-auto sm:w-fit w-full sm:pt-0 pt-5">
             <div className="flex flex-row">
               <div className="flex flex-col">
-                <img src="/image/iklan/movie_script.png" className="h-16 w-16 mx-auto" />
-                <p className="sm:text-xl text-lg text-white text-center xl:w-1/2 sm:w-52 mx-auto">Mulai Dari Pembuatan Skrip/Naskah</p>
+                <img
+                  src="/image/iklan/movie_script.png"
+                  className="h-16 w-16 mx-auto"
+                />
+                <p className="sm:text-xl text-lg text-white text-center xl:w-1/2 sm:w-52 mx-auto">
+                  Mulai Dari Pembuatan Skrip/Naskah
+                </p>
               </div>
-              <img src="/image/iklan/right_arrow.png" className="h-10 w-10 my-auto" />
+              <img
+                src="/image/iklan/right_arrow.png"
+                className="h-10 w-10 my-auto"
+              />
               <div className="flex flex-col">
-                <img src="/image/iklan/edting.png" className="h-16 w-16 mx-auto" />
-                <p className="sm:text-xl text-lg text-white text-center xl:w-1/2 sm:w-52 mx-auto">Mulai Dari Pembuatan Skrip/Naskah</p>
+                <img
+                  src="/image/iklan/edting.png"
+                  className="h-16 w-16 mx-auto"
+                />
+                <p className="sm:text-xl text-lg text-white text-center xl:w-1/2 sm:w-52 mx-auto">
+                  Mulai Dari Pembuatan Skrip/Naskah
+                </p>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+export function SectionProjects() {
+  return (
+    <Section>
+      <div className="w-full h-full bg-[#00041f] p-10">
+        <div className="flex flex-col">
+          <p className="text-white text-3xl font-semibold mx-auto mb-10">Project yang telah tim kami buat</p>
+          <div className="grid xl:grid-cols-4 sm:grid-cols-2 gap-4">
+            {projectVideoData.map((item, index) => (
+              <div className="relative" key={index}>
+              <img
+                src="/image/iklan/phone.png"
+                className="relative object-fill h-[90%] w-[70%] z-20 mx-auto"
+              />
+              <div className="absolute top-0 w-full">
+                <video
+                  controls={false}
+                  playsInline
+                  autoPlay
+                  loop
+                  muted
+                  className="p-1 mx-auto object-fill w-[70%] z-10 rounded-[50px]"
+                >
+                  <source
+                    src={item.url}
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+            </div>
+            ))}
+          </div>
+          <p className="text-white text-xl font-semibold mx-auto mt-5">Dan masih banyak lagi ...</p>
         </div>
       </div>
     </Section>
