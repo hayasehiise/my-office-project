@@ -42,7 +42,7 @@ export function SectionMain() {
             Berani Melangkah, Lebih Produktif Bersama Kami
           </p>
         </div>
-        <div className={`flex flex-col px-5 pb-10`}>
+        <div className={`flex flex-col px-5 pb-5`}>
           <p className="sm:w-fit w-full sm:text-3xl text-xl pb-3">
             Cari tau lebih detail tentang program ini
           </p>
@@ -96,7 +96,7 @@ export function SectionDesc() {
         </div>
         <hr className=""/>
         <div className="flex px-5 py-5 justify-center">
-        <p className="sm:text-3xl text-sm font-semibold w-1/2 text-white text-center">
+        <p className="sm:text-3xl text-xl font-semibold sm:w-1/2 w-full text-white text-center">
             Adapun kami mengadakan Webinar untuk memberikan wawasan kepada kalian yang ingin/tertarik untuk bergabung
           </p>
         </div>
