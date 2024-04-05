@@ -9,7 +9,7 @@ import {
 export default function IklanPage() {
   return (
     <>
-      <main className="">
+      <main className=" snap-y snap-mandatory h-screen overflow-y-scroll">
         <SectionMain />
         <SectionSecond />
         <SectionThird />

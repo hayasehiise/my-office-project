@@ -20,7 +20,7 @@ const projectVideoData: projectVideoType[] = [
 ];
 
 function Section({ children, className }: SectionProps) {
-  return <section className={`${className} flex flex-col`}>{children}</section>;
+  return <section className={`${className} snap-center snap-always flex flex-col`}>{children}</section>;
 }
 
 export function SectionMain() {
@@ -49,8 +49,8 @@ export function SectionMain() {
 
 export function SectionSecond() {
   return (
-    <Section className="w-full h-full bg-gradient-to-tl from-[#00041f] from-50% to-[#73091f] to-100%">
-      <div className="flex sm:flex-row flex-col justify-center">
+    <Section className="w-full h-full justify-center items-center bg-gradient-to-tl from-[#00041f] from-50% to-[#73091f] to-100%">
+      <div className="flex sm:flex-row flex-col">
         <img
           src="/image/iklan/iklan_second.png"
           className="xl:h-[600px] xl:w-[600px] sm:h-96 sm:w-96 w-72 h-72 mx-auto"
@@ -68,8 +68,8 @@ export function SectionSecond() {
 
 export function SectionThird() {
   return (
-    <Section className="w-full h-full bg-gradient-to-br from-[#00041f] from-50% to-[#73091f] to-100%">
-      <div className="flex sm:flex-row-reverse flex-col justify-center p-10">
+    <Section className="w-full h-full justify-center items-center bg-gradient-to-br from-[#00041f] from-50% to-[#73091f] to-100%">
+      <div className="flex sm:flex-row-reverse flex-col p-10">
         <img
           src="/image/iklan/iklan_third.jpg"
           className="xl:h-[500px] xl:w-[500px] sm:h-80 sm:w-80 w-64 h-64 object-cover sm:mx-0 mx-auto rounded-full"
@@ -107,7 +107,7 @@ export function SectionThird() {
 
 export function SectionProjects() {
   return (
-    <Section className="w-full h-full bg-gradient-to-tr from-[#00041f] from-50% to-[#73091f] to-100% p-10">
+    <Section className="w-full h-full justify-center items-center bg-gradient-to-tr from-[#00041f] from-50% to-[#73091f] to-100% p-10">
       <div className="flex flex-col">
         <p className="text-white text-3xl font-semibold mx-auto mb-10">
           Project yang telah tim kami buat
