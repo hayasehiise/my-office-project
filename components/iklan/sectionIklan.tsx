@@ -25,7 +25,7 @@ function Section({ children, className }: SectionProps) {
 
 export function SectionMain() {
   return (
-    <Section className="w-full max-h-screen sm:bg-[url(/image/iklan/bg-large-device.jpg)] bg-[url(/image/iklan/bg-phone.jpg)] bg-cover bg-no-repeat">
+    <Section className="w-full h-screen sm:bg-[url(/image/iklan/bg-large-device.jpg)] bg-[url(/image/iklan/bg-phone.jpg)] bg-cover bg-no-repeat">
       <div className="flex sm:flex-row flex-col-reverse justify-center items-center h-screen">
         <div className="flex flex-col sm:w-1/2 w-full">
           <p className="text-white sm:text-6xl text-4xl font-bold p-5">
@@ -49,7 +49,7 @@ export function SectionMain() {
 
 export function SectionSecond() {
   return (
-    <Section className="w-full h-full justify-center items-center bg-gradient-to-tl from-[#00041f] from-50% to-[#73091f] to-100%">
+    <Section className="w-full h-screen justify-center items-center bg-gradient-to-tl from-[#00041f] from-50% to-[#73091f] to-100%">
       <div className="flex sm:flex-row flex-col">
         <img
           src="/image/iklan/iklan_second.png"
@@ -68,7 +68,7 @@ export function SectionSecond() {
 
 export function SectionThird() {
   return (
-    <Section className="w-full h-full justify-center items-center bg-gradient-to-br from-[#00041f] from-50% to-[#73091f] to-100%">
+    <Section className="w-full h-screen justify-center items-center bg-gradient-to-br from-[#00041f] from-50% to-[#73091f] to-100%">
       <div className="flex sm:flex-row-reverse flex-col p-10">
         <img
           src="/image/iklan/iklan_third.jpg"
