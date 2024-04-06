@@ -1,5 +1,5 @@
 "use client";
-import { Button, Table, TableHead, TableHeadCell } from "flowbite-react";
+import { Button } from "flowbite-react";
 import {
   Card,
   CardContent,
@@ -8,6 +8,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // import styles from "./agenPage.module.css";
@@ -19,6 +26,15 @@ import React, { useEffect, useRef } from "react";
 interface SectionProps {
   children: React.ReactNode;
 }
+
+type agenDataType = {
+  name: string;
+  image: string;
+};
+
+const agenDataItem: agenDataType[] = [
+  { name: "Heru Nisa", image: "/image/agen/agenList/agen_1.jpg" },
+];
 
 function Section({ children }: SectionProps) {
   return <section className="flex flex-col">{children}</section>;
@@ -146,6 +162,40 @@ export function SectionDesc() {
             <li>Pendapatan Sesuai dengan Usaha Agen Masing Masing</li>
             <li>Pendaftaran Sebagai Agen Awaludin Resmi, Berbayar 99ribu</li>
           </ol>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+export function SectionAgen() {
+  return (
+    <Section>
+      <div className={`w-full h-full bg-blue-900 py-5`}>
+        <div className={`flex flex-col`}>
+          <div className={`justify-center items-center text-center xl:mb-5 sm:mb-5 mb-2`}>
+            <p className={`xl:text-4xl sm:text-4xl text-2xl font-bold text-white`}>
+              Agen - Agen Yang Telah Saya Rekrut
+            </p>
+            <div className="xl:mt-10 sm:mt-10 mt-5">
+              <Carousel className="w-fit mx-auto">
+                <CarouselContent>
+                  {agenDataItem.map((item, index) => (
+                    <CarouselItem key={index}>
+                      <Card className="w-fit mx-auto">
+                        <CardHeader>
+                            <img src={item.image} className="w-72 mx-auto rounded-full" />
+                          <CardTitle className="pt-3 text-4xl">{item.name}</CardTitle>
+                        </CardHeader>
+                      </Card>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious />
+                <CarouselNext />
+              </Carousel>
+            </div>
+          </div>
         </div>
       </div>
     </Section>

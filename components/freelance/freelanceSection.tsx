@@ -19,6 +19,7 @@ import Link from "next/link";
 
 interface SectionProps {
   children: React.ReactNode;
+  className: string;
 }
 
 type benefitDataType = {
@@ -27,11 +28,11 @@ type benefitDataType = {
   icon: string;
 };
 
-type agenDataType = {
-  name: string;
-  image: string;
-  url: string;
-};
+const freelanceImage = [
+  {src: '/image/freelance/freelance1.png'},
+  {src: '/image/freelance/freelance2.png'},
+  {src: '/image/freelance/freelance3.png'},
+]
 
 const benefitDataItem: benefitDataType[] = [
   {
@@ -66,18 +67,13 @@ const benefitDataItem: benefitDataType[] = [
   },
 ];
 
-const agenDataItem: agenDataType[] = [
-  { name: "Heru Nisa", url: "https://api.whatsapp.com/send?phone=6282223199957&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Jadi%20Freelance.", image: "/image/freelance/agen/agen_1.jpg" },
-];
-
-function Section({ children }: SectionProps) {
-  return <section className="flex flex-col">{children}</section>;
+function Section({ children, className }: SectionProps) {
+  return <section className={`${className} flex flex-col`}>{children}</section>;
 }
 
 export function SectionOne() {
   return (
-    <Section>
-      <div className="w-full xl:h-screen sm:h-full sm:bg-[url(/image/freelance/bg-sectionOne.jpg)] bg-[url(/image/freelance/bg-sectionOnePhone.jpg)] bg-cover">
+    <Section className="w-full xl:h-screen sm:h-full sm:bg-[url(/image/freelance/bg-sectionOne.jpg)] bg-[url(/image/freelance/bg-sectionOnePhone.jpg)] bg-cover">
         <div className={`flex flex-col sm:flex-row xl:h-screen sm:h-full h-full`}>
           <div className={`xl:w-1/2 sm:w-full w-full my-auto xl:pl-20 sm:pl-5 xl:pt-0 sm:pt-0 pt-3`}>
             <p className="xl:text-6xl sm:text-3xl text-center text-2xl font-extrabold px-4">
@@ -87,18 +83,32 @@ export function SectionOne() {
           </div>
           <img
             src={`/image/freelance/sectionOne_image.png`}
-            className={`xl:h-[900px] sm:h-[500px] h-[300px] mx-auto my-auto`}
+            className={`w-1/2 mx-auto my-auto`}
           />
         </div>
-      </div>
     </Section>
   );
 }
 
-export function SectionTwo() {
+export function SectionSecond() {
+  return(
+    <Section className="w-full h-full bg-[#efefef] justify-center items-center py-5">
+      <p className="xl:text-4xl sm:text-2xl text-xl text-center font-bold px-5">Ada banyak Job Freelance yang dapat pilih</p>
+      <div className="grid sm:grid-cols-3 grid-cols-1">
+        {freelanceImage.map((item, index) => (
+          <div key={index}>
+            <img src={item.src} className="w-[70%] rounded-2xl mx-auto" />
+          </div>
+        ))}
+      </div>
+      <p className="text-xl mt-5">Dan masih banyak lagi...</p>
+    </Section>
+  )
+}
+
+export function SectionBenefit() {
   return (
-    <Section>
-      <div className={`w-full h-full py-6`}>
+    <Section className="w-full h-full py-6">
         <div className={`justify-center items-center text-center mb-5`}>
           <p className={`xl:text-4xl sm:text-2xl text-xl`}>
             Benefit yang anda akan terima jika menjadi{" "}
@@ -122,58 +132,22 @@ export function SectionTwo() {
             </div>
           ))}
         </div>
-      </div>
     </Section>
   );
 }
 
-export function SectionAgen() {
-  return (
-    <Section>
-      <div className={`w-full h-full bg-blue-900 py-5`}>
-        <div className={`flex flex-col`}>
-          <div className={`justify-center items-center text-center xl:mb-5 sm:mb-5 mb-2`}>
-            <p className={`xl:text-4xl sm:text-4xl text-2xl text-white`}>
-              Jadilah Freelance melalui Agen Kami
-            </p>
-            <div className="xl:mt-10 sm:mt-10 mt-5">
-              <Carousel className="xl:w-1/2 sm:w-1/2 w-2/3 mx-auto">
-                <CarouselContent>
-                  {agenDataItem.map((item, index) => (
-                    <CarouselItem key={index}>
-                      <Card className="xl:w-1/2 sm:w-full w-full mx-auto">
-                        <CardHeader>
-                            <img src={item.image} className="w-72 mx-auto" />
-                          <CardTitle className="pt-3 text-4xl">{item.name}</CardTitle>
-                        </CardHeader>
-                        <CardFooter>
-                            <Button variant={'whatsapp'} asChild className="mx-auto">
-                                <Link href={item.url}>
-                                    <img src="/image/freelance/icon/wa_icon.png" className="h-6 pr-2" />
-                                    Hubungi WhatsApp
-                                </Link>
-                            </Button>
-                        </CardFooter>
-                      </Card>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious />
-                <CarouselNext />
-              </Carousel>
-            </div>
-          </div>
-        </div>
-      </div>
+export function SectionHub() {
+  return(
+    <Section className="w-full h-full p-10">
+      <div>Bagian Hubungi</div>
     </Section>
-  );
+  )
 }
 
 export function SectionFooter() {
   return (
-    <Section>
-      <div className="w-full h-full max-h-screen">
-          <div className="grid grid-cols-3 gap-0 justify-center items-center xl:px-10 sm:px-10 xs: py-5">
+    <Section className="w-full h-full">
+          <div className="grid grid-cols-2 gap-0 justify-center items-center xl:px-10 sm:px-10 xs: py-5">
             <div className="text-left">
               <p>CV.Infinity Project Property</p>
               <p>Kantor Infinity</p>
@@ -181,20 +155,12 @@ export function SectionFooter() {
               <p>Palu, Sulawesi Tengah</p>
             </div>
             <div>
-              <img
-                src="./image/infinity_logo.png"
-                className="h-[100px] mx-auto"
-              />
-            </div>
-            <div>
               <p className="text-right">
-                Copyright &copy; Hery Setiawan (Staff IT Infinity Project
-                Property)
+                Copyright &copy; Staff IT Infinity Project
+                Property
               </p>
             </div>
           </div>
-      </div>
     </Section>
   );
 }
-
