@@ -1,8 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import { Button } from "@/components/ui/button";
-
-
+import nodemailer from "nodemailer";
+import SubmitForm from "./contactFormAction";
 
 export default function ContactEmail() {
   const [name, setName] = useState("");
@@ -13,7 +13,7 @@ export default function ContactEmail() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setLoading(true)
+    setLoading(true);
 
     const formData = new FormData();
     formData.append("name", name);
@@ -26,10 +26,11 @@ export default function ContactEmail() {
     if (file) {
       formData.append("file", file);
     }
+
     try {
-      const res = await axios.post(`${process.env.API_URL}/api/email` , formData);
+      const res = await SubmitForm(formData);
       console.log(res);
-      alert(res.data.message);
+      alert(res.message);
       setName("");
       setEmail("");
       setPhone("");
@@ -37,12 +38,29 @@ export default function ContactEmail() {
       if (fileInput.value) {
         fileInput.value = "";
       }
-      setLoading(false)
+      setLoading(false);
     } catch (error) {
       console.error(error);
       alert("Error sending email");
-      setLoading(false)
+      setLoading(false);
     }
+    // try {
+    //   const res = await axios.post(`${process.env.API_URL}/api/email` , formData);
+    //   console.log(res);
+    //   alert(res.data.message);
+    //   setName("");
+    //   setEmail("");
+    //   setPhone("");
+    //   setMessage("");
+    //   if (fileInput.value) {
+    //     fileInput.value = "";
+    //   }
+    //   setLoading(false)
+    // } catch (error) {
+    //   console.error(error);
+    //   alert("Error sending email");
+    //   setLoading(false)
+    // }
   };
 
   return (
