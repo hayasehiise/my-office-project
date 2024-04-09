@@ -26,7 +26,7 @@ export default function NavMenu() {
       <Navbar.Brand href="#">
         <img src="/image/awaludin_logo.png" className="h-12" />
       </Navbar.Brand>
-      <div className="hidden xs:hidden sm:block">
+      <div className="hidden">
         <Link href="#" className="px-3 text-xl text-white">
           Home
         </Link>
@@ -43,7 +43,7 @@ export default function NavMenu() {
           Contact
         </Link>
       </div>
-      <Navbar.Toggle className="sm:invisible bg-white" />
+      <Navbar.Toggle className="hidden bg-white" />
       <Navbar.Collapse className="bg-white">
         <Link href="#" className=" border-b-2 p-2">Home</Link>
         <Link href="#" className=" border-b-2 p-2">About</Link>

@@ -50,46 +50,46 @@ const carouselImageData: carouselImageType[] = [
 const myServiceData: myServiceType[] = [
   {
     images: "./image/homepage/agen.jpg",
-    links: "/agen",
+    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Jadi%20Agen.",
   },
 ];
 
 const myServiceDataGrid: myServiceType[] = [
   {
     images: "./image/homepage/desain.jpg",
-    links: "/desain",
+    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Desain%20Rumah.",
   },
   {
     images: "./image/homepage/bangun.jpg",
-    links: "/bangun",
+    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Banguni%20Rumah.",
   },
   {
     images: "./image/homepage/interior.jpg",
-    links: "/interior",
+    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Desain/Bangun%20Interior.",
   },
   {
     images: "./image/homepage/freelance.jpg",
-    links: "/freelance",
+    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Jadi%20Freelance.",
   },
   {
     images: "./image/homepage/bahan_bangun.jpg",
-    links: "#",
+    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Beli%20Bahan%20Bangunan.",
   },
   {
     images: "./image/homepage/jual.jpg",
-    links: "#",
+    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Jual/Beli%20Rumah.",
   },
   {
     images: "./image/homepage/iklan.jpg",
-    links: "/iklan",
+    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Buat%20Iklan.",
   },
   {
     images: "./image/homepage/website.jpg",
-    links: "#",
+    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Buat%20Website.",
   },
   {
     images: "./image/homepage/lowongan.jpg",
-    links: "#",
+    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Info%20Kerja.",
   },
   {
     images: "./image/homepage/infinity.jpg",
@@ -214,7 +214,7 @@ export function SectionServiceBlock() {
           ))}
           <div className="mx-auto cursor-pointer" onClick={handlerClick}>
             <p className="text-xl font-bold text-white -mb-4">
-              Click for more...
+              Telusuri Lebih Banyak Lagi...
             </p>
             <img
               src="/image/homepage/arrow-down.svg"
