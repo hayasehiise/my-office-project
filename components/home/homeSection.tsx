@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 
 interface SectionProps {
   children: React.ReactNode;
+  className: string;
 }
 
 const fullScreenCarousel: CustomFlowbiteTheme["carousel"] = {
@@ -97,28 +98,26 @@ const myServiceDataGrid: myServiceType[] = [
   },
 ];
 
-function Section({ children }: SectionProps) {
-  return <div className="flex flex-col">{children}</div>;
+function Section({ children, className }: SectionProps) {
+  return <div className={`${className} flex flex-col`}>{children}</div>;
 }
 
 export function SectionMain() {
   return (
-    <Section>
-      <div className="w-full h-full">
+    <Section className="h-full w-full">
         <div className="flex flex-col xs:mt-20 mt-20">
           <img
             src="/image/homepage/profile_pic.png"
             className="xs:w-3/4 sm:w-1/3 mx-auto"
           />
         </div>
-      </div>
     </Section>
   );
 }
 
 export function SectionCarousel() {
   return (
-    <Section>
+    <Section className="h-full w-full">
       <Carousel
         indicators={false}
         theme={fullScreenCarousel}
@@ -138,8 +137,7 @@ export function SectionCarousel() {
 
 export function SectionServiceCarousel() {
   return (
-    <Section>
-      <div className="w-full h-full border-t-[10px] border-white">
+    <Section className="h-full w-full border-t-[10px] border-white">
         <img
           src="/image/homepage/service.jpg"
           className="absolute w-fit xl:h-[700px] object-contain scale-x-[-1] xl:left-0 z-10"
@@ -172,7 +170,6 @@ export function SectionServiceCarousel() {
             </Carousel>
           </div>
         </div>
-      </div>
     </Section>
   );
 }
@@ -199,8 +196,7 @@ export function SectionServiceBlock() {
   };
 
   return (
-    <Section>
-      <div className="w-full h-full xl:p-10 sm:p-5 xs:p-2 p-2">
+    <Section className="w-full h-full xl:p-10 sm:p-5 xs:p-2 p-2">
         <div className="flex flex-col w-full justify-center">
           {myServiceData.map((item, index) => (
             <div key={index} className="p-5">
@@ -236,15 +232,13 @@ export function SectionServiceBlock() {
             ))}
           </motion.div>
         </div>
-      </div>
     </Section>
   );
 }
 
 export function SectionFooter() {
   return (
-    <Section>
-      <div className="w-full h-full py-2">
+    <Section className="w-full h-full py-2">
         <Link
           href={"https://www.instagram.com/awaludin_infinity/"}
           className="flex justify-between xl:mx-96 p-3 bg-[#4b3621] mb-2"
@@ -279,22 +273,19 @@ export function SectionFooter() {
           <img src="/image/homepage/whatsapp.png" className="h-10" />
           <p className="p-2 font-bold text-white">Whatsapp</p>
         </Link>
-      </div>
     </Section>
   );
 }
 
 export function SectionCopyright() {
   return (
-    <Section>
-      <div className="w-full h-full bg-white">
+    <Section className="w-full h-full bg-white">
         <div className="flex justify-center">
           <p>
             &copy; <span className="font-bold">2024</span> Infinity Project
             Property - Staff IT
           </p>
         </div>
-      </div>
     </Section>
   );
 }

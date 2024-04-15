@@ -5,8 +5,8 @@ import {
   SectionServiceBlock,
   SectionFooter,
   SectionCopyright,
-} from "@/components/home/homeSection";
-import NavMenu from "@/components/home/navbar";
+} from "@components/home/homeSection";
+import NavMenu from "@components/home/navbar";
 
 export default function Home() {
 

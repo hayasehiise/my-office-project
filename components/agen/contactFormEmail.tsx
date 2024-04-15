@@ -3,64 +3,57 @@ import axios from "axios";
 import { Button } from "@/components/ui/button";
 import nodemailer from "nodemailer";
 import SubmitForm from "./contactFormAction";
+import { useFormspark } from "@formspark/use-formspark";
 
 export default function ContactEmail() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  // const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
+
+  const FORMSPARK_FORM_ID = "09Q8WPoTq";
+  const [submit, submitting] = useFormspark({
+    formId: FORMSPARK_FORM_ID,
+  });
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
 
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("email", email);
-    formData.append("phone", phone);
-    formData.append("message", message);
-    const fileInput = document.getElementById("file") as HTMLInputElement;
-    const file =
-      fileInput.files && fileInput.files.length > 0 ? fileInput.files[0] : null;
-    if (file) {
-      formData.append("file", file);
-    }
+
+    // const formData = new FormData();
+    // formData.append("name", name);
+    // formData.append("email", email);
+    // formData.append("phone", phone);
+    // formData.append("message", message);
+    // const fileInput = document.getElementById("file") as HTMLInputElement;
+    // const file =
+    //   fileInput.files && fileInput.files.length > 0 ? fileInput.files[0] : null;
+    // if (file) {
+    //   formData.append("file", file);
+    // }
 
     try {
-      const res = await SubmitForm(formData);
-      console.log(res);
-      alert(res.message);
+      await submit({ name, email, phone, message });
+      // const res = await axios.post(`${process.env.API_URL}/api/email` , formData);
+      // const res = await SubmitForm(formData);
+      // console.log(res);
+      // alert(res.message);
       setName("");
       setEmail("");
       setPhone("");
       setMessage("");
-      if (fileInput.value) {
-        fileInput.value = "";
-      }
+      // if (fileInput.value) {
+      //   fileInput.value = "";
+      // }
       setLoading(false);
     } catch (error) {
       console.error(error);
       alert("Error sending email");
       setLoading(false);
     }
-    // try {
-    //   const res = await axios.post(`${process.env.API_URL}/api/email` , formData);
-    //   console.log(res);
-    //   alert(res.data.message);
-    //   setName("");
-    //   setEmail("");
-    //   setPhone("");
-    //   setMessage("");
-    //   if (fileInput.value) {
-    //     fileInput.value = "";
-    //   }
-    //   setLoading(false)
-    // } catch (error) {
-    //   console.error(error);
-    //   alert("Error sending email");
-    //   setLoading(false)
-    // }
   };
 
   return (
@@ -103,8 +96,17 @@ export default function ContactEmail() {
             onChange={(event) => setMessage(event.target.value)}
             className="w-80 mb-5"
           />
-          <label htmlFor="file">CV:</label>
-          <input type="file" id="file" name="file" />
+          {/* <label htmlFor="file">CV:</label>
+          <input
+            type="file"
+            id="file"
+            name="file"
+            onChange={(event) => {
+              if (event.target.files && event.target.files.length > 0) {
+                setFile(event.target.files[0]);
+              }
+            }}
+          /> */}
           <Button type="submit" className="w-24 mt-5">
             Send
             {loading && (
