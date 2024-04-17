@@ -77,13 +77,11 @@ export function SectionJob() {
     }`
   );
 
-  console.log(currentApi);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await axios.get(currentApi);
-        console.log(res.data.data);
+        // console.log(res.data.data);
         setData(res.data.data.data);
         setDataLink(
           res.data.data.links.slice(1, res.data.data.links.length - 1)
