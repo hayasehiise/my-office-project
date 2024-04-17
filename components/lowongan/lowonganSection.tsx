@@ -70,7 +70,7 @@ export function SectionJob() {
   //   "http://127.0.0.1:8000/api/lowongan"
   // );
   const [currentApi, setCurrentApi] = useState(
-    `${process.env.API_URL}`
+    `${process.env.API_URL ? process.env.API_URL : process.env.NEXT_PUBLIC_API_URL}`
   );
 
   console.log(currentApi)
@@ -78,7 +78,7 @@ export function SectionJob() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(currentApi);
+        const res = await axios.get(currentApi, {headers : {'Access-Control-Allow-Credentials': true, 'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST,PUT'}});
         // console.log(res.data.data);
         setData(res.data.data.data);
         setDataLink(
