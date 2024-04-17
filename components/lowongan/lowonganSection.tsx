@@ -70,15 +70,25 @@ export function SectionJob() {
   //   "http://127.0.0.1:8000/api/lowongan"
   // );
   const [currentApi, setCurrentApi] = useState(
-    `${process.env.API_URL ? process.env.API_URL : process.env.NEXT_PUBLIC_API_URL}`
+    `${
+      process.env.API_URL
+        ? process.env.API_URL
+        : process.env.NEXT_PUBLIC_API_URL
+    }`
   );
 
-  console.log(currentApi)
+  console.log(currentApi);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(currentApi, {headers : {'Access-Control-Allow-Credentials': true, 'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST,PUT'}});
+        const res = await axios.get(currentApi, {
+          headers: {
+            "Access-Control-Allow-Credentials": true,
+            "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
+            'Access-Control-Allow-Origin': '*'
+          },
+        });
         // console.log(res.data.data);
         setData(res.data.data.data);
         setDataLink(
@@ -109,7 +119,9 @@ export function SectionJob() {
   };
   return (
     <Section className="w-full h-full p-5">
-      <p className="text-center text-3xl font-bold pb-5">Lowongan Yang Tersedia</p>
+      <p className="text-center text-3xl font-bold pb-5">
+        Lowongan Yang Tersedia
+      </p>
       {loading ? (
         <div className="mx-auto w-[200px] h-[200px]">
           <img src="/image/lowongan/loading.gif" className="w-full h-full" />
@@ -156,7 +168,8 @@ export function SectionJob() {
                           console.log("no need refresh");
                         }
                       }}
-                    className="cursor-pointer" />
+                      className="cursor-pointer"
+                    />
                   </PaginationItem>
                 ))}
                 {dataLink.map((item, index) => (
@@ -188,7 +201,8 @@ export function SectionJob() {
                           console.log("no need refresh");
                         }
                       }}
-                      className="cursor-pointer" />
+                      className="cursor-pointer"
+                    />
                   </PaginationItem>
                 ))}
               </PaginationContent>
