@@ -66,9 +66,14 @@ export function SectionJob() {
   const [prevLink, setPrevLink] = useState<linkProps[]>([]);
   const [nextLink, setNextLink] = useState<linkProps[]>([]);
   const [loading, setLoading] = useState(true);
+  // const [currentApi, setCurrentApi] = useState(
+  //   "http://127.0.0.1:8000/api/lowongan"
+  // );
   const [currentApi, setCurrentApi] = useState(
-    "http://127.0.0.1:8000/api/lowongan"
+    `${process.env.API_URL ? process.env.API_URL : process.env.NEXT_PUBLIC_API_URL }`
   );
+
+  console.log(currentApi)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -88,7 +93,7 @@ export function SectionJob() {
     };
     fetchData();
   }, [currentApi]);
-  console.log(prevLink);
+  // console.log(prevLink);
 
   const category = (value: string) => {
     switch (value) {
