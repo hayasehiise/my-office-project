@@ -82,13 +82,7 @@ export function SectionJob() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(currentApi, {
-          headers: {
-            "Access-Control-Allow-Credentials": true,
-            "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
-            'Access-Control-Allow-Origin': 'https://awalud.vercel.app'
-          },
-        });
+        const res = await axios.get(currentApi);
         // console.log(res.data.data);
         setData(res.data.data.data);
         setDataLink(
