@@ -86,7 +86,7 @@ export function SectionJob() {
           headers: {
             "Access-Control-Allow-Credentials": true,
             "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
-            'Access-Control-Allow-Origin': '*'
+            'Access-Control-Allow-Origin': 'https://awalud.vercel.app'
           },
         });
         // console.log(res.data.data);
