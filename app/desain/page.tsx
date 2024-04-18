@@ -5,6 +5,7 @@ import {
   SectionProject,
   SectionThree,
   SectionTwo,
+  Footer,
 } from "@/components/desain/desainSection";
 
 export default function Desain() {
@@ -16,6 +17,7 @@ export default function Desain() {
       <SectionProject />
       <SectionPaket />
       <SectionContact />
+      <Footer />
     </>
   );
 }

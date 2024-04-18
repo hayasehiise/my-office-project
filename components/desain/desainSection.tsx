@@ -411,7 +411,16 @@ export function SectionContact() {
               </Link>
             </Button>
           </div>
-          <div className="grid grid-cols-3 gap-0 bg-black text-white justify-center items-center xl:px-10 sm:px-10 xs: py-5">
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+export function Footer() {
+  return(
+    <footer className="w-full h-full">
+      <div className="grid grid-cols-2 gap-0 bg-[#000000] text-white justify-center items-center xl:px-10 sm:px-10 xs: py-5">
             <div className="text-left">
               <p>CV.Infinity Project Property</p>
               <p>Kantor Infinity</p>
@@ -420,20 +429,12 @@ export function SectionContact() {
               <p>infinityprojectproperty22@gmail.com</p>
             </div>
             <div>
-              <img
-                src="./image/infinity_logo.png"
-                className="h-[100px] mx-auto"
-              />
-            </div>
-            <div>
               <p className="text-right">
                 Copyright &copy; Hery Setiawan (Staff IT Infinity Project
                 Property)
               </p>
             </div>
           </div>
-        </div>
-      </div>
-    </Section>
-  );
+    </footer>
+  )
 }

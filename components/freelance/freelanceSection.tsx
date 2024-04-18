@@ -144,9 +144,9 @@ export function SectionHub() {
   )
 }
 
-export function SectionFooter() {
+export function Footer() {
   return (
-    <Section className="w-full h-full">
+    <footer className="w-full h-full">
           <div className="grid grid-cols-2 gap-0 justify-center items-center xl:px-10 sm:px-10 xs: py-5">
             <div className="text-left">
               <p>CV.Infinity Project Property</p>
@@ -161,6 +161,6 @@ export function SectionFooter() {
               </p>
             </div>
           </div>
-    </Section>
+    </footer>
   );
 }

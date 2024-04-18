@@ -1,4 +1,4 @@
-import {SectionOne, SectionSecond, SectionBenefit, SectionHub, SectionFooter} from '@/components/freelance/freelanceSection'
+import {SectionOne, SectionSecond, SectionBenefit, SectionHub, Footer} from '@/components/freelance/freelanceSection'
 export default function FreelancePage() {
     return(
         <>
@@ -6,7 +6,7 @@ export default function FreelancePage() {
         <SectionSecond />
         <SectionBenefit />
         <SectionHub />
-        <SectionFooter />
+        <Footer />
         </>
     )
 }

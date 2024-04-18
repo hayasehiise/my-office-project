@@ -1,6 +1,6 @@
 // import SectionCarousel from "@/components/interior/sectionInterior";
 
-import { SectionMain, SectionSecond, SectionProject, SectionKonsul } from "@/components/interior/interiorSection";
+import { SectionMain, SectionSecond, SectionProject, SectionKonsul, Footer } from "@/components/interior/interiorSection";
 
 export default function Interior() {
     return(
@@ -9,6 +9,7 @@ export default function Interior() {
             <SectionSecond />
             <SectionProject />
             <SectionKonsul />
+            <Footer />
         </>
     )
 }
