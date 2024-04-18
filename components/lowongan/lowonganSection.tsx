@@ -123,7 +123,7 @@ export function SectionJob() {
           <div className="grid sm:grid-cols-5 grid-cols-2 gap-5">
             {data.map((item, index) => (
               <div key={index} className="mx-auto">
-                <Card className="w-full">
+                <Card className="w-full h-full">
                   <CardHeader>
                     <img
                       src={category(item.category)}
