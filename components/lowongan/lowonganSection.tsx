@@ -30,7 +30,7 @@ function Section({ children, className }: SectionProps) {
 
 export function SectionMain() {
   return (
-    <div className="w-full h-dvh bg-[url(/image/lowongan/background.jpg)] bg-cover">
+    <div className="w-full h-dvh sm:bg-[url(/image/lowongan/background.jpg)] bg-[url(/image/lowongan/bg-phone.jpg)] bg-cover">
       <Section className="w-full h-dvh bg-black bg-opacity-45 justify-center">
         <p className="sm:text-6xl text-2xl font-extrabold text-white sm:px-24 px-5">
           Tempat Kerja Idaman Akan
