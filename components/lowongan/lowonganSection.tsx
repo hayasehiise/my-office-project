@@ -61,10 +61,11 @@ export function SectionJob() {
     url: string;
     label: string;
   }
+
   const [data, setData] = useState<dataProps[]>([]);
   const [dataLink, setDataLink] = useState<linkProps[]>([]);
-  const [prevLink, setPrevLink] = useState<linkProps[]>([]);
-  const [nextLink, setNextLink] = useState<linkProps[]>([]);
+  const [prevLink, setPrevLink] = useState('');
+  const [nextLink, setNextLink] = useState('');
   const [loading, setLoading] = useState(true);
   // const [currentApi, setCurrentApi] = useState(
   //   "http://127.0.0.1:8000/api/lowongan"
@@ -86,8 +87,8 @@ export function SectionJob() {
         setDataLink(
           res.data.data.links.slice(1, res.data.data.links.length - 1)
         );
-        setPrevLink(res.data.data.links.slice(0, 1));
-        setNextLink(res.data.data.links.slice(res.data.data.links.length - 1));
+        setPrevLink(res.data.data.prev_page_url);
+        setNextLink(res.data.data.next_page_url);
         setLoading(!loading);
       } catch (error) {
         console.error(error);
@@ -149,12 +150,11 @@ export function SectionJob() {
           <div>
             <Pagination className="mt-3">
               <PaginationContent>
-                {prevLink.map((item, index) => (
-                  <PaginationItem key={index}>
+                <PaginationItem>
                     <PaginationPrevious
                       onClick={() => {
-                        if (item.url) {
-                          setCurrentApi(item.url);
+                        if (prevLink) {
+                          setCurrentApi(prevLink);
                           setLoading(!loading);
                         } else {
                           console.log("no need refresh");
@@ -163,7 +163,6 @@ export function SectionJob() {
                       className="cursor-pointer"
                     />
                   </PaginationItem>
-                ))}
                 {dataLink.map((item, index) => (
                   <PaginationItem key={index}>
                     <PaginationLink
@@ -182,12 +181,11 @@ export function SectionJob() {
                     </PaginationLink>
                   </PaginationItem>
                 ))}
-                {nextLink.map((item, index) => (
-                  <PaginationItem key={index}>
+                <PaginationItem>
                     <PaginationNext
                       onClick={() => {
-                        if (item.url) {
-                          setCurrentApi(item.url);
+                        if (nextLink) {
+                          setCurrentApi(nextLink);
                           setLoading(!loading);
                         } else {
                           console.log("no need refresh");
@@ -196,7 +194,6 @@ export function SectionJob() {
                       className="cursor-pointer"
                     />
                   </PaginationItem>
-                ))}
               </PaginationContent>
             </Pagination>
           </div>
