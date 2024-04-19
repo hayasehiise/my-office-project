@@ -139,14 +139,25 @@ export function SectionBenefit() {
 export function SectionHub() {
   return(
     <Section className="w-full h-full p-10">
-      <div>Bagian Hubungi</div>
+      <div>
+        <p className="text-4xl font-semibold">Jadilah Freelance sekarang</p>
+        <p>dengan menghubungi kami melalui WhatsApp dibawah</p>
+              <Link
+                href="https://api.whatsapp.com/send?phone=6282122229500&text=Saya%20ingin%20Menjadi%20Freelance.%20"
+                target="_blank"
+                className="xl:text-xl sm:text-xl xs:text-lg text-lg"
+              >
+                Mulai Konsultasi
+                <img src="./image/wa_icon.png" className="h-8 ml-2" />
+              </Link>
+      </div>
     </Section>
   )
 }
 
 export function Footer() {
   return (
-    <footer className="w-full h-full">
+    <footer className="w-full h-full border-t-4">
           <div className="grid grid-cols-2 gap-0 justify-center items-center xl:px-10 sm:px-10 xs: py-5">
             <div className="text-left">
               <p>CV.Infinity Project Property</p>
