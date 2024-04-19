@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
 import { Button, Carousel, Flowbite } from "flowbite-react";
-
 import styles from "./dashboardPage.module.css";
 import type { CustomFlowbiteTheme } from "flowbite-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { sendGAEvent } from '@next/third-parties/google'
 
 interface SectionProps {
   children: React.ReactNode;
@@ -34,6 +34,7 @@ const myServiceButton: CustomFlowbiteTheme["button"] = {
 interface myServiceType {
   links: string;
   images: string;
+  eventValue: string;
 }
 
 interface carouselImageType {
@@ -52,6 +53,7 @@ const myServiceData: myServiceType[] = [
   {
     images: "./image/homepage/agen.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Jadi%20Agen.",
+    eventValue: 'Konsul WhatsApp Agen'
   },
 ];
 
@@ -59,42 +61,52 @@ const myServiceDataGrid: myServiceType[] = [
   {
     images: "./image/homepage/desain.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Desain%20Rumah.",
+    eventValue: 'Konsul WhatsApp Desain'
   },
   {
     images: "./image/homepage/bangun.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Banguni%20Rumah.",
+    eventValue: 'Konsul WhatsApp Bangun'
   },
   {
     images: "./image/homepage/interior.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Desain/Bangun%20Interior.",
+    eventValue: 'Konsul WhatsApp Interior'
   },
   {
     images: "./image/homepage/freelance.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Jadi%20Freelance.",
+    eventValue: 'Konsul WhatsApp Freelance'
   },
   {
     images: "./image/homepage/bahan_bangun.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Beli%20Bahan%20Bangunan.",
+    eventValue: 'Konsul WhatsApp Bahan Bangun'
   },
   {
     images: "./image/homepage/jual.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Jual/Beli%20Rumah.",
+    eventValue: 'Konsul WhatsApp Jual Beli'
   },
   {
     images: "./image/homepage/iklan.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Buat%20Iklan.",
+    eventValue: 'Konsul WhatsApp Iklan'
   },
   {
     images: "./image/homepage/website.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Buat%20Website.",
+    eventValue: 'Konsul WhatsApp Buat Website'
   },
   {
     images: "./image/homepage/lowongan.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Info%20Kerja.",
+    eventValue: 'Konsul WhatsApp Lowongan Kerja'
   },
   {
     images: "./image/homepage/infinity.jpg",
     links: "#",
+    eventValue: 'Konsul WhatsApp infinity'
   },
 ];
 
@@ -161,7 +173,7 @@ export function SectionServiceCarousel() {
                 >
                   <img src={item.images} className="xl:h-80 sm:h-56 xs:h-32" />
                   <Link href={item.links}>
-                    <Button pill color="amber" theme={myServiceButton}>
+                    <Button pill color="amber" theme={myServiceButton} onClick={() => sendGAEvent ({ event: 'buttonClicked', value: item.eventValue})}>
                       Klik Disini
                     </Button>
                   </Link>
