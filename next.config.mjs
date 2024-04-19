@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output: 'export',
     env: {
         APP_ENV : process.env.APP_ENV,
         SMTP_MAIL: process.env.SMTP_MAIL,
@@ -8,7 +9,6 @@ const nextConfig = {
         NEXT_PUBLIC_API_URL : process.env.NEXT_PUBLIC_API_URL,
         API_URL : process.env.API_URL
     },
-    output: 'export',
 };
 
 export default nextConfig;

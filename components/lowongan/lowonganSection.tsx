@@ -96,7 +96,7 @@ export function SectionJob() {
     };
     fetchData();
   }, [currentApi]);
-  // console.log(prevLink);
+  // console.log(currentApi);
 
   const category = (value: string) => {
     switch (value) {
