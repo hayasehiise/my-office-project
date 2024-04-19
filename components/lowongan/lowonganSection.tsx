@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import {
   Card,
@@ -18,6 +18,14 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 interface SectionProps {
   children: React.ReactNode;
@@ -49,12 +57,13 @@ export function SectionMain() {
 
 export function SectionJob() {
   interface dataProps {
+    id: number;
     title: string;
     desc: string;
     category: string;
     location: string;
-    created_at: Date;
-    update_at: Date;
+    created_at: string;
+    update_at: string;
   }
   interface linkProps {
     active: boolean;
@@ -64,15 +73,15 @@ export function SectionJob() {
 
   const [data, setData] = useState<dataProps[]>([]);
   const [dataLink, setDataLink] = useState<linkProps[]>([]);
-  const [prevLink, setPrevLink] = useState('');
-  const [nextLink, setNextLink] = useState('');
+  const [prevLink, setPrevLink] = useState("");
+  const [nextLink, setNextLink] = useState("");
   const [loading, setLoading] = useState(true);
   // const [currentApi, setCurrentApi] = useState(
   //   "http://127.0.0.1:8000/api/lowongan"
   // );
   const [currentApi, setCurrentApi] = useState(
     `${
-      process.env.APP_ENV == 'production'
+      process.env.APP_ENV == "production"
         ? process.env.API_URL
         : process.env.NEXT_PUBLIC_API_URL
     }/api/lowongan`
@@ -97,6 +106,10 @@ export function SectionJob() {
     fetchData();
   }, [currentApi]);
   // console.log(currentApi);
+
+  const formatDate = (date: string) => {
+    return new Date(date).toLocaleDateString("en-GB");
+  };
 
   const category = (value: string) => {
     switch (value) {
@@ -138,11 +151,22 @@ export function SectionJob() {
                       <img src="/icons/marker.svg" className="h-6" />
                       {item.location}
                     </p>
-                    <p>{item.desc}</p>
+                    <Dialog>
+                      <DialogTrigger>More Detail</DialogTrigger>
+                      <DialogContent>
+                        <DialogHeader>
+                          <DialogTitle>{item.title}</DialogTitle>
+                          <DialogDescription>{item.category}</DialogDescription>
+                        </DialogHeader>
+                        <div>
+                          <p className="text-lg">
+                            {formatDate(item.created_at)}
+                          </p>
+                          <p className="text-lg">{item.desc}</p>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
                   </CardContent>
-                  {/* <CardFooter>
-                  <p>Card Footer</p>
-                </CardFooter> */}
                 </Card>
               </div>
             ))}
@@ -151,18 +175,18 @@ export function SectionJob() {
             <Pagination className="mt-3">
               <PaginationContent>
                 <PaginationItem>
-                    <PaginationPrevious
-                      onClick={() => {
-                        if (prevLink) {
-                          setCurrentApi(prevLink);
-                          setLoading(!loading);
-                        } else {
-                          console.log("no need refresh");
-                        }
-                      }}
-                      className="cursor-pointer"
-                    />
-                  </PaginationItem>
+                  <PaginationPrevious
+                    onClick={() => {
+                      if (prevLink) {
+                        setCurrentApi(prevLink);
+                        setLoading(!loading);
+                      } else {
+                        console.log("no need refresh");
+                      }
+                    }}
+                    className="cursor-pointer"
+                  />
+                </PaginationItem>
                 {dataLink.map((item, index) => (
                   <PaginationItem key={index}>
                     <PaginationLink
@@ -182,18 +206,18 @@ export function SectionJob() {
                   </PaginationItem>
                 ))}
                 <PaginationItem>
-                    <PaginationNext
-                      onClick={() => {
-                        if (nextLink) {
-                          setCurrentApi(nextLink);
-                          setLoading(!loading);
-                        } else {
-                          console.log("no need refresh");
-                        }
-                      }}
-                      className="cursor-pointer"
-                    />
-                  </PaginationItem>
+                  <PaginationNext
+                    onClick={() => {
+                      if (nextLink) {
+                        setCurrentApi(nextLink);
+                        setLoading(!loading);
+                      } else {
+                        console.log("no need refresh");
+                      }
+                    }}
+                    className="cursor-pointer"
+                  />
+                </PaginationItem>
               </PaginationContent>
             </Pagination>
           </div>
@@ -204,23 +228,22 @@ export function SectionJob() {
 }
 
 export function Footer() {
-  return(
+  return (
     <footer className="w-full h-full">
       <div className="grid grid-cols-2 gap-0 bg-[#4e7dd4] text-white justify-center items-center xl:px-10 sm:px-10 xs: py-5">
-            <div className="text-left">
-              <p>CV.Infinity Project Property</p>
-              <p>Kantor Infinity</p>
-              <p>Jl.Domba no.13 Kel.Talise</p>
-              <p>Palu, Sulawesi Tengah</p>
-              <p>infinityprojectproperty22@gmail.com</p>
-            </div>
-            <div>
-              <p className="text-right">
-                Copyright &copy; Hery Setiawan (Staff IT Infinity Project
-                Property)
-              </p>
-            </div>
-          </div>
+        <div className="text-left">
+          <p>CV.Infinity Project Property</p>
+          <p>Kantor Infinity</p>
+          <p>Jl.Domba no.13 Kel.Talise</p>
+          <p>Palu, Sulawesi Tengah</p>
+          <p>infinityprojectproperty22@gmail.com</p>
+        </div>
+        <div>
+          <p className="text-right">
+            Copyright &copy; Hery Setiawan (Staff IT Infinity Project Property)
+          </p>
+        </div>
+      </div>
     </footer>
-  )
+  );
 }
