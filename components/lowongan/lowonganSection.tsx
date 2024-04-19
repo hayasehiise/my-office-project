@@ -61,6 +61,8 @@ export function SectionJob() {
     title: string;
     desc: string;
     category: string;
+    company: string;
+    type: string;
     location: string;
     created_at: string;
     update_at: string;
@@ -117,10 +119,14 @@ export function SectionJob() {
         return "/image/lowongan/category/Tech.png";
       case "Multimedia":
         return "/image/lowongan/category/Multimedia.png";
-      case "Infrastructure":
+      case "Construction":
         return "/image/lowongan/category/Structure.png";
-      case "Agency":
+      case "Management":
         return "/image/lowongan/category/Agency.png";
+      case "Manufacture":
+        return "/image/lowongan/category/Manufacture.png";
+      case "Engineer":
+        return "/image/lowongan/category/Engineer.png";
     }
   };
   return (
@@ -156,9 +162,12 @@ export function SectionJob() {
                       <DialogContent>
                         <DialogHeader>
                           <DialogTitle>{item.title}</DialogTitle>
-                          <DialogDescription>{item.category}</DialogDescription>
+                          <DialogDescription>{item.company} <br/> {item.type}</DialogDescription>
                         </DialogHeader>
                         <div>
+                        <p className="text-base">
+                            {item.category}
+                          </p>
                           <p className="text-base">
                             {formatDate(item.created_at)}
                           </p>
