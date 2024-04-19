@@ -159,10 +159,10 @@ export function SectionJob() {
                           <DialogDescription>{item.category}</DialogDescription>
                         </DialogHeader>
                         <div>
-                          <p className="text-lg">
+                          <p className="text-base">
                             {formatDate(item.created_at)}
                           </p>
-                          <p className="text-lg">{item.desc}</p>
+                          <p className="text-base">{item.desc}</p>
                         </div>
                       </DialogContent>
                     </Dialog>
