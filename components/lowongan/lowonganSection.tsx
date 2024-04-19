@@ -72,7 +72,7 @@ export function SectionJob() {
   // );
   const [currentApi, setCurrentApi] = useState(
     `${
-      process.env.API_URL
+      process.env.APP_ENV != 'production'
         ? process.env.API_URL
         : process.env.NEXT_PUBLIC_API_URL
     }`

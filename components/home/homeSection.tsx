@@ -265,7 +265,7 @@ export function SectionFooter() {
         </Link>
         <Link
           href={
-            "https://api.whatsapp.com/send?phone=6282223199958&text=Assalamualaikum"
+            "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum"
           }
           className="flex justify-between xl:mx-96 p-3 bg-[#4b3621] mb-2"
           target="_blank"
