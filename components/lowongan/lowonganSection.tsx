@@ -75,7 +75,7 @@ export function SectionJob() {
       process.env.APP_ENV == 'production'
         ? process.env.API_URL
         : process.env.NEXT_PUBLIC_API_URL
-    }`
+    }/api/lowongan`
   );
 
   useEffect(() => {
