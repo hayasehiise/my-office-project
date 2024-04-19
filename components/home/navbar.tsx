@@ -24,7 +24,7 @@ export default function NavMenu() {
   return (
     <Navbar fluid className={`fixed top-0 z-40 w-full bg-[#4b3621]`}>
       <Navbar.Brand href="#">
-        <img src="/image/homepage/logo/logo_2.png" className="h-12" />
+        <img src="/image/logo/logo_2.png" className="h-12" />
       </Navbar.Brand>
       <div className="hidden">
         <Link href="#" className="px-3 text-xl text-white">

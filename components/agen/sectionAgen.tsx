@@ -58,7 +58,7 @@ export function SectionMain() {
               variants={animateVariant}
               className="flex"
             >
-              <img src="/image/awaludin_logo.png" className="sm:h-16 h-9" />
+              <img src="/image/logo/logo_2.png" className="sm:h-16 h-9 pr-2" />
               <p className="sm:text-7xl text-4xl font-bold italic text-[#bf9b30]">
                 Awaludin{" "}
                 <span className="sm:text-7xl text-4xl font-bold italic text-gray-600">
