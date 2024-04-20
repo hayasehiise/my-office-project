@@ -46,7 +46,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         {/* <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TNGVJMB3"
 height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe></noscript> */}
 
-        <GoogleAnalytics gaId="G-XQZ652E0YZ" />
+        {process.env.APP_ENV == 'production' ? (<GoogleAnalytics gaId="G-XQZ652E0YZ" />) : ''}
         {children}
       </body>
     </html>
