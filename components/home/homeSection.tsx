@@ -53,7 +53,7 @@ const myServiceData: myServiceType[] = [
   {
     images: "./image/homepage/agen.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Jadi%20Agen.",
-    eventValue: 'Konsul WhatsApp Agen'
+    eventValue: 'button_wa'
   },
 ];
 
@@ -61,52 +61,52 @@ const myServiceDataGrid: myServiceType[] = [
   {
     images: "./image/homepage/desain.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Desain%20Rumah.",
-    eventValue: 'Konsul WhatsApp Desain'
+    eventValue: 'button_wa'
   },
   {
     images: "./image/homepage/bangun.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Banguni%20Rumah.",
-    eventValue: 'Konsul WhatsApp Bangun'
+    eventValue: 'button_wa'
   },
   {
     images: "./image/homepage/interior.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Desain/Bangun%20Interior.",
-    eventValue: 'Konsul WhatsApp Interior'
+    eventValue: 'button_wa'
   },
   {
     images: "./image/homepage/freelance.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Jadi%20Freelance.",
-    eventValue: 'Konsul WhatsApp Freelance'
+    eventValue: 'button_wa'
   },
   {
     images: "./image/homepage/bahan_bangun.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Beli%20Bahan%20Bangunan.",
-    eventValue: 'Konsul WhatsApp Bahan Bangun'
+    eventValue: 'button_wa'
   },
   {
     images: "./image/homepage/jual.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Jual/Beli%20Rumah.",
-    eventValue: 'Konsul WhatsApp Jual Beli'
+    eventValue: 'button_wa'
   },
   {
     images: "./image/homepage/iklan.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Buat%20Iklan.",
-    eventValue: 'Konsul WhatsApp Iklan'
+    eventValue: 'button_wa'
   },
   {
     images: "./image/homepage/website.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Buat%20Website.",
-    eventValue: 'Konsul WhatsApp Buat Website'
+    eventValue: 'button_wa'
   },
   {
     images: "./image/homepage/lowongan.jpg",
     links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Info%20Kerja.",
-    eventValue: 'Konsul WhatsApp Lowongan Kerja'
+    eventValue: 'button_wa'
   },
   {
     images: "./image/homepage/infinity.jpg",
     links: "#",
-    eventValue: 'Konsul WhatsApp infinity'
+    eventValue: 'button_wa'
   },
 ];
 
