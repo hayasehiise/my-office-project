@@ -4,7 +4,7 @@ export const metadata: Metadata = {
     description: "",
 };
 
-export default function AgenLayout({
+export default function InteriorLayout({
     children,
   }: {
     children: React.ReactNode

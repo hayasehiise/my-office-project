@@ -82,11 +82,7 @@ export function SectionJob() {
   //   "http://127.0.0.1:8000/api/lowongan"
   // );
   const [currentApi, setCurrentApi] = useState(
-    `${
-      process.env.APP_ENV == "production"
-        ? process.env.API_URL
-        : process.env.NEXT_PUBLIC_API_URL
-    }/api/lowongan`
+    `${process.env.API_URL}/api/lowongan`
   );
 
   useEffect(() => {
