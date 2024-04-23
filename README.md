@@ -22,7 +22,7 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ## For More
 
-This project using API from my laravel repo my-office-laravel-api so download and use it when opening Lowongan Page because if not it only show loading with no data.
+This project using API from my laravel repo [my-office-laravel-api](https://github.com/hayasehiise/my-office-laravel-api) so download and use it when opening Lowongan Page because if not it only show loading with no data.
 
 ## Learn More
 
