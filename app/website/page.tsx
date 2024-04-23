@@ -1,4 +1,4 @@
-import {SectionMain, SectionSecond, SectionPaket, SectionFaq} from '@components/website/websiteSection'
+import {SectionMain, SectionSecond, SectionPaket, SectionFaq, Footer} from '@components/website/websiteSection'
 
 export default function WebistePage() {
     return(
@@ -7,6 +7,7 @@ export default function WebistePage() {
         <SectionSecond />
         <SectionPaket />
         <SectionFaq />
+        <Footer />
         </>
     )
 }

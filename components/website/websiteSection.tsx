@@ -231,3 +231,24 @@ export function SectionFaq() {
     </Section>
   );
 }
+
+export function Footer() {
+  return (
+    <footer className="w-full h-full">
+      <div className="grid grid-cols-2 gap-0 bg-gray-300 justify-center items-center xl:px-10 sm:px-10 xs: py-5">
+        <div className="text-left">
+          <p>CV.Infinity Project Property</p>
+          <p>Kantor Infinity</p>
+          <p>Jl.Domba no.13 Kel.Talise</p>
+          <p>Palu, Sulawesi Tengah</p>
+          <p>infinityprojectproperty22@gmail.com</p>
+        </div>
+        <div>
+          <p className="text-right">
+            Copyright &copy; Hery Setiawan (Staff IT Infinity Project Property)
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}

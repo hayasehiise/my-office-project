@@ -76,6 +76,11 @@ export default function ListLowongan() {
     return new Date(date).toLocaleDateString("en-GB");
   };
 
+  const handlePaginate = ({url, loading}: {url: string, loading: boolean}) => {
+    setCurrentApi(url)
+    setIsLoading(loading)
+  }
+
   const category = (value: string) => {
     switch (value) {
       case "Technology":
@@ -93,7 +98,6 @@ export default function ListLowongan() {
     }
   };
 
-  console.log();
   if (isLoading) return (
     <div className="mx-auto w-[200px] h-[200px]">
           <img src="/image/lowongan/loading.gif" className="w-full h-full" />
@@ -145,12 +149,7 @@ export default function ListLowongan() {
             <PaginationItem>
               <PaginationPrevious
                 onClick={() => {
-                  if (prevLink) {
-                    setCurrentApi(prevLink);
-                    setIsLoading(!isLoading)
-                  } else {
-                    console.log("no need refresh");
-                  }
+                    prevLink ? handlePaginate({url: prevLink, loading: !isLoading}) : console.log("First Paginate!");
                 }}
                 className="cursor-pointer"
               />
@@ -159,12 +158,7 @@ export default function ListLowongan() {
               <PaginationItem key={index}>
                 <PaginationLink
                   onClick={() => {
-                    if (item.active) {
-                      console.log("no need refresh");
-                    } else {
-                      setCurrentApi(item.url);
-                      setIsLoading(!isLoading)
-                    }
+                    !item.active ? handlePaginate({url: item.url, loading: !isLoading}) : console.log("On This Paginate!");
                   }}
                   isActive={item.active}
                   className="cursor-pointer"
@@ -176,12 +170,7 @@ export default function ListLowongan() {
             <PaginationItem>
               <PaginationNext
                 onClick={() => {
-                  if (nextLink) {
-                    setCurrentApi(nextLink);
-                    setIsLoading(!isLoading)
-                  } else {
-                    console.log("no need refresh");
-                  }
+                    nextLink ? handlePaginate({url: nextLink, loading: !isLoading}) : console.log("Last Paginate!");
                 }}
                 className="cursor-pointer"
               />

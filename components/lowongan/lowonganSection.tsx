@@ -36,6 +36,7 @@ export function SectionJob() {
       <p className="text-center text-3xl font-bold pb-5">
         Lowongan Yang Tersedia
       </p>
+      {/* bagian list lowongan dari API */}
       <ListLowongan />
     </Section>
   );
