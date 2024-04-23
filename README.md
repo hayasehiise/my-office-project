@@ -20,6 +20,10 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## For More
+
+This project using API from my laravel repo my-office-laravel-api so download and use it when opening Lowongan Page because if not it only show loading with no data.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
