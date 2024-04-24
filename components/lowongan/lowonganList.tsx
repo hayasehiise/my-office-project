@@ -38,7 +38,7 @@ export default function ListLowongan() {
   const { data, error, isLoading } = useSWR(
     `/api/lowongan?page=${pageIndex}`,
     fetcher,
-    {refreshInterval: 1000}
+    { refreshInterval: 1000, shouldRetryOnError: false }
   );
   const listLowongan = data?.data.data;
   const listPaginate = data?.data.links.slice(1, data.data.links.length - 1);
@@ -46,25 +46,25 @@ export default function ListLowongan() {
 
   const handlePrevPage = () => {
     if (pageIndex == 0 || pageIndex == 1) {
-        console.info('no more previous page')
+      console.info("no more previous page");
     } else {
-        setPageIndex(pageIndex - 1)
+      setPageIndex(pageIndex - 1);
     }
-  }
+  };
   const handleNextPage = () => {
     if (pageIndex == lastPage) {
-        console.info('no more next page')
+      console.info("no more next page");
     } else {
-        setPageIndex(pageIndex + 1)
+      setPageIndex(pageIndex + 1);
     }
-  }
+  };
   const handlePage = (page: number) => {
     if (page == pageIndex) {
-        console.info('on the page')
+      console.info("on the page");
     } else {
-        setPageIndex(page)
+      setPageIndex(page);
     }
-  }
+  };
 
   const category = (value: string) => {
     switch (value) {
@@ -99,11 +99,12 @@ export default function ListLowongan() {
   }
   interface pageProps {
     label: string;
+    active: boolean;
   }
 
-//   console.log(pageIndex);
+  //   console.log(pageIndex);
   // console.log(isLoading)
-//   console.log(data)
+  //   console.log(data)
   // console.log(error)
 
   if (isLoading)
@@ -113,6 +114,16 @@ export default function ListLowongan() {
       </div>
     );
 
+  if (error)
+    return (
+      <div className="mx-auto text-center">
+        <div className="mx-auto w-[300px] h-[300px]">
+          <img src="/image/lowongan/no_data.png" className="w-full h-full" />
+        </div>
+        <p className="text-xl font-semibold">Sorry, Data not found</p>
+        <p className="text-base">Refresh after a while</p>
+      </div>
+    );
   return (
     <>
       <div className="grid sm:grid-cols-5 grid-cols-2 gap-5">
@@ -180,21 +191,26 @@ export default function ListLowongan() {
         ))}
       </div>
       <div>
-      <Pagination className="mt-3">
-        <PaginationContent>
+        <Pagination className="mt-3">
+          <PaginationContent>
             <PaginationItem>
-                <PaginationPrevious onClick={() => handlePrevPage()} />
+              <PaginationPrevious onClick={() => handlePrevPage()} />
             </PaginationItem>
             {listPaginate.map((item: pageProps, index: number) => (
-                <PaginationItem key={index}>
-                    <PaginationLink onClick={() => handlePage(+item.label)}>{item.label}</PaginationLink>
-                </PaginationItem>
+              <PaginationItem key={index}>
+                <PaginationLink
+                  onClick={() => handlePage(+item.label)}
+                  isActive={item.active}
+                >
+                  {item.label}
+                </PaginationLink>
+              </PaginationItem>
             ))}
             <PaginationItem>
-                <PaginationNext onClick={() => handleNextPage()} />
+              <PaginationNext onClick={() => handleNextPage()} />
             </PaginationItem>
-        </PaginationContent>
-      </Pagination>
+          </PaginationContent>
+        </Pagination>
       </div>
     </>
   );
