@@ -8,6 +8,7 @@ const nextConfig = {
         MAIL_TO: process.env.MAIL_TO,
         API_URL : process.env.API_URL
     },
+    trailingSlash: true,
 };
 
 export default nextConfig;

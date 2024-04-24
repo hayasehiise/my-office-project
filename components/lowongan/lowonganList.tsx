@@ -1,6 +1,6 @@
-"use client";
-import { useEffect, useState } from "react";
 import axios from "axios";
+import useSWR from "swr";
+import { useEffect, useState } from "react";
 import {
   Card,
   CardContent,
@@ -30,65 +30,41 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-interface dataProps {
-  id: number;
-  title: string;
-  desc: string;
-  category: string;
-  company: string;
-  type: string;
-  location: string;
-  created_at: string;
-  update_at: string;
-}
-interface linkProps {
-  active: boolean;
-  url: string;
-  label: string;
-}
+const fetcher = (url: string) =>
+  axios.get(`${process.env.API_URL}${url}`).then((res) => res.data);
+
 export default function ListLowongan() {
-  const [data, setData] = useState<dataProps[]>([]);
-  const [dataLink, setDataLink] = useState<linkProps[]>([]);
-  const [prevLink, setPrevLink] = useState("");
-  const [nextLink, setNextLink] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
-  const [currentApi, setCurrentApi] = useState(
-    `${process.env.API_URL}/api/lowongan`
+  const [pageIndex, setPageIndex] = useState<number>(1);
+  const { data, error, isLoading } = useSWR(
+    `/api/lowongan?page=${pageIndex}`,
+    fetcher,
+    {refreshInterval: 1000}
   );
+  const listLowongan = data?.data.data;
+  const listPaginate = data?.data.links.slice(1, data.data.links.length - 1);
+  const lastPage = data?.data.last_page;
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await axios.get(currentApi);
-        // console.log(res.data.data);
-        setData(res.data.data.data);
-        setDataLink(
-          res.data.data.links.slice(1, res.data.data.links.length - 1)
-        );
-        setPrevLink(res.data.data.prev_page_url);
-        setNextLink(res.data.data.next_page_url);
-        setIsLoading(!isLoading);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchData();
-  }, [currentApi]);
-
-  const formatDate = (date: string) => {
-    return new Date(date).toLocaleDateString("en-GB");
-  };
-
-  const handlePaginate = ({
-    url,
-    loading,
-  }: {
-    url: string;
-    loading: boolean;
-  }) => {
-    setCurrentApi(url);
-    setIsLoading(loading);
-  };
+  const handlePrevPage = () => {
+    if (pageIndex == 0 || pageIndex == 1) {
+        console.info('no more previous page')
+    } else {
+        setPageIndex(pageIndex - 1)
+    }
+  }
+  const handleNextPage = () => {
+    if (pageIndex == lastPage) {
+        console.info('no more next page')
+    } else {
+        setPageIndex(pageIndex + 1)
+    }
+  }
+  const handlePage = (page: number) => {
+    if (page == pageIndex) {
+        console.info('on the page')
+    } else {
+        setPageIndex(page)
+    }
+  }
 
   const category = (value: string) => {
     switch (value) {
@@ -106,6 +82,29 @@ export default function ListLowongan() {
         return "/image/lowongan/category/Engineer.png";
     }
   };
+  const formatDate = (date: string) => {
+    return new Date(date).toLocaleDateString("en-GB");
+  };
+
+  interface dataProps {
+    id: number;
+    title: string;
+    desc: string;
+    category: string;
+    company: string;
+    type: string;
+    location: string;
+    created_at: string;
+    update_at: string;
+  }
+  interface pageProps {
+    label: string;
+  }
+
+//   console.log(pageIndex);
+  // console.log(isLoading)
+//   console.log(data)
+  // console.log(error)
 
   if (isLoading)
     return (
@@ -113,10 +112,11 @@ export default function ListLowongan() {
         <img src="/image/lowongan/loading.gif" className="w-full h-full" />
       </div>
     );
+
   return (
     <>
       <div className="grid sm:grid-cols-5 grid-cols-2 gap-5">
-        {data.map((item, index) => (
+        {listLowongan.map((item: dataProps, index: number) => (
           <div key={index} className="mx-auto">
             <Card className="w-full h-full flex flex-col">
               <CardHeader className="grow">
@@ -152,10 +152,11 @@ export default function ListLowongan() {
                         <span className="font-semibold">Tanggal Post : </span>
                         {formatDate(item.created_at)}
                       </p>
-                      <p className="text-base font-semibold">
-                        Deskripsi :
-                      </p>
-                      <div className="text-base" dangerouslySetInnerHTML={{ __html: item.desc }} ></div>
+                      <p className="text-base font-semibold">Deskripsi :</p>
+                      <div
+                        className="text-base"
+                        dangerouslySetInnerHTML={{ __html: item.desc }}
+                      ></div>
                     </div>
                     <DialogFooter>
                       <Button
@@ -179,45 +180,21 @@ export default function ListLowongan() {
         ))}
       </div>
       <div>
-        <Pagination className="mt-3">
-          <PaginationContent>
+      <Pagination className="mt-3">
+        <PaginationContent>
             <PaginationItem>
-              <PaginationPrevious
-                onClick={() => {
-                  prevLink
-                    ? handlePaginate({ url: prevLink, loading: !isLoading })
-                    : console.log("First Paginate!");
-                }}
-                className="cursor-pointer"
-              />
+                <PaginationPrevious onClick={() => handlePrevPage()} />
             </PaginationItem>
-            {dataLink.map((item, index) => (
-              <PaginationItem key={index}>
-                <PaginationLink
-                  onClick={() => {
-                    !item.active
-                      ? handlePaginate({ url: item.url, loading: !isLoading })
-                      : console.log("On This Paginate!");
-                  }}
-                  isActive={item.active}
-                  className="cursor-pointer"
-                >
-                  {item.label}
-                </PaginationLink>
-              </PaginationItem>
+            {listPaginate.map((item: pageProps, index: number) => (
+                <PaginationItem key={index}>
+                    <PaginationLink onClick={() => handlePage(+item.label)}>{item.label}</PaginationLink>
+                </PaginationItem>
             ))}
             <PaginationItem>
-              <PaginationNext
-                onClick={() => {
-                  nextLink
-                    ? handlePaginate({ url: nextLink, loading: !isLoading })
-                    : console.log("Last Paginate!");
-                }}
-                className="cursor-pointer"
-              />
+                <PaginationNext onClick={() => handleNextPage()} />
             </PaginationItem>
-          </PaginationContent>
-        </Pagination>
+        </PaginationContent>
+      </Pagination>
       </div>
     </>
   );

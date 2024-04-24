@@ -1,6 +1,5 @@
 "use client";
-import { Suspense } from "react";
-import ListLowongan from './listLowongan'
+import LowonganList from './lowonganList'
 
 interface SectionProps {
   children: React.ReactNode;
@@ -37,7 +36,7 @@ export function SectionJob() {
         Lowongan Yang Tersedia
       </p>
       {/* bagian list lowongan dari API */}
-      <ListLowongan />
+      <LowonganList />
     </Section>
   );
 }
