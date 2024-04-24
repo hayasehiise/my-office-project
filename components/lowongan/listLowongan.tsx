@@ -119,20 +119,18 @@ export default function ListLowongan() {
         {data.map((item, index) => (
           <div key={index} className="mx-auto">
             <Card className="w-full h-full flex flex-col">
-              <CardHeader>
+              <CardHeader className="grow">
                 <img
                   src={category(item.category)}
                   className="w-full h-full object-cover"
                 />
                 <CardTitle>{item.title}</CardTitle>
                 <CardDescription>{item.category}</CardDescription>
-              </CardHeader>
-              <CardContent className="grow">
-                <p className="flex mb-2">
+                <p className="flex">
                   <img src="/icons/marker.svg" className="h-6" />
                   {item.location}
                 </p>
-              </CardContent>
+              </CardHeader>
               <CardFooter className="self-center">
                 <Dialog>
                   <Button variant={"default"} asChild>
