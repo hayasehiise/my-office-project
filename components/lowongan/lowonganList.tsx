@@ -37,8 +37,7 @@ export default function ListLowongan() {
   const [pageIndex, setPageIndex] = useState<number>(1);
   const { data, error, isLoading } = useSWR(
     `/api/lowongan?page=${pageIndex}`,
-    fetcher,
-    { refreshInterval: 1000, shouldRetryOnError: false }
+    fetcher
   );
   const listLowongan = data?.data.data;
   const listPaginate = data?.data.links.slice(1, data.data.links.length - 1);
