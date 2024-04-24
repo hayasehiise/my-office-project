@@ -7,8 +7,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Link from "next/link";
-import {useState} from 'react'
-import FaqAccordion from '@components/website/faqAccordion'
+import { useState } from "react";
+import FaqAccordion from "@components/website/faqAccordion";
 
 interface SectionProps {
   children: React.ReactNode;
@@ -165,21 +165,36 @@ export function SectionPaket() {
           <tr>
             <td className=""></td>
             <td className="p-5 border-y-2 ">
-              <Button variant={"default"} className="text-xl w-fit">
-                Pesan
-                <img src="/icons/trolly.png" className="h-7" />
+              <Button variant={"default"} className="text-xl w-fit" asChild>
+                <Link
+                  href={`https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Buat%20Website.%0APaket%20Hemat`}
+                  target="_blank"
+                >
+                  Pesan
+                  <img src="/icons/trolly.png" className="h-7" />
+                </Link>
               </Button>
             </td>
             <td className="p-5 border-y-2 ">
-              <Button variant={"default"} className="text-xl w-fit">
-                Pesan
-                <img src="/icons/trolly.png" className="h-7" />
+              <Button variant={"default"} className="text-xl w-fit" asChild>
+                <Link
+                  href={`https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Buat%20Website.%0APaket%20Standar`}
+                  target="_blank"
+                >
+                  Pesan
+                  <img src="/icons/trolly.png" className="h-7" />
+                </Link>
               </Button>
             </td>
             <td className="p-5 border-y-2 ">
-              <Button variant={"default"} className="text-xl w-fit">
-                Pesan
-                <img src="/icons/trolly.png" className="h-7" />
+              <Button variant={"default"} className="text-xl w-fit" asChild>
+                <Link
+                  href={`https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Buat%20Website.%0APaket%20Lengkap`}
+                  target="_blank"
+                >
+                  Pesan
+                  <img src="/icons/trolly.png" className="h-7" />
+                </Link>
               </Button>
             </td>
           </tr>
@@ -195,38 +210,91 @@ export function SectionFaq() {
       <p className="text-4xl font-bold mb-5">FAQ</p>
       <div className="w-1/2 h-full mb-3">
         <FaqAccordion
-        value="faq-1"
-        question='Question 1?'
-        answer='Answer 1'
-        />
+          value="faq-1"
+          question='Jenis website apa saja yang "bisa" dibuat menggunakan layanan ini??'
+        >
+          <>
+            <p>
+              Layanan ini support untuk pembuatan website company
+              profile/personal/landing page sederhana.
+            </p>
+          </>
+        </FaqAccordion>
       </div>
       <div className="w-1/2 h-full mb-3">
         <FaqAccordion
-        value="faq-2"
-        question='Question 2?'
-        answer='Answer 2'
-        />
+          value="faq-2"
+          question='Jenis website apa saja yang "tidak bisa" dibuat menggunakan layanan ini?'
+        >
+          <>
+            <p>
+              Layanan ini tidak support untuk pembuatan website dengan jenis
+              forum, portal berita, dan jenis website lainnya yang membutuhkan
+              data login klien.
+            </p>
+            <br />
+            <p>
+              Layanan ini juga tidak bisa digunakan untuk membuat toko online
+              dengan shopping cart, shipping, dan payment gateway. Namun
+              demikian banyak yang menggunakan layanan ini untuk menampilkan
+              produk dan menangani transaksinya melalui WhatsApp, telepon,
+              email, atau platform komunikasi lainnya.
+            </p>
+          </>
+        </FaqAccordion>
       </div>
       <div className="w-1/2 h-full mb-3">
         <FaqAccordion
-        value="faq-3"
-        question='Question 3?'
-        answer='Answer 3'
-        />
+          value="faq-3"
+          question="Bagaimana jika website sudah jadi dan perlu revisi??"
+        >
+          <>
+            <p>
+              Setelah website selesai diproses, maksimal 1 kali revisi. Jika
+              masih ada revisi selanjutnya, maka akan dikenakan biaya update
+              halaman sebesar x per halaman (belum termasuk PPN). Revisi hanya
+              sebatas mengubah/mengurangi konten yang sudah ada. Jika menambah
+              konten baru, maka akan dikenakan biaya update.
+            </p>
+          </>
+        </FaqAccordion>
       </div>
       <div className="w-1/2 h-full mb-3">
         <FaqAccordion
-        value="faq-3"
-        question='Question 4?'
-        answer='Answer 4'
-        />
+          value="faq-4"
+          question="Apakah mendapatkan domain gratis pada tiap paketnya?"
+        >
+          <>
+            <p>
+              Gratis domain ekstensi tertentu untuk 1 tahun pertama. Jika ingin
+              menggunakan domain lain seperti .ID atau .CO.ID, maka akan
+              dikenakan biaya sesuai ekstensi domainnya.
+            </p>
+          </>
+        </FaqAccordion>
       </div>
       <div className="w-1/2 h-full mb-3">
         <FaqAccordion
-        value="faq-3"
-        question='Question 5?'
-        answer='Answer 5'
-        />
+          value="faq-5"
+          question="Berapa kapasitas hosting websitenya?"
+        >
+          <>
+            <p>Besaran space hosting sesuai paket yang digunakan.</p>
+          </>
+        </FaqAccordion>
+      </div>
+      <div className="w-1/2 h-full mb-3">
+        <FaqAccordion
+          value="faq-6"
+          question="Apakah bisa menambahkan logo sosmed yang terhubung langsung ke sosmednya?"
+        >
+          <>
+            <p>
+              Ya. Integrasi ke sosial media ( Facebook, Instagram, dan Twitter )
+              dapat dilakukan.
+            </p>
+          </>
+        </FaqAccordion>
       </div>
     </Section>
   );

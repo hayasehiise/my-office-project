@@ -23,9 +23,12 @@ import {
   DialogContent,
   DialogDescription,
   DialogHeader,
+  DialogFooter,
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface dataProps {
   id: number;
@@ -48,7 +51,7 @@ export default function ListLowongan() {
   const [dataLink, setDataLink] = useState<linkProps[]>([]);
   const [prevLink, setPrevLink] = useState("");
   const [nextLink, setNextLink] = useState("");
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
   const [currentApi, setCurrentApi] = useState(
     `${process.env.API_URL}/api/lowongan`
   );
@@ -64,7 +67,7 @@ export default function ListLowongan() {
         );
         setPrevLink(res.data.data.prev_page_url);
         setNextLink(res.data.data.next_page_url);
-        setIsLoading(!isLoading)
+        setIsLoading(!isLoading);
       } catch (error) {
         console.error(error);
       }
@@ -76,10 +79,16 @@ export default function ListLowongan() {
     return new Date(date).toLocaleDateString("en-GB");
   };
 
-  const handlePaginate = ({url, loading}: {url: string, loading: boolean}) => {
-    setCurrentApi(url)
-    setIsLoading(loading)
-  }
+  const handlePaginate = ({
+    url,
+    loading,
+  }: {
+    url: string;
+    loading: boolean;
+  }) => {
+    setCurrentApi(url);
+    setIsLoading(loading);
+  };
 
   const category = (value: string) => {
     switch (value) {
@@ -98,17 +107,18 @@ export default function ListLowongan() {
     }
   };
 
-  if (isLoading) return (
-    <div className="mx-auto w-[200px] h-[200px]">
-          <img src="/image/lowongan/loading.gif" className="w-full h-full" />
-    </div>
-  )
+  if (isLoading)
+    return (
+      <div className="mx-auto w-[200px] h-[200px]">
+        <img src="/image/lowongan/loading.gif" className="w-full h-full" />
+      </div>
+    );
   return (
     <>
       <div className="grid sm:grid-cols-5 grid-cols-2 gap-5">
         {data.map((item, index) => (
           <div key={index} className="mx-auto">
-            <Card className="w-full h-full">
+            <Card className="w-full h-full flex flex-col">
               <CardHeader>
                 <img
                   src={category(item.category)}
@@ -117,13 +127,17 @@ export default function ListLowongan() {
                 <CardTitle>{item.title}</CardTitle>
                 <CardDescription>{item.category}</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="grow">
                 <p className="flex mb-2">
                   <img src="/icons/marker.svg" className="h-6" />
                   {item.location}
                 </p>
+              </CardContent>
+              <CardFooter className="self-center">
                 <Dialog>
-                  <DialogTrigger>More Detail</DialogTrigger>
+                  <Button variant={"default"} asChild>
+                    <DialogTrigger>More Detail</DialogTrigger>
+                  </Button>
                   <DialogContent>
                     <DialogHeader>
                       <DialogTitle>{item.title}</DialogTitle>
@@ -132,13 +146,37 @@ export default function ListLowongan() {
                       </DialogDescription>
                     </DialogHeader>
                     <div>
-                      <p className="text-base">{item.category}</p>
-                      <p className="text-base">{formatDate(item.created_at)}</p>
-                      <p className="text-base">{item.desc}</p>
+                      <p className="text-base">
+                        <span className="font-semibold">Kategory : </span>
+                        {item.category}
+                      </p>
+                      <p className="text-base">
+                        <span className="font-semibold">Tanggal Post : </span>
+                        {formatDate(item.created_at)}
+                      </p>
+                      <p className="text-base">
+                        <span className="font-semibold">Deskripsi : </span>
+                        <br />
+                        {item.desc}
+                      </p>
                     </div>
+                    <DialogFooter>
+                      <Button
+                        variant={"default"}
+                        className="text-base w-fit"
+                        asChild
+                      >
+                        <Link
+                          href={`https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Daftar%20Kerja.%0ABagian:%20${item.title}%0APerusahaan:%20${item.company}`}
+                          target="_blank"
+                        >
+                          Daftar
+                        </Link>
+                      </Button>
+                    </DialogFooter>
                   </DialogContent>
                 </Dialog>
-              </CardContent>
+              </CardFooter>
             </Card>
           </div>
         ))}
@@ -149,7 +187,9 @@ export default function ListLowongan() {
             <PaginationItem>
               <PaginationPrevious
                 onClick={() => {
-                    prevLink ? handlePaginate({url: prevLink, loading: !isLoading}) : console.log("First Paginate!");
+                  prevLink
+                    ? handlePaginate({ url: prevLink, loading: !isLoading })
+                    : console.log("First Paginate!");
                 }}
                 className="cursor-pointer"
               />
@@ -158,7 +198,9 @@ export default function ListLowongan() {
               <PaginationItem key={index}>
                 <PaginationLink
                   onClick={() => {
-                    !item.active ? handlePaginate({url: item.url, loading: !isLoading}) : console.log("On This Paginate!");
+                    !item.active
+                      ? handlePaginate({ url: item.url, loading: !isLoading })
+                      : console.log("On This Paginate!");
                   }}
                   isActive={item.active}
                   className="cursor-pointer"
@@ -170,7 +212,9 @@ export default function ListLowongan() {
             <PaginationItem>
               <PaginationNext
                 onClick={() => {
-                    nextLink ? handlePaginate({url: nextLink, loading: !isLoading}) : console.log("Last Paginate!");
+                  nextLink
+                    ? handlePaginate({ url: nextLink, loading: !isLoading })
+                    : console.log("Last Paginate!");
                 }}
                 className="cursor-pointer"
               />
