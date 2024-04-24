@@ -152,11 +152,10 @@ export default function ListLowongan() {
                         <span className="font-semibold">Tanggal Post : </span>
                         {formatDate(item.created_at)}
                       </p>
-                      <p className="text-base">
-                        <span className="font-semibold">Deskripsi : </span>
-                        <br />
-                        {item.desc}
+                      <p className="text-base font-semibold">
+                        Deskripsi :
                       </p>
+                      <div className="text-base" dangerouslySetInnerHTML={{ __html: item.desc }} ></div>
                     </div>
                     <DialogFooter>
                       <Button
