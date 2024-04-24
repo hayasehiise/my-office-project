@@ -14,7 +14,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 interface SectionProps {
@@ -29,10 +29,10 @@ type benefitDataType = {
 };
 
 const freelanceImage = [
-  {src: '/image/freelance/freelance1.png'},
-  {src: '/image/freelance/freelance2.png'},
-  {src: '/image/freelance/freelance3.png'},
-]
+  { src: "/image/freelance/freelance1.png" },
+  { src: "/image/freelance/freelance2.png" },
+  { src: "/image/freelance/freelance3.png" },
+];
 
 const benefitDataItem: benefitDataType[] = [
   {
@@ -74,26 +74,30 @@ function Section({ children, className }: SectionProps) {
 export function SectionOne() {
   return (
     <Section className="w-full xl:h-screen sm:h-full sm:bg-[url(/image/freelance/bg-sectionOne.jpg)] bg-[url(/image/freelance/bg-sectionOnePhone.jpg)] bg-cover">
-        <div className={`flex flex-col sm:flex-row xl:h-screen sm:h-full h-full`}>
-          <div className={`xl:w-1/2 sm:w-full w-full my-auto xl:pl-20 sm:pl-5 xl:pt-0 sm:pt-0 pt-3`}>
-            <p className="xl:text-6xl sm:text-3xl text-center text-2xl font-extrabold px-4">
-              Mulailah Meniti Karirmu dengan menjadi Freelance di Bidang
-              Property Bersama Kami
-            </p>
-          </div>
-          <img
-            src={`/image/freelance/sectionOne_image.png`}
-            className={`w-1/2 mx-auto my-auto`}
-          />
+      <div className={`flex flex-col sm:flex-row xl:h-screen sm:h-full h-full`}>
+        <div
+          className={`xl:w-1/2 sm:w-full w-full my-auto xl:pl-20 sm:pl-5 xl:pt-0 sm:pt-0 pt-3`}
+        >
+          <p className="xl:text-6xl sm:text-3xl text-center text-2xl font-extrabold px-4">
+            Mulailah Meniti Karirmu dengan menjadi Freelance di Bidang Property
+            Bersama Kami
+          </p>
         </div>
+        <img
+          src={`/image/freelance/sectionOne_image.png`}
+          className={`w-1/2 mx-auto my-auto`}
+        />
+      </div>
     </Section>
   );
 }
 
 export function SectionSecond() {
-  return(
+  return (
     <Section className="w-full h-full bg-[#efefef] justify-center items-center py-5">
-      <p className="xl:text-4xl sm:text-2xl text-xl text-center font-bold px-5">Ada banyak Job Freelance yang dapat pilih</p>
+      <p className="xl:text-4xl sm:text-2xl text-xl text-center font-bold px-5">
+        Ada banyak Job Freelance yang dapat pilih
+      </p>
       <div className="grid sm:grid-cols-3 grid-cols-1">
         {freelanceImage.map((item, index) => (
           <div key={index}>
@@ -103,75 +107,78 @@ export function SectionSecond() {
       </div>
       <p className="text-xl mt-5">Dan masih banyak lagi...</p>
     </Section>
-  )
+  );
 }
 
 export function SectionBenefit() {
   return (
     <Section className="w-full h-full py-6">
-        <div className={`justify-center items-center text-center mb-5`}>
-          <p className={`xl:text-4xl sm:text-2xl text-xl`}>
-            Benefit yang anda akan terima jika menjadi{" "}
-            <span className="font-bold text-blue-800">Freelance</span> kami
-          </p>
-        </div>
-        <div className={`grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 xl:px-10 sm:px-5 px-3`}>
-          {benefitDataItem.map((item, index) => (
-            <div key={index}>
-              <Card className=" xl:h-full sm:h-full">
-                <CardHeader>
-                  <CardTitle className="flex mx-auto">
-                    <img src={item.icon} className={`h-6`} />
-                    <p className="ml-2">{item.title}</p>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p>{item.desc}</p>
-                </CardContent>
-              </Card>
-            </div>
-          ))}
-        </div>
+      <div className={`justify-center items-center text-center mb-5`}>
+        <p className={`xl:text-4xl sm:text-2xl text-xl`}>
+          Benefit yang anda akan terima jika menjadi{" "}
+          <span className="font-bold text-blue-800">Freelance</span> kami
+        </p>
+      </div>
+      <div
+        className={`grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 xl:px-10 sm:px-5 px-3`}
+      >
+        {benefitDataItem.map((item, index) => (
+          <div key={index}>
+            <Card className=" xl:h-full sm:h-full">
+              <CardHeader>
+                <CardTitle className="flex mx-auto">
+                  <img src={item.icon} className={`h-6`} />
+                  <p className="ml-2">{item.title}</p>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p>{item.desc}</p>
+              </CardContent>
+            </Card>
+          </div>
+        ))}
+      </div>
     </Section>
   );
 }
 
 export function SectionHub() {
-  return(
-    <Section className="w-full h-full p-10">
+  return (
+    <Section className="w-full h-full p-10 text-center">
       <div>
         <p className="text-4xl font-semibold">Jadilah Freelance sekarang</p>
         <p>dengan menghubungi kami melalui WhatsApp dibawah</p>
-              <Link
-                href="https://api.whatsapp.com/send?phone=6282122229500&text=Saya%20ingin%20Menjadi%20Freelance.%20"
-                target="_blank"
-                className="xl:text-xl sm:text-xl xs:text-lg text-lg"
-              >
-                Mulai Konsultasi
-                <img src="./image/wa_icon.png" className="h-8 ml-2" />
-              </Link>
+        <Button variant={'outline'} className="mt-3" asChild>
+          <Link
+            href="https://api.whatsapp.com/send?phone=6282122229500&text=Saya%20ingin%20Menjadi%20Freelance.%20"
+            target="_blank"
+            className="xl:text-xl sm:text-xl xs:text-lg text-lg flex"
+          >
+            Mulai Konsultasi
+            <img src="/image/wa_icon.png" className="h-8 ml-2" />
+          </Link>
+        </Button>
       </div>
     </Section>
-  )
+  );
 }
 
 export function Footer() {
   return (
     <footer className="w-full h-full border-t-4">
-          <div className="grid grid-cols-2 gap-0 justify-center items-center xl:px-10 sm:px-10 xs: py-5">
-            <div className="text-left">
-              <p>CV.Infinity Project Property</p>
-              <p>Kantor Infinity</p>
-              <p>Jl.Domba no.13 Kel.Talise</p>
-              <p>Palu, Sulawesi Tengah</p>
-            </div>
-            <div>
-              <p className="text-right">
-                Copyright &copy; Staff IT Infinity Project
-                Property
-              </p>
-            </div>
-          </div>
+      <div className="grid grid-cols-2 gap-0 justify-center items-center xl:px-10 sm:px-10 xs: py-5">
+        <div className="text-left">
+          <p>CV.Infinity Project Property</p>
+          <p>Kantor Infinity</p>
+          <p>Jl.Domba no.13 Kel.Talise</p>
+          <p>Palu, Sulawesi Tengah</p>
+        </div>
+        <div>
+          <p className="text-right">
+            Copyright &copy; Staff IT Infinity Project Property
+          </p>
+        </div>
+      </div>
     </footer>
   );
 }
