@@ -120,7 +120,7 @@ export function SectionMain() {
         <div className="flex flex-col xs:mt-20 mt-20">
           <img
             src="/image/homepage/profile_pic.png"
-            className="xs:w-3/4 sm:w-1/3 mx-auto"
+            className="xs:w-1/2 sm:w-[20%] mx-auto"
           />
         </div>
     </Section>
