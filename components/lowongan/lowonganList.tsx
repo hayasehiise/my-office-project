@@ -107,6 +107,17 @@ export default function ListLowongan() {
   //   console.log(data)
   // console.log(error)
 
+  if (!data || data === null)
+    return (
+      <div className="mx-auto text-center">
+        <div className="mx-auto w-[300px] h-[300px]">
+          <img src="/image/lowongan/no_data.png" className="w-full h-full" />
+        </div>
+        <p className="text-xl font-semibold">Sorry, Data not found</p>
+        <p className="text-base">Refresh after a while</p>
+      </div>
+    );
+
   if (isLoading)
     return (
       <div className="mx-auto w-[200px] h-[200px]">
@@ -124,6 +135,7 @@ export default function ListLowongan() {
         <p className="text-base">Refresh after a while</p>
       </div>
     );
+
   return (
     <>
       <div className="grid sm:grid-cols-5 grid-cols-2 gap-5">

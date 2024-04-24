@@ -90,7 +90,7 @@ export function SectionMain() {
               <Button color="light" className="sm:mt-0 mt-0" pill>
                 Saya Tertarik
                 <img
-                  src="./icons/arrow-upright.svg"
+                  src="/icons/arrow-upright.svg"
                   alt="next section"
                   className="ml-2 h-6"
                 />
@@ -123,14 +123,14 @@ export function SectionDesc() {
           </p>
         </div>
         <div className="px-5 py-1">
-          <p className="sm:text-2xl text-sm font-normal text-white">
+          <p className="sm:text-xl text-sm font-normal text-white">
             Kami Mengundang Teman teman, Para Calon Agen Sukses, Insya Allah,
             Dunia Akhirat.
           </p>
-          <p className="sm:text-2xl text-sm font-normal w-full text-white">
+          <p className="sm:text-xl text-sm font-normal w-full text-white">
             Siapkan Diri Teman teman, bergabung di komunitas kecil kami, Kami
             menerima Siapapun yang Ingin Memiliki Penghasilan yang Halal dan
-            Berkah,
+            Berkah.
           </p>
         </div>
         <hr className="" />
