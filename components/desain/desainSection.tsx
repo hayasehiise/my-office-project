@@ -46,17 +46,17 @@ function Section({ children }: SectionProps) {
 export function SectionOne() {
   return (
     <Section>
-      <div className="static w-full h-full xl:w-full sm:w-full xl:h-screen sm:h-full bg-black items-center justify-center text-center">
-        <img
+      <div className="static w-full h-full xl:w-full sm:w-full xl:h-screen sm:h-full bg-gradient-to-b from-slate-900 via-slate-600 to-slate-100 items-center justify-center text-center">
+      <img
           src="/image/logo/logo_2.png"
-          className="relative left-1/2 right-1/2 top-[15px] -translate-x-1/2 z-10 h-[70px] max-h-screen"
+          className="relative top-[15px] mx-auto z-10 sm:h-[100px] h-[50px]"
         />
-        <p className="text-white mt-10 xl:text-[40px]/[52px] sm:text-2xl font-extrabold">
+        <p className="text-white mt-10 sm:text-4xl text-xl font-extrabold">
           Wujudkan Rumah Impian Anda Yang
           <br />
           Nyaman Dengan Konsep Rumah Tumbuh
         </p>
-        <p className="text-white mt-5 2xl:text-[20px]/[32px] text-xs sm:text-sm font-medium">
+        <p className="text-white text-sm sm:text-base font-medium">
           Karena rumah yang nyaman adalah rumah yang bikin bahagia
         </p>
         <motion.img
@@ -77,6 +77,7 @@ export function SectionOne() {
     </Section>
   );
 }
+
 export function SectionTwo() {
   return (
     <Section>
@@ -84,28 +85,28 @@ export function SectionTwo() {
         <div className="flex flex-col xl:flex-row sm:flex-col justify-center items-center mb-24">
           <div className="xl:mt-10 sm:mt-0 xl:pl-56 xl:pt-10 sm:pl-16 sm:pt-10 xs:px-10 xs:pt-10">
             <p className=" text-4xl font-extrabold mb-10">Kami Paham...</p>
-            <p className=" text-lg mb-10">
+            <p className=" sm:text-lg text-base mb-5">
               Menyediakan rumah yang nyaman untuk keluarga itu butuh
               <br />
               waktu, proses dan biaya yg nggak sedikit. Tapi,
               <br />
               bukan berarti kita harus menuggu sempurna dulu untuk memulai, kan?
             </p>
-            <p className="text-lg mb-10">
+            <p className="sm:text-lg text-base mb-5">
               Sebenarnya, Anda bisa mulai mewujudkan rumah impian yang
               <br />
               nyaman untuk keluarga Anda secara bertahap. Iya benar,
               <br />
               tahap demi tahap.
             </p>
-            <p className="text-lg mb-10">
+            <p className="sm:text-lg text-base mb-5">
               Saat membangun rumahnya nanti, perasaan Anda lebih tenang karena
               <br />
               tidak terburu-buru dan keluarga Anda tetap bisa merasakan
               <br />
               kenyamanan saat beraktivitas di rumah nanti.
             </p>
-            <p className="text-lg">
+            <p className="sm:text-lg text-base">
               Harapannya, tahap demi tahap rumah Anda dan Keluarga
               <br />
               jadi semakin nyaman nantinya.
@@ -119,8 +120,8 @@ export function SectionTwo() {
             className="h-[300px] xl:h-[500px] sm:h-[500px] mx-auto"
           />
         </div>
-        <div className="flex flex-col justify-center items-center text-center">
-          <div className=" bg-amber-400 w-full h-full py-14">
+        <div className="flex flex-col justify-center text-white items-center text-center">
+          <div className=" bg-slate-900 w-full h-full py-14">
             <p className="text-4xl font-extrabold">Karena Itu,</p>
             <p className="text-lg">
               Tim Infinity siap menjadi partner untuk membantu mewujudkan rumah
@@ -146,8 +147,8 @@ export function SectionThree() {
               Yang bisa Anda sesuaikan dengan kebutuhan Anda dan Keluarga
             </p>
           </div>
-          <div className="flex flex-col xl:flex-row sm:flex-col xl:mt-96 sm:mt-80 mt-72">
-            <div className="relative w-56 h-[320px] xl:w-96 xl:h-[420px] sm:w-96 sm:h-[420px] bg-amber-400 xl:mx-5 sm:mx-auto mx-auto xl:pt-36 sm:pt-36 pt-32 z-0 rounded-tl-lg rounded-tr-lg xl:mb-0 sm:mb-80 mb-72">
+          <div className="flex flex-col xl:flex-row sm:flex-col xl:mt-96 sm:mt-80 mt-72 text-white">
+            <div className="relative w-56 h-[320px] xl:w-96 xl:h-[420px] sm:w-96 sm:h-[420px] bg-slate-600 xl:mx-5 sm:mx-auto mx-auto xl:pt-36 sm:pt-36 pt-32 z-0 rounded-tl-lg rounded-tr-lg xl:mb-0 sm:mb-80 mb-72">
               <motion.img
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -163,7 +164,7 @@ export function SectionThree() {
                 1 lantai impian secara bertahap.
               </p>
             </div>
-            <div className="relative w-56 h-[320px] xl:w-96 xl:h-[420px] sm:w-96 sm:h-[420px] bg-amber-400 xl:mx-5 sm:mx-auto mx-auto xl:pt-36 sm:pt-36 pt-32 z-0 rounded-tl-lg rounded-tr-lg">
+            <div className="relative w-56 h-[320px] xl:w-96 xl:h-[420px] sm:w-96 sm:h-[420px] bg-slate-600 xl:mx-5 sm:mx-auto mx-auto xl:pt-36 sm:pt-36 pt-32 z-0 rounded-tl-lg rounded-tr-lg">
               <motion.img
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -189,23 +190,23 @@ export function SectionThree() {
 export function SectionProject() {
   return (
     <Section>
-      <div className="w-full h-full bg-gray-400 text-center">
+      <div className="w-full h-full bg-slate-900 text-center">
         <div className="flex flex-col mt-10">
           <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold text-white pb-10">
             Rumah yg Kami Selesaikan Desain Perencanaannya
           </p>
-          <div className="flex xl:flex-row flex-col pb-10">
+          <div className="flex sm:flex-row flex-col pb-10">
             <div className="mx-auto my-5">
-              <Carousel className="xl:w-[700px] sm:w-96 xs:w-64 w-64">
+              <Carousel className="w-[70%] mx-auto">
                 <CarouselContent>
                   {carouselProyekItem.map((item, index) => (
                     <CarouselItem key={index}>
-                      <img src={item.image} />
+                      <img src={item.image} className="mx-auto" />
                     </CarouselItem>
                   ))}
                 </CarouselContent>
-                <CarouselNext />
-                <CarouselPrevious />
+                <CarouselNext variant={'secondary'} className="sm:h-16 sm:w-16 h-7 w-7 sm:-mr-5" />
+                <CarouselPrevious variant={'secondary'} className="sm:h-16 sm:w-16 h-7 w-7 sm:-ml-5"  />
               </Carousel>
             </div>
           </div>
@@ -395,8 +396,8 @@ export function SectionContact() {
   return (
     <Section>
       <div className="w-full h-full max-h-screen">
-        <div className="flex flex-col text-center">
-          <div className="bg-amber-400 h-[250px] xl:py-20 sm:py-20 py-10">
+        <div className="flex flex-col text-center text-white">
+          <div className="bg-slate-900 h-[250px] xl:py-20 sm:py-20 py-10">
             <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold mb-5">
               Klik tombol dibawah ini untuk mulai Konsultasi Gratis via WhatsApp
             </p>
@@ -420,7 +421,7 @@ export function SectionContact() {
 export function Footer() {
   return(
     <footer className="w-full h-full">
-      <div className="grid grid-cols-2 gap-0 bg-[#000000] text-white justify-center items-center xl:px-10 sm:px-10 xs: py-5">
+      <div className="grid grid-cols-2 gap-0 bg-slate-600 text-white justify-center items-center xl:px-10 sm:px-10 xs: py-5">
             <div className="text-left">
               <p>CV.Infinity Project Property</p>
               <p>Kantor Infinity</p>

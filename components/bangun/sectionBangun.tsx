@@ -32,14 +32,14 @@ interface SectionProps {
 }
 
 type carouselProjectType = {
-  url: string;
+  image: string;
 };
 
 const carouselProjectItem: carouselProjectType[] = [
-  { url: "./image/bangun/carousel/proyek1.jpg" },
-  { url: "./image/bangun/carousel/proyek2.jpg" },
-  { url: "./image/bangun/carousel/proyek3.jpg" },
-  { url: "./image/bangun/carousel/proyek4.jpg" },
+  { image: "/image/bangun/carousel/proyek1.jpg" },
+  { image: "/image/bangun/carousel/proyek2.jpg" },
+  { image: "/image/bangun/carousel/proyek3.jpg" },
+  { image: "/image/bangun/carousel/proyek4.jpg" },
 ];
 
 function Section({ children }: SectionProps) {
@@ -49,17 +49,28 @@ function Section({ children }: SectionProps) {
 export function SectionMain() {
   return (
     <Section>
-      <div className="flex flex-col w-full h-screen sm:bg-[url(/image/bangun/background.jpg)] bg-[url(/image/bangun/bg-small.jpg)] bg-center sm:bg-cover bg-cover justify-center items-center">
-        <div className={`bg-white w-fit p-4 bg-opacity-70`}>
-        <p className="text-black text-center mx-auto xl:text-6xl sm:text-5xl font-black xl:p-0 sm:p-0 xs:p-2 p-2 xl:w-1/2 sm:w-fit">
-          Bangun Rumah Impian Keluarga dengan Konsep Rumah Tumbuh tanpa Ribet,
-          Mau?
+      <div className="static w-full h-full xl:w-full sm:w-full xl:h-screen sm:h-full bg-gradient-to-b from-amber-700 via-amber-500 to-amber-100 justify-center text-center">
+        <img
+          src="/image/logo/logo_2.png"
+          className="relative top-[15px] mx-auto z-10 sm:h-[100px] h-[50px]"
+        />
+        <p className="text-white mt-10 sm:text-4xl text-xl font-extrabold w-full mx-auto px-10">
+        Bangun Rumah Impian Keluarga dengan Konsep Rumah Tumbuh tanpa Ribet, Mau?
         </p>
-        <div className={`text-center justify-center`}>
-        <p className="text-2xl font-bold mt-10">Scroll for more</p>
-        <img src={`/image/bangun/arrow-down.svg`} className={`h-10 mx-auto`} />
-        </div>
-        </div>
+        <motion.img
+          initial={{ opacity: 0, x: "-100vh" }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            type: "spring",
+            duration: 1,
+            bounce: 0.6,
+            mass: 1,
+            stiffness: 300,
+            damping: 20,
+          }}
+          src="/image/bangun/main_section.png"
+          className="relative z-10 left-0 right-0 transform -translate-x-1/2 mx-auto h-[250px] xl:h-[680px] sm:h-[550px]"
+        />
       </div>
     </Section>
   );
@@ -72,8 +83,8 @@ export function SecondSection() {
         <div className="flex xl:flex-row justify-center items-center">
           <div className="xl:w-1/2">
             <img
-              src="./image/bangun/family_art.png"
-              className="w-[700px] mx-auto"
+              src="/image/bangun/family_art.png"
+              className="sm:w-[700px] w-[500px] mx-auto"
             />
           </div>
           <div className="xl:w-1/2">
@@ -140,22 +151,22 @@ export function SectionProject() {
     <Section>
       <div className="w-full h-full xl:mt-24 sm:mt-10 xs:mt-10 mt-10">
         <div className="flex flex-col justify-center items-center text-center">
-          <p className="font-extrabold xl:text-5xl sm:text-3xl xs:text-xl text-xl">
+          <p className="font-extrabold sm:text-3xl xs:text-xl text-xl">
             Proyek Rumah Yang Telah Selesai Dibuat Tim Infinity
           </p>
-          <div className="my-10">
-            <Carousel className="xl:w-1/3 sm:w-1/2 w-2/3 mx-auto">
-              <CarouselContent>
-                {carouselProjectItem.map((item, index) => (
-                  <CarouselItem key={index}>
-                    <img src={item.url} />
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselNext className="bg-black text-white hover:bg-white hover:text-black" />
-              <CarouselPrevious className="bg-black text-white hover:bg-white hover:text-black" />
-            </Carousel>
-          </div>
+          <div className="mx-auto my-5">
+              <Carousel className="w-[70%] mx-auto">
+                <CarouselContent>
+                  {carouselProjectItem.map((item, index) => (
+                    <CarouselItem key={index}>
+                      <img src={item.image} className="mx-auto" />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselNext variant={'default'} className="sm:h-16 sm:w-16 h-7 w-7 sm:-mr-5" />
+                <CarouselPrevious variant={'default'} className="sm:h-16 sm:w-16 h-7 w-7 sm:-ml-5"  />
+              </Carousel>
+            </div>
         </div>
       </div>
     </Section>
@@ -168,21 +179,21 @@ export function SectionTahap() {
       <div className="w-full h-full xl:my-10">
         <div className="flex flex-col justify-center items-center">
           <div className="mb-10 xl:w-1/2">
-            <p className="text-center xl:text-4xl sm:text-xl xs:text-xl text-xl font-extrabold">
+            <p className="text-center sm:text-4xl text-xl font-extrabold">
               Flow Tahapan Pembangunan Rumah Anda?
             </p>
           </div>
-          <div className="xl:w-1/3 sm:w-1/2 xs:w-1/2 w-1/2">
+          <div className="sm:w-1/2 xs:w-1/2 w-1/2">
             <Accordion type="single" collapsible>
               <AccordionItem value="item-1">
                 <AccordionTrigger>
-                  <p className="xl:text-xl sm:text-xl xs:text-lg text-lg font-bold">
+                  <p className="sm:text-xl xs:text-lg text-lg font-bold">
                     Konsultasi
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="list-disc list-inside">
-                    <li className="xl:text-lg sm:text-lg xs:text-sm text-sm">
+                    <li className="sm:text-lg xs:text-sm text-sm">
                       Analisa kebutuhan ruangan
                     </li>
                     <li className="text-lg">Analisa anggaran</li>
@@ -190,7 +201,7 @@ export function SectionTahap() {
                 </AccordionContent>
               </AccordionItem>
               <Image
-                src="./icons/arrow-down.svg"
+                src="/icons/arrow-down.svg"
                 width={30}
                 height={30}
                 className="mx-auto my-5"
@@ -211,7 +222,7 @@ export function SectionTahap() {
                 </AccordionContent>
               </AccordionItem>
               <Image
-                src="./icons/arrow-down.svg"
+                src="/icons/arrow-down.svg"
                 width={30}
                 height={30}
                 className="mx-auto my-5"
@@ -219,20 +230,20 @@ export function SectionTahap() {
               />
               <AccordionItem value="item-3">
                 <AccordionTrigger>
-                  <p className="xl:text-xl sm:text-xl xs:text-lg text-lg font-bold">
+                  <p className="sm:text-xl xs:text-lg text-lg font-bold">
                     Desain & Perencanaan
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="list-disc list-inside">
-                    <li className="xl:text-lg sm:text-lg xs:text-sm text-sm">
+                    <li className="sm:text-lg xs:text-sm text-sm">
                       Denah, Desain 3D, Gambar Kerja & RAB
                     </li>
                   </ul>
                 </AccordionContent>
               </AccordionItem>
               <Image
-                src="./icons/arrow-down.svg"
+                src="/icons/arrow-down.svg"
                 width={30}
                 height={30}
                 className="mx-auto my-5"
@@ -240,20 +251,20 @@ export function SectionTahap() {
               />
               <AccordionItem value="item-4">
                 <AccordionTrigger>
-                  <p className="xl:text-xl sm:text-xl xs:text-lg text-lg font-bold">
+                  <p className="sm:text-xl xs:text-lg text-lg font-bold">
                     Kontrak Kerja
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="list-disc list-inside">
-                    <li className="xl:text-lg sm:text-lg xs:text-sm text-sm">
+                    <li className="sm:text-lg xs:text-sm text-sm">
                       Memperjelas hak & kewajiban
                     </li>
                   </ul>
                 </AccordionContent>
               </AccordionItem>
               <Image
-                src="./icons/arrow-down.svg"
+                src="/icons/arrow-down.svg"
                 width={30}
                 height={30}
                 className="mx-auto my-5"
@@ -261,20 +272,20 @@ export function SectionTahap() {
               />
               <AccordionItem value="item-5">
                 <AccordionTrigger>
-                  <p className="xl:text-xl sm:text-xl xs:text-lg text-lg font-bold">
+                  <p className="sm:text-xl xs:text-lg text-lg font-bold">
                     Pembangunan
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="list-disc list-inside">
-                    <li className="xl:text-lg sm:text-lg xs:text-sm text-sm">
+                    <li className="sm:text-lg xs:text-sm text-sm">
                       Dilakukan sampai serah terima
                     </li>
                   </ul>
                 </AccordionContent>
               </AccordionItem>
               <Image
-                src="./icons/arrow-down.svg"
+                src="/icons/arrow-down.svg"
                 width={30}
                 height={30}
                 className="mx-auto my-5"
@@ -282,20 +293,20 @@ export function SectionTahap() {
               />
               <AccordionItem value="item-6">
                 <AccordionTrigger>
-                  <p className="xl:text-xl sm:text-xl xs:text-lg text-lg font-bold">
+                  <p className="sm:text-xl xs:text-lg text-lg font-bold">
                     Masa Retensi
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="list-disc list-inside">
-                    <li className="xl:text-lg sm:text-lg xs:text-sm text-sm">
+                    <li className="sm:text-lg xs:text-sm text-sm">
                       Garansi kerusakan 3 bulan dari tim Infinity
                     </li>
                   </ul>
                 </AccordionContent>
               </AccordionItem>
               <Image
-                src="./icons/arrow-down.svg"
+                src="/icons/arrow-down.svg"
                 width={30}
                 height={30}
                 className="mx-auto my-5"
@@ -303,20 +314,20 @@ export function SectionTahap() {
               />
               <AccordionItem value="item-7">
                 <AccordionTrigger>
-                  <p className="xl:text-xl sm:text-xl xs:text-lg text-lg font-bold">
+                  <p className="sm:text-xl xs:text-lg text-lg font-bold">
                     Selesai
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="list-disc list-inside">
-                    <li className="xl:text-lg sm:text-lg xs:text-sm text-sm">
+                    <li className="sm:text-lg xs:text-sm text-sm">
                       Akad pembangunan selesai
                     </li>
                   </ul>
                 </AccordionContent>
               </AccordionItem>
               <Image
-                src="./icons/arrow-down.svg"
+                src="/icons/arrow-down.svg"
                 width={30}
                 height={30}
                 className="mx-auto my-5"
@@ -324,13 +335,13 @@ export function SectionTahap() {
               />
               <AccordionItem value="item-8">
                 <AccordionTrigger>
-                  <p className="xl:text-xl sm:text-xl xs:text-lg text-lg font-bold">
+                  <p className="sm:text-xl xs:text-lg text-lg font-bold">
                     Testimoni
                   </p>
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="list-disc list-inside">
-                    <li className="xl:text-lg sm:text-lg xs:text-sm text-sm">
+                    <li className="sm:text-lg xs:text-sm text-sm">
                       Pendapat Client Terhadap Hasil Pembangunan
                     </li>
                   </ul>
@@ -348,7 +359,7 @@ export function SectionLast() {
   return (
     <Section>
       <div className="w-full h-full">
-        <div className="flex flex-col justify-center items-center bg-gray-950 xl:py-10 sm:py-10 xs:py-3 p-3 text-white">
+        <div className="flex flex-col justify-center items-center bg-amber-700 xl:py-10 sm:py-10 xs:py-3 p-3 text-white">
           <div className="xl:w-1/2 sm:w-full xs:w-full xl:p-5 sm:p-5 xs:p-2 p-2">
             <p className="xl:text-2xl sm:text-2xl xs:text-lg font-semibold text-center">
               Untuk selanjutnya, Anda dapat mengkonsultasikan dulu bagaimana
@@ -385,8 +396,8 @@ export function SectionKonsul() {
     <Section>
       <div className="w-full h-full">
         <div className="flex flex-col text-center">
-          <div className="bg-amber-400 h-[250px] xl:py-20 sm:py-20 py-10">
-            <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold mb-5">
+          <div className="bg-amber-500 h-[250px] xl:py-20 sm:py-20 py-10">
+            <p className="sm:text-3xl text-xl font-extrabold mb-5">
               Klik tombol dibawah ini untuk mulai Konsultasi Gratis via WhatsApp
             </p>
             <Button variant="success" className="rounded-full p-6" asChild>
@@ -396,7 +407,7 @@ export function SectionKonsul() {
                 className=" text-xl"
               >
                 Mulai Konsultasi
-                <img src="./image/wa_icon.png" className="h-8 ml-2" />
+                <img src="/image/wa_icon.png" className="h-8 ml-2" />
               </Link>
             </Button>
           </div>
@@ -409,7 +420,7 @@ export function SectionKonsul() {
 export function Footer() {
   return(
     <footer className="w-full h-full">
-      <div className="grid grid-cols-2 gap-0 bg-[#000000] text-white justify-center items-center xl:px-10 sm:px-10 xs: py-5">
+      <div className="grid grid-cols-2 gap-0 text-black justify-center items-center xl:px-10 sm:px-10 xs: py-5">
             <div className="text-left">
               <p>CV.Infinity Project Property</p>
               <p>Kantor Infinity</p>

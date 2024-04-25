@@ -1,11 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion } from "@/components/ui/accordion";
 import Link from "next/link";
 import { useState } from "react";
 import FaqAccordion from "@components/website/faqAccordion";
@@ -13,23 +8,29 @@ import FaqAccordion from "@components/website/faqAccordion";
 interface SectionProps {
   children: React.ReactNode;
   className: string;
+  id?: string;
 }
 
-function Section({ children, className }: SectionProps) {
-  return <section className={`${className}`}>{children}</section>;
+function Section({ children, className, id }: SectionProps) {
+  return <section className={`${className}`} id={id}>{children}</section>;
+}
+
+function scrollTo(element: string) {
+  const ele = document.getElementById(element)
+  ele?.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'nearest'})
 }
 
 export function SectionMain() {
   return (
     <Section className="w-full h-dvh bg-[url(/image/website/bg-section.jpg)] bg-cover flex justify-end">
-      <div className="w-1/3 h-dvh bg-white bg-opacity-70 flex items-center">
+      <div className="sm:w-1/2 h-dvh bg-white bg-opacity-70 flex items-center">
         <div className="w-fit px-[5%]">
-          <p className="text-[2.7rem] leading-[2rem] font-bold">
+          <p className="text-4xl font-bold">
             Jasa Pembuatan Website
           </p>
           <p className="text-xl py-3">Buatlah Bisnis anda mendunia</p>
-          <Button variant={"default"} className="text-xl" asChild>
-            <Link href="#secondSection">Buatkan Website &raquo;</Link>
+          <Button variant={"default"} className="text-xl" onClick={() => scrollTo('secondSection')}>
+            Buatkan Website &raquo;
           </Button>
         </div>
       </div>
@@ -39,15 +40,14 @@ export function SectionMain() {
 
 export function SectionSecond() {
   return (
-    <Section className="w-full h-full flex justify-center py-5 px-56">
+    <Section className="w-full h-full py-5 sm:px-10 px-5" id="secondSection">
       <div
-        className="w-fit border-2 rounded-lg shadow-md p-5 flex flex-col"
-        id="secondSection"
+        className="w-fit border-2 rounded-lg shadow-md flex flex-col py-5 px-2"
       >
         <p className="text-3xl font-bold text-center pb-10">
           Saya ingin website dan saya...
         </p>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid sm:grid-cols-3 grid-cols-1 gap-4">
           <div>
             <p className="text-center font-semibold">
               Sudah Siap Dengan Materinya/Isinya
@@ -61,7 +61,7 @@ export function SectionSecond() {
               kami.
             </p>
           </div>
-          <div className="border-x-2">
+          <div className="sm:border-x-2 sm:border-y-0 border-y-2">
             <p className="text-center font-semibold">
               Punya Contoh atau Materi Lain
             </p>
@@ -88,7 +88,7 @@ export function SectionSecond() {
             </p>
           </div>
         </div>
-        <Button variant={"default"} className="text-xl w-fit mx-auto mt-10">
+        <Button variant={"default"} className="text-xl w-fit mx-auto mt-10" onClick={() => scrollTo('sectionPaket')}>
           Saya Ingin Buat Sekarang &raquo;
         </Button>
       </div>
@@ -98,11 +98,12 @@ export function SectionSecond() {
 
 export function SectionPaket() {
   return (
-    <Section className="w-full h-full flex flex-col">
+    <Section className="w-full h-full flex flex-col" id="sectionPaket">
       <p className="text-center text-4xl font-bold mt-10 pb-5">
         Paket Yang Kami Miliki
       </p>
-      <table className="table-auto w-1/2 mx-auto mb-10">
+      <div className="overflow-x-auto w-full">
+      <table className="table-auto mx-auto mb-10">
         <thead className=" bg-gray-200 border-b-4 border-black">
           <tr className="h-24 ">
             <th className="bg-gray-300 text-lg font-bold rounded-tl-xl">
@@ -200,6 +201,8 @@ export function SectionPaket() {
           </tr>
         </tbody>
       </table>
+      </div>
+      
     </Section>
   );
 }
@@ -209,20 +212,19 @@ export function SectionFaq() {
     <Section className="w-full h-full flex flex-col items-center py-10">
       <p className="text-4xl font-bold mb-5">FAQ</p>
       <div className="w-1/2 h-full mb-3">
-        <FaqAccordion
-          value="faq-1"
-          question='Jenis website apa saja yang "bisa" dibuat menggunakan layanan ini??'
-        >
-          <>
-            <p>
-              Layanan ini support untuk pembuatan website company
-              profile/personal/landing page sederhana.
-            </p>
-          </>
-        </FaqAccordion>
-      </div>
-      <div className="w-1/2 h-full mb-3">
-        <FaqAccordion
+        <Accordion type="single" collapsible>
+          <FaqAccordion
+            value="faq-1"
+            question='Jenis website apa saja yang "bisa" dibuat menggunakan layanan ini??'
+          >
+            <>
+              <p>
+                Layanan ini support untuk pembuatan website company
+                profile/personal/landing page sederhana.
+              </p>
+            </>
+          </FaqAccordion>
+          <FaqAccordion
           value="faq-2"
           question='Jenis website apa saja yang "tidak bisa" dibuat menggunakan layanan ini?'
         >
@@ -242,8 +244,6 @@ export function SectionFaq() {
             </p>
           </>
         </FaqAccordion>
-      </div>
-      <div className="w-1/2 h-full mb-3">
         <FaqAccordion
           value="faq-3"
           question="Bagaimana jika website sudah jadi dan perlu revisi??"
@@ -258,8 +258,6 @@ export function SectionFaq() {
             </p>
           </>
         </FaqAccordion>
-      </div>
-      <div className="w-1/2 h-full mb-3">
         <FaqAccordion
           value="faq-4"
           question="Apakah mendapatkan domain gratis pada tiap paketnya?"
@@ -272,8 +270,6 @@ export function SectionFaq() {
             </p>
           </>
         </FaqAccordion>
-      </div>
-      <div className="w-1/2 h-full mb-3">
         <FaqAccordion
           value="faq-5"
           question="Berapa kapasitas hosting websitenya?"
@@ -282,8 +278,6 @@ export function SectionFaq() {
             <p>Besaran space hosting sesuai paket yang digunakan.</p>
           </>
         </FaqAccordion>
-      </div>
-      <div className="w-1/2 h-full mb-3">
         <FaqAccordion
           value="faq-6"
           question="Apakah bisa menambahkan logo sosmed yang terhubung langsung ke sosmednya?"
@@ -295,6 +289,7 @@ export function SectionFaq() {
             </p>
           </>
         </FaqAccordion>
+        </Accordion>
       </div>
     </Section>
   );

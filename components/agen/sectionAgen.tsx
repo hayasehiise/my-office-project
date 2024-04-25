@@ -41,6 +41,11 @@ function Section({ children, className, id }: SectionProps) {
   return <section className={`${className} flex flex-col`} id={id}>{children}</section>;
 }
 
+function scrollTo(element: string) {
+  const ele = document.getElementById(element)
+  ele?.scrollIntoView({behavior: 'smooth', block: 'end', inline: 'nearest'})
+}
+
 export function SectionMain() {
   const animateVariant = {
     hidden: { y: 100, opacity: 0 },
@@ -86,8 +91,7 @@ export function SectionMain() {
             <p className="sm:w-fit w-full sm:text-xl text-base">
               Cari tau lebih detail tentang program ini
             </p>
-            <Link href="#desc" className="flex">
-              <Button color="light" className="sm:mt-0 mt-0" pill>
+              <Button color="light" className="sm:mt-0 mt-0 w-fit" pill onClick={() => scrollTo('desc')}>
                 Saya Tertarik
                 <img
                   src="/icons/arrow-upright.svg"
@@ -95,7 +99,6 @@ export function SectionMain() {
                   className="ml-2 h-6"
                 />
               </Button>
-            </Link>
           </motion.div>
         </div>
         <img src="/image/agen/awaluding.png" className="flex object-cover w-fit sm:h-full h-96 mx-auto sm:mt-16 mt-0 justify-end" />
@@ -130,8 +133,8 @@ export function SectionDesc() {
 
 export function SectionAgen() {
   const slideVariant = {
-    hidden: { x: '100%', opacity: 0},
-    show: {x: 0, opacity: 1, transition: { duration: 0.5}}
+    hidden: { x: 100, opacity: 0},
+    show: {x: 0, opacity: 1, transition: { duration: 1}}
   }
   return (
     <Section className={`w-full h-full bg-blue-900 py-10`} id="desc">
