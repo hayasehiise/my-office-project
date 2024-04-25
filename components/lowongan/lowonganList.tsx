@@ -1,6 +1,6 @@
 import axios from "axios";
 import useSWR from "swr";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   Card,
   CardContent,
@@ -102,7 +102,7 @@ export default function ListLowongan() {
     active: boolean;
   }
 
-    console.log(listLowongan);
+  console.log(listLowongan);
   // console.log(isLoading)
   // console.log(data);
   // console.log(error)
@@ -125,106 +125,105 @@ export default function ListLowongan() {
       </div>
     );
 
-    if (listLowongan.length == 0) {
-      return (
-        <div className="mx-auto text-center">
-          <div className="mx-auto w-[300px] h-[300px]">
-            <img src="/image/lowongan/no_data.png" className="w-full h-full" />
-          </div>
-          <p className="text-xl font-semibold">Sorry, Data not found</p>
-          <p className="text-base">Refresh after a while</p>
+  if (listLowongan.length == 0) {
+    return (
+      <div className="mx-auto text-center">
+        <div className="mx-auto w-[300px] h-[300px]">
+          <img src="/image/lowongan/no_data.png" className="w-full h-full" />
         </div>
-      );
-    } else {
-      return (
-        <>
-          <div className="grid sm:grid-cols-5 grid-cols-2 gap-5">
-            {listLowongan.map((item: dataProps, index: number) => (
-              <div key={index} className="mx-auto">
-                <Card className="w-full h-full flex flex-col">
-                  <CardHeader className="grow">
-                    <img
-                      src={category(item.category)}
-                      className="w-full h-full object-cover"
-                    />
-                    <CardTitle>{item.title}</CardTitle>
-                    <CardDescription>{item.category}</CardDescription>
-                    <p className="flex">
-                      <img src="/icons/marker.svg" className="h-6" />
-                      {item.location}
-                    </p>
-                  </CardHeader>
-                  <CardFooter className="self-center">
-                    <Dialog>
-                      <Button variant={"default"} asChild>
-                        <DialogTrigger>More Detail</DialogTrigger>
+        <p className="text-xl font-semibold">Sorry, Data not found</p>
+        <p className="text-base">Refresh after a while</p>
+      </div>
+    );
+  }
+  return (
+    <>
+      <div className="grid sm:grid-cols-5 grid-cols-2 gap-5">
+        {listLowongan.map((item: dataProps, index: number) => (
+          <div key={index} className="mx-auto">
+            <Card className="w-full h-full flex flex-col">
+              <CardHeader className="grow">
+                <img
+                  src={category(item.category)}
+                  className="w-full h-full object-cover"
+                />
+                <CardTitle>{item.title}</CardTitle>
+                <CardDescription>{item.category}</CardDescription>
+                <p className="flex">
+                  <img src="/icons/marker.svg" className="h-6" />
+                  {item.location}
+                </p>
+              </CardHeader>
+              <CardFooter className="self-center">
+                <Dialog>
+                  <Button variant={"default"} asChild>
+                    <DialogTrigger>More Detail</DialogTrigger>
+                  </Button>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>{item.title}</DialogTitle>
+                      <DialogDescription>
+                        {item.company} <br /> {item.type}
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div>
+                      <p className="text-base">
+                        <span className="font-semibold">Kategory : </span>
+                        {item.category}
+                      </p>
+                      <p className="text-base">
+                        <span className="font-semibold">Tanggal Post : </span>
+                        {formatDate(item.created_at)}
+                      </p>
+                      <p className="text-base font-semibold">Deskripsi :</p>
+                      <div
+                        className="text-base"
+                        dangerouslySetInnerHTML={{ __html: item.desc }}
+                      ></div>
+                    </div>
+                    <DialogFooter>
+                      <Button
+                        variant={"default"}
+                        className="text-base w-fit"
+                        asChild
+                      >
+                        <Link
+                          href={`https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Daftar%20Kerja.%0ABagian:%20${item.title}%0APerusahaan:%20${item.company}`}
+                          target="_blank"
+                        >
+                          Daftar
+                        </Link>
                       </Button>
-                      <DialogContent>
-                        <DialogHeader>
-                          <DialogTitle>{item.title}</DialogTitle>
-                          <DialogDescription>
-                            {item.company} <br /> {item.type}
-                          </DialogDescription>
-                        </DialogHeader>
-                        <div>
-                          <p className="text-base">
-                            <span className="font-semibold">Kategory : </span>
-                            {item.category}
-                          </p>
-                          <p className="text-base">
-                            <span className="font-semibold">Tanggal Post : </span>
-                            {formatDate(item.created_at)}
-                          </p>
-                          <p className="text-base font-semibold">Deskripsi :</p>
-                          <div
-                            className="text-base"
-                            dangerouslySetInnerHTML={{ __html: item.desc }}
-                          ></div>
-                        </div>
-                        <DialogFooter>
-                          <Button
-                            variant={"default"}
-                            className="text-base w-fit"
-                            asChild
-                          >
-                            <Link
-                              href={`https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Daftar%20Kerja.%0ABagian:%20${item.title}%0APerusahaan:%20${item.company}`}
-                              target="_blank"
-                            >
-                              Daftar
-                            </Link>
-                          </Button>
-                        </DialogFooter>
-                      </DialogContent>
-                    </Dialog>
-                  </CardFooter>
-                </Card>
-              </div>
+                    </DialogFooter>
+                  </DialogContent>
+                </Dialog>
+              </CardFooter>
+            </Card>
+          </div>
+        ))}
+      </div>
+      <div>
+        <Pagination className="mt-3">
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious onClick={() => handlePrevPage()} />
+            </PaginationItem>
+            {listPaginate.map((item: pageProps, index: number) => (
+              <PaginationItem key={index}>
+                <PaginationLink
+                  onClick={() => handlePage(+item.label)}
+                  isActive={item.active}
+                >
+                  {item.label}
+                </PaginationLink>
+              </PaginationItem>
             ))}
-          </div>
-          <div>
-            <Pagination className="mt-3">
-              <PaginationContent>
-                <PaginationItem>
-                  <PaginationPrevious onClick={() => handlePrevPage()} />
-                </PaginationItem>
-                {listPaginate.map((item: pageProps, index: number) => (
-                  <PaginationItem key={index}>
-                    <PaginationLink
-                      onClick={() => handlePage(+item.label)}
-                      isActive={item.active}
-                    >
-                      {item.label}
-                    </PaginationLink>
-                  </PaginationItem>
-                ))}
-                <PaginationItem>
-                  <PaginationNext onClick={() => handleNextPage()} />
-                </PaginationItem>
-              </PaginationContent>
-            </Pagination>
-          </div>
-        </>
-      );
-    }
+            <PaginationItem>
+              <PaginationNext onClick={() => handleNextPage()} />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination>
+      </div>
+    </>
+  );
 }

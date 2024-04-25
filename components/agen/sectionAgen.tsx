@@ -16,16 +16,16 @@ import {
   CarouselPrevious,
 } from "@components/ui/carousel";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@components/ui/tabs";
-
-// import styles from "./agenPage.module.css";
 import Link from "next/link";
 import { motion, animate } from "framer-motion";
 import ContactEmail from "@components/agen/contactFormEmail";
 import React, { useEffect, useRef } from "react";
+import ListWebinar from './listWebinar';
 
 interface SectionProps {
   children: React.ReactNode;
   className: string;
+  id?: string;
 }
 
 type agenDataType = {
@@ -37,8 +37,8 @@ const agenDataItem: agenDataType[] = [
   { name: "Heru Nisa", image: "/image/agen/agenList/agen_1.jpg" },
 ];
 
-function Section({ children, className }: SectionProps) {
-  return <section className={`${className} flex flex-col`}>{children}</section>;
+function Section({ children, className, id }: SectionProps) {
+  return <section className={`${className} flex flex-col`} id={id}>{children}</section>;
 }
 
 export function SectionMain() {
@@ -98,36 +98,25 @@ export function SectionMain() {
             </Link>
           </motion.div>
         </div>
-        <img src="/image/agen/awaluding.png" className="flex object-cover w-fit sm:h-[120%] h-96 mx-auto justify-end" />
+        <img src="/image/agen/awaluding.png" className="flex object-cover w-fit sm:h-full h-96 mx-auto sm:mt-16 mt-0 justify-end" />
       </div>
     </Section>
   );
 }
 
 export function SectionDesc() {
-  const webinar = {
-    date: "Senin 15 April",
-    time: "16.00 - 18.00",
-    via: "Zoom Meeting",
-    url: `https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Ikut%20Webinar.`,
-    price: "250.000",
-    free: true,
-  };
   return (
-    <Section className="w-full h-full bg-slate-800">
-      <div id="desc">
-        <div className="px-5 py-5">
+    <Section className="w-full h-full bg-slate-800" id="desc">
+        <div className="px-5 pt-5">
           <p className="sm:text-6xl text-4xl font-bold text-white">
             Selamat Datang Di Area <br />
             Awaludin Agen
           </p>
         </div>
         <div className="px-5 py-1">
-          <p className="sm:text-xl text-sm font-normal text-white">
+          <p className="sm:text-lg text-base font-normal text-white">
             Kami Mengundang Teman teman, Para Calon Agen Sukses, Insya Allah,
-            Dunia Akhirat.
-          </p>
-          <p className="sm:text-xl text-sm font-normal w-full text-white">
+            Dunia Akhirat.<br />
             Siapkan Diri Teman teman, bergabung di komunitas kecil kami, Kami
             menerima Siapapun yang Ingin Memiliki Penghasilan yang Halal dan
             Berkah.
@@ -135,46 +124,12 @@ export function SectionDesc() {
         </div>
         <hr className="" />
         <div className="flex px-5 py-5 justify-center">
-          <p className="sm:text-3xl text-xl font-semibold sm:w-1/2 w-full text-white text-center">
-            Adapun kami mengadakan Webinar untuk memberikan wawasan kepada
-            kalian yang ingin/tertarik untuk bergabung
+          <p className="sm:text-4xl text-xl font-bold sm:w-1/2 w-full text-white text-center">
+            Webinar yang akan dilaksanakan
           </p>
         </div>
-        <div className="px-5 my-5">
-          <Card className="sm:w-96 w-full mx-auto">
-            <CardHeader>
-              <CardTitle className="font-bold text-center">
-                Webinar Awaludin Agen
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="flex items-center font-semibold">
-                <img src="/image/agen/icon/date.svg" className="h-10 mr-2" />
-                {webinar.date}
-              </p>
-              <p className="flex items-center font-semibold">
-                <img src="/image/agen/icon/time.svg" className="h-10 mr-2" />
-                {webinar.time}
-              </p>
-              <p className="flex items-center font-semibold">
-                <img src="/image/agen/icon/via.svg" className="h-10 mr-2" />
-                {webinar.via}
-              </p>
-            </CardContent>
-            <CardFooter className="justify-between">
-              <p className="text-2xl mr-2">
-                <span className={webinar.free ? `line-through` : ``}>
-                  Rp.{webinar.price}
-                </span>{" "}
-                {webinar.free && <span className="font-bold">Gratis</span>}
-              </p>
-              <Link href={webinar.url} className="flex">
-                <Button color="success" className="" pill>
-                  Saya Mau Gabung
-                </Button>
-              </Link>
-            </CardFooter>
-          </Card>
+        <div className="flex px-10 pb-5 justify-center">
+          <ListWebinar />
         </div>
         <div className="px-5 mb-5">
           <p className="text-white sm:text-xl text-sm">Ket :</p>
@@ -185,14 +140,13 @@ export function SectionDesc() {
             <li>Pendaftaran Sebagai Agen Awaludin Resmi, Berbayar 99ribu</li>
           </ol>
         </div>
-      </div>
     </Section>
   );
 }
 
 export function SectionAgen() {
   return (
-    <Section className={`w-full h-full bg-blue-900 py-5`}>
+    <Section className={`w-full h-full bg-blue-900 py-5`} id=''>
       <div className={`flex flex-col`}>
         <div
           className={`justify-center items-center text-center xl:mb-5 sm:mb-5 mb-2`}
@@ -237,7 +191,7 @@ export function SectionFormAgen() {
     visible: { x: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
   return (
-    <Section className="w-full h-full">
+    <Section className="w-full h-full" id="">
       <motion.div
         initial="hidden"
         whileInView="visible"
