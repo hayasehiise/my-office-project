@@ -83,7 +83,7 @@ export default function ListWebinar() {
         {listWebinar.map((item: dataProps, index: number) => (
           <Card className="w-full mx-auto" key={index}>
             <CardHeader>
-              <CardTitle className="font-bold text-center w-2/3 mx-auto">
+              <CardTitle className="font-bold text-center sm:w-2/3 w-full mx-auto">
                 {item.title}
               </CardTitle>
             </CardHeader>
