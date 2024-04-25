@@ -156,7 +156,7 @@ export function SectionAgen() {
           >
             Agen - Agen Yang Telah Saya Rekrut
           </p>
-          <motion.div initial={`hidden`} whileInView={`show`} viewport={{ once: true }} variants={slideVariant} className="xl:mt-10 sm:mt-10 mt-5">
+          <motion.div initial={`hidden`} whileInView={`show`} viewport={{ once: true }} variants={slideVariant} className="sm:mt-10 mt-5">
             <Carousel className="sm:w-fit w-[70%] mx-auto">
               <CarouselContent>
                 {agenDataItem.map((item, index) => (
