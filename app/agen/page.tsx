@@ -3,8 +3,8 @@ export default function AgenPage() {
     return(
         <>
         <SectionMain />
-        <SectionDesc />
         <SectionAgen />
+        <SectionDesc />
         <SectionFormAgen />
         </>
     )

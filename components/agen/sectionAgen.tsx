@@ -106,25 +106,9 @@ export function SectionMain() {
 
 export function SectionDesc() {
   return (
-    <Section className="w-full h-full bg-slate-800" id="desc">
-        <div className="px-5 pt-5">
-          <p className="sm:text-6xl text-4xl font-bold text-white">
-            Selamat Datang Di Area <br />
-            Awaludin Agen
-          </p>
-        </div>
-        <div className="px-5 py-1">
-          <p className="sm:text-lg text-base font-normal text-white">
-            Kami Mengundang Teman teman, Para Calon Agen Sukses, Insya Allah,
-            Dunia Akhirat.<br />
-            Siapkan Diri Teman teman, bergabung di komunitas kecil kami, Kami
-            menerima Siapapun yang Ingin Memiliki Penghasilan yang Halal dan
-            Berkah.
-          </p>
-        </div>
-        <hr className="" />
+    <Section className="w-full h-full bg-slate-800">
         <div className="flex px-5 py-5 justify-center">
-          <p className="sm:text-4xl text-xl font-bold sm:w-1/2 w-full text-white text-center">
+          <p className="sm:text-4xl text-2xl font-extrabold sm:w-1/2 w-full text-white text-center">
             Webinar yang akan dilaksanakan
           </p>
         </div>
@@ -145,18 +129,34 @@ export function SectionDesc() {
 }
 
 export function SectionAgen() {
+  const slideVariant = {
+    hidden: { x: '100%', opacity: 0},
+    show: {x: 0, opacity: 1, transition: { duration: 0.5}}
+  }
   return (
-    <Section className={`w-full h-full bg-blue-900 py-5`} id=''>
+    <Section className={`w-full h-full bg-blue-900 py-10`} id="desc">
       <div className={`flex flex-col`}>
+      <div className="px-5 mb-5">
+          <p className="sm:text-6xl text-3xl font-extrabold text-white mb-2">
+            Selamat Datang Di Area <br />
+            Awaludin Agen
+          </p>
+          <p className="sm:text-lg text-base font-normal text-white sm:w-1/2 w-full">
+            Kami Mengundang Teman teman, Para Calon Agen Sukses, Insya Allah,
+            Dunia Akhirat. Siapkan Diri Teman teman, bergabung di komunitas kecil kami, Kami
+            menerima Siapapun yang Ingin Memiliki Penghasilan yang Halal dan
+            Berkah.
+          </p>
+        </div>
         <div
-          className={`justify-center items-center text-center xl:mb-5 sm:mb-5 mb-2`}
+          className={`justify-center items-center text-center`}
         >
           <p
-            className={`xl:text-4xl sm:text-4xl text-2xl font-bold text-white`}
+            className={`sm:text-4xl text-2xl font-extrabold text-white`}
           >
             Agen - Agen Yang Telah Saya Rekrut
           </p>
-          <div className="xl:mt-10 sm:mt-10 mt-5">
+          <motion.div initial={`hidden`} whileInView={`show`} viewport={{ once: true }} variants={slideVariant} className="xl:mt-10 sm:mt-10 mt-5">
             <Carousel className="sm:w-fit w-[70%] mx-auto">
               <CarouselContent>
                 {agenDataItem.map((item, index) => (
@@ -178,7 +178,7 @@ export function SectionAgen() {
               <CarouselPrevious />
               <CarouselNext />
             </Carousel>
-          </div>
+          </motion.div>
         </div>
       </div>
     </Section>
