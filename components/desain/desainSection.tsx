@@ -33,10 +33,10 @@ interface carouselProyekData {
 }
 
 const carouselProyekItem: carouselProyekData[] = [
-  { image: "./image/desain/carousel/proyek1.jpg" },
-  { image: "./image/desain/carousel/proyek2.jpg" },
-  { image: "./image/desain/carousel/proyek3.jpg" },
-  { image: "./image/desain/carousel/proyek4.jpg" },
+  { image: "/image/desain/carousel/proyek1.jpg" },
+  { image: "/image/desain/carousel/proyek2.jpg" },
+  { image: "/image/desain/carousel/proyek3.jpg" },
+  { image: "/image/desain/carousel/proyek4.jpg" },
 ];
 
 function Section({ children }: SectionProps) {
@@ -48,7 +48,7 @@ export function SectionOne() {
     <Section>
       <div className="static w-full h-full xl:w-full sm:w-full xl:h-screen sm:h-full bg-black items-center justify-center text-center">
         <img
-          src="./image/logo/logo_2.png"
+          src="/image/logo/logo_2.png"
           className="relative left-1/2 right-1/2 top-[15px] -translate-x-1/2 z-10 h-[70px] max-h-screen"
         />
         <p className="text-white mt-10 xl:text-[40px]/[52px] sm:text-2xl font-extrabold">
@@ -70,7 +70,7 @@ export function SectionOne() {
             stiffness: 300,
             damping: 20,
           }}
-          src="./image/desain/desain_dashboard.png"
+          src="/image/desain/desain_dashboard.png"
           className="relative z-10 left-0 right-0 transform -translate-x-1/2 mx-auto h-[250px] xl:h-[680px] sm:h-[550px]"
         />
       </div>
@@ -115,7 +115,7 @@ export function SectionTwo() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 2 }}
-            src="./image/desain/desain_asset1.png"
+            src="/image/desain/desain_asset1.png"
             className="h-[300px] xl:h-[500px] sm:h-[500px] mx-auto"
           />
         </div>
@@ -152,7 +152,7 @@ export function SectionThree() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1 }}
-                src="./image/desain/desain_lantai1.jpg"
+                src="/image/desain/desain_lantai1.jpg"
                 className="absolute z-10 origin-center left-1/2 right-1/2 xl:-top-20 sm:-top-20 -top-14 -translate-x-1/2 -translate-y-1/2 mx-auto object-cover w-[180px] h-[320px] sm:w-[280px] sm:h-[420px] xl:w-[280px] xl:h-[420px] border-solid border-4 border-white rounded-2xl"
               />
               <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold xl:mb-10 sm:mb-10 mb-5">
@@ -168,7 +168,7 @@ export function SectionThree() {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1 }}
-                src="./image/desain/desain_lantai2.jpg"
+                src="/image/desain/desain_lantai2.jpg"
                 className="absolute z-10 origin-center left-1/2 right-1/2 xl:-top-20 sm:-top-20 -top-14 -translate-x-1/2 -translate-y-1/2 mx-auto object-cover w-[180px] h-[320px] sm:w-[280px] sm:h-[420px] xl:w-[280px] xl:h-[420px] border-solid border-4 border-white rounded-2xl"
               />
               <p className="xl:text-3xl sm:text-3xl text-xl font-extrabold xl:mb-10 sm:mb-10 mb-5">
@@ -407,7 +407,7 @@ export function SectionContact() {
                 className=" text-xl"
               >
                 Mulai Konsultasi
-                <img src="./image/wa_icon.png" className="h-8 ml-2" />
+                <img src="/image/wa_icon.png" className="h-8 ml-2" />
               </Link>
             </Button>
           </div>
