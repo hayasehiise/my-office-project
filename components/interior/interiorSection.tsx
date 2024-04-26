@@ -1,13 +1,5 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
@@ -74,12 +66,46 @@ export function SectionSecond() {
   );
 }
 
+function useWindowSize() {
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  const [windowSize, setWindowSize] = useState({
+    width: 0,
+    height: 0,
+  });
+
+  useEffect(() => {
+    // only execute all the code below in client side
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+     
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+    
+    // Remove event listener on cleanup
+    return window.removeEventListener("resize", handleResize);
+  }, []); // Empty array ensures that effect is only run on mount
+  return windowSize;
+}
+
 export function SectionThird() {
   const targetRef = useRef<HTMLDivElement>(null)
+  const viewport = useWindowSize()
+
   const {scrollYProgress} = useScroll({
     target: targetRef,
     offset: ['start end', 'end end'],
   })
+
   const position = useTransform(scrollYProgress, (pos) => {
     return pos === 1 ? 'relative' : 'fixed'
   })
@@ -91,7 +117,7 @@ export function SectionThird() {
 
   const opacity = useTransform(scrollYProgress, [0.12, 0.2], [0, 1]);
   const y = useTransform(scrollYProgress, [0.12, 0.2], [100, 0]);
-  const x = useTransform(scrollYProgress, [0.2, 1], [window?.innerWidth, window?.innerWidth - (window?.innerWidth * 3)])
+  const x = useTransform(scrollYProgress, [0.2, 1], [viewport?.width, viewport?.width <= 414 ? -viewport?.width * 4.5 : -viewport?.width * 2])
 
   return (
     <>
