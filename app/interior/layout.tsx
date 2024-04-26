@@ -9,5 +9,5 @@ export default function InteriorLayout({
   }: {
     children: React.ReactNode
   }) {
-    return <main>{children}</main>
+    return <main className="">{children}</main>
   }
