@@ -91,7 +91,7 @@ export function SectionThird() {
 
   const opacity = useTransform(scrollYProgress, [0.12, 0.2], [0, 1]);
   const y = useTransform(scrollYProgress, [0.12, 0.2], [100, 0]);
-  const x = useTransform(scrollYProgress, [0.2, 1], [window.innerWidth, window.innerWidth - (window.innerWidth * 3)])
+  const x = useTransform(scrollYProgress, [0.2, 1], [window?.innerWidth, window?.innerWidth - (window?.innerWidth * 3)])
 
   return (
     <>
