@@ -5,28 +5,47 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 
 export function SectionMain() {
-  const targetRef = useRef<HTMLDivElement>(null)
-  const {scrollYProgress} = useScroll({
+  const targetRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ['start start', 'end end'],
-  })
+    offset: ["start start", "end end"],
+  });
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const position = useTransform(scrollYProgress, (pos) => {
-    return pos === 1 ? 'relative' : 'fixed'
-  })
+    return pos === 1 ? "relative" : "fixed";
+  });
 
   const slideInText = {
-    hidden: {x: 100, opacity: 0},
-    show: {x: 0, opacity: 1},
-  }
+    hidden: { x: 100, opacity: 0 },
+    show: { x: 0, opacity: 1 },
+  };
   return (
     <>
-      <motion.section style={{ opacity: opacity }} className="relative h-[200vh] w-full" ref={targetRef}>
-        <motion.div style={{ position }} className="flex flex-col inset-0 justify-center items-center text-black">
-          <motion.p initial='hidden' animate='show' variants={slideInText} transition={{ duration: 0.8, type: 'spring' }} className="sm:text-7xl text-4xl font-black text-center">
+      <motion.section
+        style={{ opacity: opacity }}
+        className="relative h-[200vh] w-full"
+        ref={targetRef}
+      >
+        <motion.div
+          style={{ position }}
+          className="flex flex-col inset-0 justify-center items-center text-black"
+        >
+          <motion.p
+            initial="hidden"
+            animate="show"
+            variants={slideInText}
+            transition={{ duration: 0.8, type: "spring" }}
+            className="sm:text-7xl text-4xl font-black text-center"
+          >
             Welcome to Infinity Interior Workshops
           </motion.p>
-          <motion.p initial='hidden' animate='show' variants={slideInText} transition={{ duration: 0.8, delay: 0.5, type: 'spring' }} className="p-5 sm:text-lg text-sm text-center">
+          <motion.p
+            initial="hidden"
+            animate="show"
+            variants={slideInText}
+            transition={{ duration: 0.8, delay: 0.5, type: "spring" }}
+            className="p-5 sm:text-lg text-sm text-center"
+          >
             Kami akan membuat interior terbaik untuk rumah anda
           </motion.p>
         </motion.div>
@@ -36,29 +55,54 @@ export function SectionMain() {
 }
 
 export function SectionSecond() {
-  const targetRef = useRef<HTMLDivElement>(null)
-  const {scrollYProgress} = useScroll({
+  const targetRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ['start end', 'end end'],
-  })
+    offset: ["start end", "end end"],
+  });
 
-  const opacity1 = useTransform(scrollYProgress, [0, 0.4, 0.8, 1], [0, 1, 1, 0]);
-  const opacity2 = useTransform(scrollYProgress, [0.2, 0.4, 0.8, 1], [0, 1, 1, 0]);
+  const opacity1 = useTransform(
+    scrollYProgress,
+    [0, 0.4, 0.8, 1],
+    [0, 1, 1, 0]
+  );
+  const opacity2 = useTransform(
+    scrollYProgress,
+    [0.2, 0.4, 0.8, 1],
+    [0, 1, 1, 0]
+  );
   const x1 = useTransform(scrollYProgress, [0, 0.4, 0.8, 1], [100, 0, 0, 100]);
-  const x2 = useTransform(scrollYProgress, [0.2, 0.4, 0.8, 1], [100, 0, 0, 100]);
+  const x2 = useTransform(
+    scrollYProgress,
+    [0.2, 0.4, 0.8, 1],
+    [100, 0, 0, 100]
+  );
   const position = useTransform(scrollYProgress, (pos) => {
-    return pos === 1 ? 'relative' : 'fixed'
-  })
+    return pos === 1 ? "relative" : "fixed";
+  });
 
   return (
     <>
-      <section className="relative h-[200vh] w-full overflow-x-hidden" ref={targetRef}>
-        <motion.div style={{ position }} className="flex flex-col inset-0 justify-center items-center text-black">
-          <motion.p style={{x: x1, opacity: opacity1 }} className="sm:text-7xl text-4xl font-black text-center">
+      <section
+        className="relative h-[200vh] w-full overflow-x-hidden"
+        ref={targetRef}
+      >
+        <motion.div
+          style={{ position }}
+          className="flex flex-col inset-0 justify-center items-center text-black"
+        >
+          <motion.p
+            style={{ x: x1, opacity: opacity1 }}
+            className="sm:text-7xl text-4xl font-black text-center"
+          >
             Ubah Ruangan Dalam Rumah Anda
           </motion.p>
-          <motion.p style={{x: x2, opacity: opacity2 }} className="p-5 sm:text-lg xs:text-sm text-sm text-center">
-            Dengan interior terbaik membuat suasana rumah menjadi nyaman dan enak dipandang
+          <motion.p
+            style={{ x: x2, opacity: opacity2 }}
+            className="p-5 sm:text-lg xs:text-sm text-sm text-center"
+          >
+            Dengan interior terbaik membuat suasana rumah menjadi nyaman dan
+            enak dipandang
           </motion.p>
         </motion.div>
       </section>
@@ -66,71 +110,66 @@ export function SectionSecond() {
   );
 }
 
-function useWindowSize() {
-  // Initialize state with undefined width/height so server and client renders match
-  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
-  const [windowSize, setWindowSize] = useState({
-    width: 0,
-    height: 0,
+export function SectionThird() {
+  const targetRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress: scrollSection } = useScroll({
+    target: targetRef,
+    offset: ["start end", "end end"],
   });
 
-  useEffect(() => {
-    // only execute all the code below in client side
-    // Handler to call on window resize
-    function handleResize() {
-      // Set window width/height to state
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    }
-    
-    // Add event listener
-    window.addEventListener("resize", handleResize);
-     
-    // Call handler right away so state gets updated with initial window size
-    handleResize();
-    
-    // Remove event listener on cleanup
-    return window.removeEventListener("resize", handleResize);
-  }, []); // Empty array ensures that effect is only run on mount
-  return windowSize;
-}
+  const position = useTransform(scrollSection, (pos) => {
+    return pos === 1 ? "relative" : "fixed";
+  });
 
-export function SectionThird() {
-  const targetRef = useRef<HTMLDivElement>(null)
-  const viewport = useWindowSize()
+  const opacity = useTransform(scrollSection, [0.05, 0.1], [0, 1]);
+  const y = useTransform(scrollSection, [0.05, 0.1], [100, 0]);
 
-  const {scrollYProgress} = useScroll({
-    target: targetRef,
-    offset: ['start end', 'end end'],
-  })
-
-  const position = useTransform(scrollYProgress, (pos) => {
-    return pos === 1 ? 'relative' : 'fixed'
-  })
-
-  const imageCarouselOrder = {
-    scaleIn: 1,
-    scaleOut: 0.5,
-  }
-
-  const opacity = useTransform(scrollYProgress, [0.12, 0.2], [0, 1]);
-  const y = useTransform(scrollYProgress, [0.12, 0.2], [100, 0]);
-  const x = useTransform(scrollYProgress, [0.2, 1], [viewport?.width, viewport?.width <= 414 ? -viewport?.width * 4.5 : -viewport?.width * 2])
+  const xImage1 = useTransform(scrollSection, [0.1, 0.3], ["100vw", "-100vw"]);
+  const xImage2 = useTransform(scrollSection, [0.3, 0.5], ["100vw", "-100vw"]);
+  const xImage3 = useTransform(scrollSection, [0.5, 0.7], ["100vw", "-100vw"]);
+  const xImage4 = useTransform(scrollSection, [0.7, 0.8], ["100vw", "-100vw"]);
+  const xImage5 = useTransform(scrollSection, [0.8, 1], ["100vw", "-100vw"]);
 
   return (
     <>
-      <section className="relative h-[500vh] w-full overflow-x-hidden" ref={targetRef}>
-        <motion.div style={{ y, opacity }} className="fixed flex flex-col inset-0 text-black">
-          <p  className="sm:text-4xl text-2xl font-black text-center mt-auto mx-auto">Interior yang telah dibuat</p>
-          <motion.div className="mb-auto relative flex flex-nowrap gap-10" style={{ left: x }}>
-            <motion.img src="/image/interior/carousel/item1.jpg" className="relative sm:h-[600px] sm:w-[600px] h-[400px] w-[400px] object-cover rounded-full mt-4" />
-            <motion.img src="/image/interior/carousel/item2.jpg" className="relative sm:h-[600px] sm:w-[600px] h-[400px] w-[400px] object-cover rounded-full mt-4" />
-            <motion.img src="/image/interior/carousel/item3.jpg" className="relative sm:h-[600px] sm:w-[600px] h-[400px] w-[400px] object-cover rounded-full mt-4" />
-            <motion.img src="/image/interior/carousel/item4.jpg" className="relative sm:h-[600px] sm:w-[600px] h-[400px] w-[400px] object-cover rounded-full mt-4" />
-          </motion.div>
+      <section
+        className="relative h-[1200vh] w-full overflow-x-hidden"
+        ref={targetRef}
+      >
+        <motion.div
+          style={{ y, opacity }}
+          className="fixed top-[15%] flex inset-0 text-black"
+        >
+          <p className="sm:text-5xl text-2xl font-black text-center mx-auto">
+            Interior yang telah dibuat
+          </p>
         </motion.div>
+          <motion.img
+            style={{ x: xImage1 }}
+            src="/image/interior/carousel/item1.jpg"
+            className="fixed top-[22%] sm:h-[600px] sm:w-[600px] h-[400px] w-[400px] object-cover rounded-full"
+          />
+          <motion.img
+            style={{ x: xImage2 }}
+            src="/image/interior/carousel/item2.jpg"
+            className="fixed top-[22%] sm:h-[600px] sm:w-[600px] h-[400px] w-[400px] object-cover rounded-full"
+          />
+          <motion.img
+            style={{ x: xImage3 }}
+            src="/image/interior/carousel/item3.jpg"
+            className="fixed top-[22%] sm:h-[600px] sm:w-[600px] h-[400px] w-[400px] object-cover rounded-full"
+          />
+          <motion.img
+            style={{ x: xImage4 }}
+            src="/image/interior/carousel/item4.jpg"
+            className="fixed top-[22%] sm:h-[600px] sm:w-[600px] h-[400px] w-[400px] object-cover rounded-full"
+          />
+          <motion.img
+            style={{ x: xImage5 }}
+            src="/image/interior/carousel/item5.jpg"
+            className="fixed top-[22%] sm:h-[600px] sm:w-[600px] h-[400px] w-[400px] object-cover rounded-full"
+          />
       </section>
     </>
   );
