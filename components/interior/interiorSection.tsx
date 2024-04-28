@@ -122,14 +122,14 @@ export function SectionThird() {
     return pos === 1 ? "relative" : "fixed";
   });
 
-  const opacity = useTransform(scrollSection, [0.05, 0.1], [0, 1]);
-  const y = useTransform(scrollSection, [0.05, 0.1], [100, 0]);
+  const opacity = useTransform(scrollSection, [0.05, 0.1, 0.9, 1], [0, 1, 1, 0]);
+  const y = useTransform(scrollSection, [0.05, 0.1, 0.9, 1], [100, 0, 0, 100]);
 
-  const xImage1 = useTransform(scrollSection, [0.1, 0.3], ["100vw", "-100vw"]);
-  const xImage2 = useTransform(scrollSection, [0.3, 0.5], ["100vw", "-100vw"]);
-  const xImage3 = useTransform(scrollSection, [0.5, 0.7], ["100vw", "-100vw"]);
-  const xImage4 = useTransform(scrollSection, [0.7, 0.8], ["100vw", "-100vw"]);
-  const xImage5 = useTransform(scrollSection, [0.8, 1], ["100vw", "-100vw"]);
+  const xImage1 = useTransform(scrollSection, [0.1, 0.2], ["100vw", "-100vw"]);
+  const xImage2 = useTransform(scrollSection, [0.2, 0.3], ["100vw", "-100vw"]);
+  const xImage3 = useTransform(scrollSection, [0.3, 0.4], ["100vw", "-100vw"]);
+  const xImage4 = useTransform(scrollSection, [0.5, 0.6], ["100vw", "-100vw"]);
+  const xImage5 = useTransform(scrollSection, [0.7, 0.8], ["100vw", "-100vw"]);
 
   return (
     <>
@@ -138,8 +138,8 @@ export function SectionThird() {
         ref={targetRef}
       >
         <motion.div
-          style={{ y, opacity }}
-          className="fixed top-[15%] flex inset-0 text-black"
+          style={{ y, opacity, position }}
+          className="top-[15%] flex inset-0 text-black"
         >
           <p className="sm:text-5xl text-2xl font-black text-center mx-auto">
             Interior yang telah dibuat
@@ -177,10 +177,8 @@ export function SectionThird() {
 
 export function SectionKonsul() {
   return (
-    <section>
-      <div className="w-full h-screen max-h-screen sm:bg-[url(/image/interior/background4.jpg)] bg-[url(/image/interior/background4-phone.jpg)] bg-cover bg-center">
-        <div className="flex flex-col w-full h-screen">
-          <div className="my-auto mx-auto xl:rounded-xl rounded-none bg-white w-fit p-5 justify-center items-center text-center bg-opacity-70">
+    <section className="w-full h-screen relative flex flex-col inset-0 sm:bg-[url(/image/interior/background4.jpg)] bg-[url(/image/interior/background4-phone.jpg)] bg-cover bg-center">
+          <div className="my-auto mx-auto xl:rounded-xl rounded-none bg-white w-fit p-5 text-center bg-opacity-70">
             <p className="text-black xl:text-5xl sm:text-4xl xs:text-2xl text-2xl font-black">
               Yuk, Mulai Rencanakan Interiormu Sekarang
             </p>
@@ -195,12 +193,10 @@ export function SectionKonsul() {
                 className="xl:text-xl sm:text-xl xs:text-lg text-lg"
               >
                 Mulai Konsultasi
-                <img src="./image/wa_icon.png" className="h-8 ml-2" />
+                <img src="/image/wa_icon.png" className="h-8 ml-2" />
               </Link>
             </Button>
           </div>
-        </div>
-      </div>
     </section>
   );
 }

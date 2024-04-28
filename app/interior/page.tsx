@@ -16,9 +16,7 @@ export default function Interior() {
     <SectionSecond />
     </div>
     <SectionThird />
-      {/* <SectionProject />
-            <SectionKonsul />
-            <Footer /> */}
+    <SectionKonsul />
     </>
   );
 }
