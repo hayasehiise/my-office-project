@@ -129,11 +129,6 @@ export function SectionThird() {
   const xImage2 = useTransform(scrollSection, [0.3, 0.4], ["100vw", "-100vw"]);
   const xImage3 = useTransform(scrollSection, [0.5, 0.6], ["100vw", "-100vw"]);
   const xImage4 = useTransform(scrollSection, [0.7, 0.8], ["100vw", "-100vw"]);
-  const xImage1 = useTransform(scrollSection, [0.1, 0.2], ["100vw", "-50vw"]);
-  const xImage2 = useTransform(scrollSection, [0.3, 0.4], ["100vw", "-50vw"]);
-  const xImage3 = useTransform(scrollSection, [0.5, 0.6], ["100vw", "-50vw"]);
-  const xImage4 = useTransform(scrollSection, [0.7, 0.8], ["100vw", "-50vw"]);
-
   return (
     <>
       <section
