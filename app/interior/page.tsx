@@ -17,6 +17,7 @@ export default function Interior() {
     </div>
     <SectionThird />
     <SectionKonsul />
+    <Footer />
     </>
   );
 }
