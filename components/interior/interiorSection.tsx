@@ -122,10 +122,12 @@ function WindowSize() {
 
   useEffect(() => {
     function handleResize() {
-      setWindowDimension({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      })
+      if (typeof window != undefined) {
+        setWindowDimension({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        })
+      }
     }
 
     window.addEventListener('resize', handleResize)
