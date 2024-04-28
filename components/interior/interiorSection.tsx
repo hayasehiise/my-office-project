@@ -116,8 +116,8 @@ function WindowSize() {
     height: number;
   }
   const [windowDimension, setWindowDimension] = useState<windowProp>({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: window?.innerWidth,
+    height: window?.innerHeight,
   })
 
   useEffect(() => {
