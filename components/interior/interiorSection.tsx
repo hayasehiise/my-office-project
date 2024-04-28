@@ -125,11 +125,10 @@ export function SectionThird() {
   const opacity = useTransform(scrollSection, [0.05, 0.1, 0.9, 1], [0, 1, 1, 0]);
   const y = useTransform(scrollSection, [0.05, 0.1, 0.9, 1], [100, 0, 0, 100]);
 
-  const xImage1 = useTransform(scrollSection, [0.1, 0.2], ["100vw", "-100vw"]);
-  const xImage2 = useTransform(scrollSection, [0.2, 0.3], ["100vw", "-100vw"]);
-  const xImage3 = useTransform(scrollSection, [0.3, 0.4], ["100vw", "-100vw"]);
-  const xImage4 = useTransform(scrollSection, [0.5, 0.6], ["100vw", "-100vw"]);
-  const xImage5 = useTransform(scrollSection, [0.7, 0.8], ["100vw", "-100vw"]);
+  const xImage1 = useTransform(scrollSection, [0.1, 0.2], ["100vw", "-35vw"]);
+  const xImage2 = useTransform(scrollSection, [0.3, 0.4], ["100vw", "-35vw"]);
+  const xImage3 = useTransform(scrollSection, [0.5, 0.6], ["100vw", "-35vw"]);
+  const xImage4 = useTransform(scrollSection, [0.7, 0.8], ["100vw", "-35vw"]);
 
   return (
     <>
@@ -163,11 +162,6 @@ export function SectionThird() {
           <motion.img
             style={{ x: xImage4 }}
             src="/image/interior/carousel/item4.jpg"
-            className="fixed top-[22%] sm:h-[600px] sm:w-[600px] h-[400px] w-[400px] object-cover rounded-full"
-          />
-          <motion.img
-            style={{ x: xImage5 }}
-            src="/image/interior/carousel/item5.jpg"
             className="fixed top-[22%] sm:h-[600px] sm:w-[600px] h-[400px] w-[400px] object-cover rounded-full"
           />
       </section>
