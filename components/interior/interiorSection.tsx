@@ -122,7 +122,7 @@ function WindowSize() {
 
   useEffect(() => {
     function handleResize() {
-      if (typeof window != undefined) {
+      if (typeof window !== "undefined") {
         setWindowDimension({
           width: window.innerWidth,
           height: window.innerHeight,
