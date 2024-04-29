@@ -297,20 +297,49 @@ export function SectionFaq() {
 
 export function Footer() {
   return (
-    <footer className="w-full h-full">
-      <div className="grid grid-cols-2 gap-0 bg-gray-300 justify-center items-center xl:px-10 sm:px-10 xs: py-5">
-        <div className="text-left">
-          <p>CV.Infinity Project Property</p>
-          <p>Kantor Infinity</p>
-          <p>Jl.Domba no.13 Kel.Talise</p>
-          <p>Palu, Sulawesi Tengah</p>
-          <p>infinityprojectproperty22@gmail.com</p>
+    <footer className="flex flex-col inset-0 sm:px-24 px-12 pt-5 pb-2 bg-gray-300 text-black">
+      <div className="flex mb-5">
+        <img src="/image/logo/logo_2.png" className="h-10" />
+        <p className="my-auto ml-2 text-xl font-bold select-none">
+          Awaludin Agen
+        </p>
+      </div>
+      <div className="grid sm:grid-cols-2 grid-cols-1 sm:gap-0 gap-5 mb-2">
+        <div className="flex flex-col">
+          <p className="mb-3 text-lg font-semibold">Ikuti Saya Di:</p>
+          <div className="flex gap-5">
+            <Link href={`https://www.instagram.com/awaludin_infinity/`} target="_blank">
+              <img src="/icons/instagram.png" className="h-10" />
+            </Link>
+            <Link href={`https://www.tiktok.com/@awaludin_infinity?lang=id-ID`} target="_blank">
+            <img src="/icons/tiktok.png" className="h-10" />
+            </Link>
+            <Link href={`https://www.youtube.com/@awaludin1832`} target="_blank">
+            <img src="/icons/youtube.png" className="h-10" />
+            </Link>
+          </div>
         </div>
-        <div>
-          <p className="text-right">
-            Copyright &copy; Hery Setiawan (Staff IT Infinity Project Property)
-          </p>
+        <div className="flex flex-col">
+          <p className="mb-3 text-lg font-semibold">Hubungi Saya</p>
+          <div className="flex flex-col">
+            <div className="flex">
+            <img src="/icons/mail.png" className="h-5" />
+            <p className="my-auto ml-2">awaludin.malewa@gmail.com</p>
+            </div>
+            <div className="flex">
+            <img src="/icons/whatsapp.png" className="h-5" />
+            <p className="my-auto ml-2">(+62) 821-2222-9500</p>
+            </div>
+            <div className="flex">
+            <img src="/icons/map.png" className="h-5" />
+            <p className="my-auto ml-2 w-1/2">Jl. Domba No.22, Talise, Kec. Palu Tim., Kota Palu, Sulawesi Tengah 94118</p>
+            </div>
+          </div>
         </div>
+      </div>
+      <hr style={{ height: 5, borderWidth: 0, backgroundColor: 'black' }} />
+      <div className="flex mt-2 justify-center">
+        <p>Copyright &copy; | Staff IT (Hery Setiawan)</p>
       </div>
     </footer>
   );

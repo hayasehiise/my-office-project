@@ -98,44 +98,44 @@ export default function ListWebinar() {
               </p>
             </CardContent>
             <CardFooter className="sm:justify-between flex-col sm:flex-row">
-              <p className="flex flex-col text-2xl mr-2">
+              <div className="flex flex-col text-2xl mr-2">
                 {item.discount == 0 ? (
                   <>
-                    <span className="font-semibold">
+                    <p className="font-semibold">
                       {item.price.toLocaleString("id-ID", {
                         style: "currency",
                         currency: "IDR",
                       })}
-                    </span>
+                    </p>
                   </>
                 ) : item.discount == 100 ? (
                   <>
-                    <span className="line-through">
+                    <p className="line-through">
                       {item.base_price.toLocaleString("id-ID", {
                         style: "currency",
                         currency: "IDR",
                       })}
-                    </span>
-                    <span className="font-semibold">Gratis</span>
+                    </p>
+                    <p className="font-semibold">Gratis</p>
                   </>
                 ) : (
                   <>
-                    <span className="line-through">
+                    <p className="line-through">
                       {item.base_price.toLocaleString("id-ID", {
                         style: "currency",
                         currency: "IDR",
                       })}
-                    </span>
+                    </p>
                     {/* <Badge className="ml-2 w-fit mx-auto">{item.discount}%</Badge> */}
-                    <span className="font-semibold">
+                    <p className="font-semibold">
                       {item.price.toLocaleString("id-ID", {
                         style: "currency",
                         currency: "IDR",
                       })}
-                    </span>
+                    </p>
                   </>
                 )}
-              </p>
+              </div>
               <Button variant={"success"} asChild className="sm:mt-0 mt-5">
                 <Link
                   href={`https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20${item.title}`}

@@ -3,19 +3,19 @@ import {
   SectionSecond,
   SectionThird,
   SectionProjects,
-  SectionLast
+  SectionLast,
+  Footer
 } from "@/components/iklan/sectionIklan";
 
 export default function IklanPage() {
   return (
     <>
-      <main className=" snap-y snap-mandatory sm:h-screen overflow-y-scroll">
         <SectionMain />
         <SectionSecond />
         <SectionThird />
         <SectionProjects />
         <SectionLast />
-      </main>
+        <Footer />
     </>
   );
 }

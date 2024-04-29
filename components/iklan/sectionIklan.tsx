@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 interface SectionProps {
-  children: React.ReactNode;
-  className: string;
+  children?: React.ReactNode;
+  className?: string;
 }
 
 type projectVideoType = {
@@ -20,7 +20,7 @@ const projectVideoData: projectVideoType[] = [
 ];
 
 function Section({ children, className }: SectionProps) {
-  return <section className={`${className} snap-center snap-always flex flex-col`}>{children}</section>;
+  return <section className={`${className} flex flex-col`}>{children}</section>;
 }
 
 export function SectionMain() {
@@ -162,5 +162,55 @@ export function SectionLast() {
         </Link>
       </Button>
     </Section>
+  );
+}
+
+export function Footer() {
+  return (
+    <footer className="relative flex flex-col inset-0 sm:px-24 px-12 pt-5 pb-2 bg-black text-white">
+      <div className="flex mb-5">
+        <img src="/image/logo/logo_2.png" className="h-10" />
+        <p className="my-auto ml-2 text-white text-xl font-bold select-none">
+          Awaludin Agen
+        </p>
+      </div>
+      <div className="grid sm:grid-cols-2 grid-cols-1 sm:gap-0 gap-5 mb-2">
+        <div className="flex flex-col">
+          <p className="mb-3 text-lg font-semibold">Ikuti Saya Di:</p>
+          <div className="flex gap-5">
+            <Link href={`https://www.instagram.com/awaludin_infinity/`} target="_blank">
+              <img src="/icons/instagram.png" className="h-10" />
+            </Link>
+            <Link href={`https://www.tiktok.com/@awaludin_infinity?lang=id-ID`} target="_blank">
+            <img src="/icons/tiktok.png" className="h-10" />
+            </Link>
+            <Link href={`https://www.youtube.com/@awaludin1832`} target="_blank">
+            <img src="/icons/youtube.png" className="h-10" />
+            </Link>
+          </div>
+        </div>
+        <div className="flex flex-col">
+          <p className="mb-3 text-lg font-semibold">Hubungi Saya</p>
+          <div className="flex flex-col">
+            <div className="flex">
+            <img src="/icons/mail.png" className="h-5" />
+            <p className="my-auto ml-2">awaludin.malewa@gmail.com</p>
+            </div>
+            <div className="flex">
+            <img src="/icons/whatsapp.png" className="h-5" />
+            <p className="my-auto ml-2">(+62) 821-2222-9500</p>
+            </div>
+            <div className="flex">
+            <img src="/icons/map.png" className="h-5" />
+            <p className="my-auto ml-2 w-1/2">Jl. Domba No.22, Talise, Kec. Palu Tim., Kota Palu, Sulawesi Tengah 94118</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr style={{ height: 5, borderWidth: 0, backgroundColor: 'white' }} />
+      <div className="flex mt-2 justify-center">
+        <p>Copyright &copy; | Staff IT (Hery Setiawan)</p>
+      </div>
+    </footer>
   );
 }

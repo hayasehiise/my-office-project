@@ -102,11 +102,6 @@ export default function ListLowongan() {
     active: boolean;
   }
 
-  console.log(listLowongan);
-  // console.log(isLoading)
-  // console.log(data);
-  // console.log(error)
-
   if (isLoading)
     return (
       <div className="mx-auto w-[200px] h-[200px]">
@@ -131,8 +126,8 @@ export default function ListLowongan() {
         <div className="mx-auto w-[300px] h-[300px]">
           <img src="/image/lowongan/no_data.png" className="w-full h-full" />
         </div>
-        <p className="text-xl font-semibold">Sorry, Data not found</p>
-        <p className="text-base">Refresh after a while</p>
+        <p className="text-xl font-semibold">Maaf, Tidak Ada Lowongan Untuk Sementara Waktu</p>
+        <p className="text-base">Tunggu untuk informasi lebih lanjut</p>
       </div>
     );
   }
