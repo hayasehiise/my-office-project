@@ -203,7 +203,6 @@ export function SectionServiceBlock() {
       x: 0,
       height: "100%",
       transition: { type: "slide", stiffness: 100 },
-      
     },
   };
 

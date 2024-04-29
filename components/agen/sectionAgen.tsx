@@ -80,7 +80,9 @@ export function SectionMain() {
           </p>
         </div>
         <div>
-          <Button className="p-6" onClick={() => scrollTo('webinar')}>Daftar Sekarang</Button>
+          <Button className="p-6" onClick={() => scrollTo("webinar")}>
+            Daftar Sekarang
+          </Button>
         </div>
       </div>
       <div className="absolute bottom-0 flex shrink w-full justify-between lg:px-36 sm:px-24 xs:px-2 bg-[#3d85c6]">
@@ -138,8 +140,10 @@ export function SectionDesc() {
             Anda akan mendapatkan bimbingan langsung dari para ahli, mendapatkan
             skill baru sebagai pengusaha dan berinteraksi dengan sesama Agen
             lain
-          </p >
-          <p className="sm:text-2xl text-sm font-black text-center">Sungguh Menarik Bukan ?</p>
+          </p>
+          <p className="sm:text-2xl text-sm font-black text-center">
+            Sungguh Menarik Bukan ?
+          </p>
         </div>
       </div>
     </Section>
@@ -176,7 +180,7 @@ export function SectionFormAgen() {
     visible: { x: 0, transition: { duration: 0.8, ease: "easeOut" } },
   };
   return (
-    <Section className="w-full h-full" id="">
+    <Section className="relative w-full h-full" id="">
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -205,7 +209,7 @@ export function SectionFormAgen() {
                   >
                     <Button variant={"success"}>
                       <img
-                        src="/image/agen/whatsapp.png"
+                        src="/icons/whatsapp.png"
                         className="h-8 mr-2"
                       />
                       Hubungi Saya
@@ -225,5 +229,51 @@ export function SectionFormAgen() {
 }
 
 export function Footer() {
-  
+  return (
+    <footer className="relative flex flex-col inset-0 sm:px-24 px-12 pt-5 pb-2 bg-[#0c343d] text-white">
+      <div className="flex mb-5">
+        <img src="/image/logo/logo_2.png" className="h-10" />
+        <p className="my-auto ml-2 text-white text-xl font-bold select-none">
+          Awaludin Agen
+        </p>
+      </div>
+      <div className="grid sm:grid-cols-2 grid-cols-1 sm:gap-0 gap-5 mb-2">
+        <div className="flex flex-col">
+          <p className="mb-3 text-lg font-semibold">Ikuti Saya Di:</p>
+          <div className="flex gap-5">
+            <Link href={`https://www.instagram.com/awaludin_infinity/`} target="_blank">
+              <img src="/icons/instagram.png" className="h-10" />
+            </Link>
+            <Link href={`https://www.tiktok.com/@awaludin_infinity?lang=id-ID`} target="_blank">
+            <img src="/icons/tiktok.png" className="h-10" />
+            </Link>
+            <Link href={`https://www.youtube.com/@awaludin1832`} target="_blank">
+            <img src="/icons/youtube.png" className="h-10" />
+            </Link>
+          </div>
+        </div>
+        <div className="flex flex-col">
+          <p className="mb-3 text-lg font-semibold">Hubungi Saya</p>
+          <div className="flex flex-col">
+            <div className="flex">
+            <img src="/icons/mail.png" className="h-5" />
+            <p className="my-auto ml-2">awaludin.malewa@gmail.com</p>
+            </div>
+            <div className="flex">
+            <img src="/icons/whatsapp.png" className="h-5" />
+            <p className="my-auto ml-2">(+62) 821-2222-9500</p>
+            </div>
+            <div className="flex">
+            <img src="/icons/map.png" className="h-5" />
+            <p className="my-auto ml-2 w-1/2">Jl. Domba No.22, Talise, Kec. Palu Tim., Kota Palu, Sulawesi Tengah 94118</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr style={{ height: 5, borderWidth: 0, backgroundColor: 'white' }} />
+      <div className="flex mt-2 justify-center">
+        <p>Copyright &copy; | Staff IT (Hery Setiawan)</p>
+      </div>
+    </footer>
+  );
 }

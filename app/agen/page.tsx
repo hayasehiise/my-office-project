@@ -1,4 +1,4 @@
-import {SectionMain, SectionDesc, SectionWebinar, SectionFormAgen} from '@/components/agen/sectionAgen'
+import {SectionMain, SectionDesc, SectionWebinar, SectionFormAgen, Footer} from '@/components/agen/sectionAgen'
 export default function AgenPage() {
     return(
         <>
@@ -6,6 +6,7 @@ export default function AgenPage() {
         <SectionDesc />
         <SectionWebinar />
         <SectionFormAgen />
+        <Footer />
         </>
     )
 }
