@@ -167,7 +167,7 @@ export function SectionFormAgen() {
             Apakah Kamu Tertarik Menjadi Agen? <br />
             Daftar Sekarang!
           </p>
-          <p className="flex font-serif my-5 font-medium">
+          <p className="flex my-5 font-medium">
             Mari kita bersama menciptakan ide menjadi nyata dan hasil yang
             memuaskan
           </p>
