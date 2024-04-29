@@ -223,3 +223,7 @@ export function SectionFormAgen() {
     </Section>
   );
 }
+
+export function Footer() {
+  
+}

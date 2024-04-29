@@ -7,31 +7,21 @@ import {
   CardHeader,
   CardTitle,
 } from "@components/ui/card";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { useState } from "react";
 import axios from "axios";
 import useSWR from "swr";
 
-const fetcher = (url: string) =>
-  axios.get(`${process.env.API_URL}${url}`).then((res) => res.data);
+const fetcher = (url: string) => (axios.get(url).then((res) => res.data))
 
 export default function ListWebinar() {
-  const { data, error, isLoading } = useSWR(`/api/webinar`, fetcher, {
+  const { data, error, isLoading } = useSWR(`${process.env.API_URL}/api/webinar`, fetcher, {
     refreshInterval: 1000,
   });
 
   const listWebinar = data?.data;
-  console.log(listWebinar);
 
   type dataProps = {
     id: number;
@@ -46,13 +36,16 @@ export default function ListWebinar() {
 
   if (isLoading)
     return (
+      <>
       <div className="mx-auto w-[200px] h-[200px]">
         <img src="/image/agen/loading2.gif" className="w-full h-full" />
       </div>
+      </>
     );
 
   if (error)
     return (
+      <>
       <div className="mx-auto text-center">
         <div className="mx-auto w-[300px] h-[300px]">
           <img src="/image/agen/no_data.png" className="w-full h-full" />
@@ -60,10 +53,12 @@ export default function ListWebinar() {
         <p className="text-xl font-semibold text-white">Sorry, Data not found</p>
         <p className="text-base text-white">Refresh after a while</p>
       </div>
+      </>
     );
 
   if (listWebinar.length == 0) {
     return (
+      <>
       <div className="mx-auto text-center">
         <div className="mx-auto w-[300px] h-[300px]">
           <img src="/image/agen/no_data.png" className="w-full h-full" />
@@ -71,6 +66,7 @@ export default function ListWebinar() {
         <p className="text-xl font-semibold text-white">Maaf, Webinar Belum Tersedia</p>
         <p className="text-base text-white">Silahkan Mengecek Kembali Dilain Waktu</p>
       </div>
+      </>
     );
   }
   return (
@@ -130,6 +126,7 @@ export default function ListWebinar() {
                         currency: "IDR",
                       })}
                     </span>
+                    {/* <Badge className="ml-2 w-fit mx-auto">{item.discount}%</Badge> */}
                     <span className="font-semibold">
                       {item.price.toLocaleString("id-ID", {
                         style: "currency",
