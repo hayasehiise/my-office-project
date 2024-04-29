@@ -12,9 +12,10 @@ const config = {
   prefix: "",
   theme: {
     screens: {
-      "xs": "375px",
+      "xs": "320px",
       "sm": "640px",
-      "xl": "1280px"
+      "lg": '1280px',
+      'xl': '1400px'
     },
     container: {
       center: true,

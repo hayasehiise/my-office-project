@@ -68,8 +68,8 @@ export default function ListWebinar() {
         <div className="mx-auto w-[300px] h-[300px]">
           <img src="/image/agen/no_data.png" className="w-full h-full" />
         </div>
-        <p className="text-xl font-semibold text-white">Sorry, Data not found</p>
-        <p className="text-base text-white">Refresh after a while</p>
+        <p className="text-xl font-semibold text-white">Maaf, Webinar Belum Tersedia</p>
+        <p className="text-base text-white">Silahkan Mengecek Kembali Dilain Waktu</p>
       </div>
     );
   }

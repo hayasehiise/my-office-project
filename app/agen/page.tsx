@@ -1,10 +1,10 @@
-import {SectionMain, SectionDesc, SectionAgen, SectionFormAgen} from '@/components/agen/sectionAgen'
+import {SectionMain, SectionDesc, SectionWebinar, SectionFormAgen} from '@/components/agen/sectionAgen'
 export default function AgenPage() {
     return(
         <>
         <SectionMain />
-        <SectionAgen />
         <SectionDesc />
+        <SectionWebinar />
         <SectionFormAgen />
         </>
     )
