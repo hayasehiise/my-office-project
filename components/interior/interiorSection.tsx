@@ -203,7 +203,6 @@ export function Footer() {
           <p>Kantor Infinity</p>
           <p>Jl.Domba no.13 Kel.Talise</p>
           <p>Palu, Sulawesi Tengah</p>
-          <p>infinityprojectproperty22@gmail.com</p>
         </div>
         <div>
           <p className="text-right">
