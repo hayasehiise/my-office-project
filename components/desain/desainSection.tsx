@@ -7,7 +7,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "@components/ui/carousel";
 import {
   Card,
   CardContent,
@@ -15,12 +15,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+} from "@components/ui/card";
 import { motion } from "framer-motion";
 import Link from "next/link";
 

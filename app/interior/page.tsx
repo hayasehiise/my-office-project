@@ -6,7 +6,7 @@ import {
   SectionThird,
   SectionKonsul,
   Footer,
-} from "@/components/interior/interiorSection";
+} from "@components/interior/interiorSection";
 
 export default function Interior() {
   return (

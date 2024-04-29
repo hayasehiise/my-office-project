@@ -17,7 +17,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination";
+} from "@components/ui/pagination";
 import {
   Dialog,
   DialogContent,
@@ -26,8 +26,8 @@ import {
   DialogFooter,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Button } from "@/components/ui/button";
+} from "@components/ui/dialog";
+import { Button } from "@components/ui/button";
 import Link from "next/link";
 
 const fetcher = (url: string) =>

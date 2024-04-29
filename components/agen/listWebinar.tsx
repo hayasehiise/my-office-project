@@ -7,10 +7,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@components/ui/card";
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button";
+import { Button } from "@components/ui/button";
 import Link from "next/link";
-import { useState } from "react";
 import axios from "axios";
 import useSWR from "swr";
 

@@ -5,8 +5,8 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
+} from "@components/ui/accordion";
+import { Button } from "@components/ui/button";
 import Link from "next/link";
 import {
   Carousel,
@@ -14,7 +14,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/components/ui/carousel";
+} from "@components/ui/carousel";
 import {
   Card,
   CardContent,
@@ -22,7 +22,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
+} from "@components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
 import Image from "next/image";

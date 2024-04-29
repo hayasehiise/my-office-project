@@ -5,7 +5,7 @@ import {
   SectionProjects,
   SectionLast,
   Footer
-} from "@/components/iklan/sectionIklan";
+} from "@components/iklan/sectionIklan";
 
 export default function IklanPage() {
   return (

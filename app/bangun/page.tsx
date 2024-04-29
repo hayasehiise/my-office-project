@@ -1,4 +1,4 @@
-import { SecondSection, SectionMain, SectionProject, SectionTahap, SectionLast, SectionKonsul, Footer } from "@/components/bangun/sectionBangun"
+import { SecondSection, SectionMain, SectionProject, SectionTahap, SectionLast, SectionKonsul, Footer } from "@components/bangun/sectionBangun"
 
 
 

@@ -1,20 +1,5 @@
 "use client";
 import { Button } from "@components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@components/ui/card";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@components/ui/carousel";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@components/ui/tabs";
 import Link from "next/link";
 import { motion, animate } from "framer-motion";
@@ -27,15 +12,6 @@ interface SectionProps {
   className?: string;
   id?: string;
 }
-
-type agenDataType = {
-  name: string;
-  image: string;
-};
-
-const agenDataItem: agenDataType[] = [
-  { name: "Heru Nisa", image: "/image/agen/agenList/agen_1.jpg" },
-];
 
 function Section({ children, className, id }: SectionProps) {
   return (

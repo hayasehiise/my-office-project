@@ -1,6 +1,6 @@
 "use client";
-import { Button } from "@/components/ui/button";
-import { Accordion } from "@/components/ui/accordion";
+import { Button } from "@components/ui/button";
+import { Accordion } from "@components/ui/accordion";
 import Link from "next/link";
 import { useState } from "react";
 import FaqAccordion from "@components/website/faqAccordion";
