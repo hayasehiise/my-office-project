@@ -80,7 +80,7 @@ export function SectionMain() {
           </p>
         </div>
         <div>
-          <Button className="p-6">Daftar Sekarang</Button>
+          <Button className="p-6" onClick={() => scrollTo('webinar')}>Daftar Sekarang</Button>
         </div>
       </div>
       <div className="absolute bottom-0 flex shrink w-full justify-between lg:px-36 sm:px-24 xs:px-2 bg-[#3d85c6]">
@@ -148,8 +148,8 @@ export function SectionDesc() {
 
 export function SectionWebinar() {
   return (
-    <Section className="relative w-full h-full bg-[#073763] py-5">
-      <div className="flex px-5 justify-center">
+    <Section className="relative w-full h-full bg-[#073763] py-5" id="webinar">
+      <div className="flex px-5 justify-center mb-5">
         <p className="sm:text-4xl text-2xl font-extrabold sm:w-1/2 w-full text-white text-center">
           Webinar yang akan dilaksanakan
         </p>
