@@ -398,7 +398,7 @@ export function SectionContact() {
             </p>
             <Button variant="success" className="rounded-full p-6" asChild>
               <Link
-                href="https://api.whatsapp.com/send?phone=6281352294435&text=Saya%20ingin%20desain%20rumah%20"
+                href="https://api.whatsapp.com/send?phone=6282122229500&text=Saya%20ingin%20desain%20rumah%20"
                 target="_blank"
                 className=" text-xl"
               >
