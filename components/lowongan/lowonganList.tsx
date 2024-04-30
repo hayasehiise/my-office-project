@@ -31,12 +31,12 @@ import { Button } from "@components/ui/button";
 import Link from "next/link";
 
 const fetcher = (url: string) =>
-  axios.get(`${process.env.API_URL}${url}`).then((res) => res.data);
+  axios.get(url).then((res) => res.data);
 
 export default function ListLowongan() {
   const [pageIndex, setPageIndex] = useState<number>(1);
   const { data, error, isLoading } = useSWR(
-    `/api/lowongan?page=${pageIndex}`,
+    `${process.env.API_URL}/api/lowongan?page=${pageIndex}`,
     fetcher,
     { refreshInterval: 1000 }
   );
