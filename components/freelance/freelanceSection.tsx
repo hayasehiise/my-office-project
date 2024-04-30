@@ -68,33 +68,31 @@ const benefitDataItem: benefitDataType[] = [
 ];
 
 function Section({ children, className }: SectionProps) {
-  return <section className={`${className} flex flex-col`}>{children}</section>;
+  return <section className={className}>{children}</section>;
 }
 
 export function SectionOne() {
   return (
-    <Section className="w-full xl:h-screen sm:h-full sm:bg-[url(/image/freelance/bg-sectionOne.jpg)] bg-[url(/image/freelance/bg-sectionOnePhone.jpg)] bg-cover">
-      <div className={`flex flex-col sm:flex-row xl:h-screen sm:h-full h-full`}>
+    <Section className="w-full h-dvh flex justify-center items-center sm:bg-[url(/image/freelance/bg-sectionOne.jpg)] bg-[url(/image/freelance/bg-sectionOnePhone.jpg)] bg-cover">
         <div
-          className={`xl:w-1/2 sm:w-full w-full my-auto xl:pl-20 sm:pl-5 xl:pt-0 sm:pt-0 pt-3`}
+          className={`flex lg:flex-row flex-col w-full xl:pl-20 sm:pl-5 xl:pt-0 sm:pt-0 pt-3`}
         >
-          <p className="xl:text-6xl sm:text-3xl text-center text-2xl font-extrabold px-4">
+          <p className="xl:text-6xl sm:text-3xl text-center my-auto text-2xl font-extrabold px-4">
             Mulailah Meniti Karirmu dengan menjadi Freelance di Bidang Property
             Bersama Kami
           </p>
-        </div>
-        <img
+          <img
           src={`/image/freelance/sectionOne_image.png`}
-          className={`w-1/2 mx-auto my-auto`}
+          className={`lg:w-1/2 w-[80%] mx-auto my-auto`}
         />
-      </div>
+        </div>
     </Section>
   );
 }
 
 export function SectionSecond() {
   return (
-    <Section className="w-full h-full bg-[#efefef] justify-center items-center py-5">
+    <Section className="w-full h-full flex flex-col bg-[#efefef] justify-center items-center py-5">
       <p className="xl:text-4xl sm:text-2xl text-xl text-center font-bold px-5">
         Ada banyak Job Freelance yang dapat pilih
       </p>
