@@ -198,7 +198,7 @@ export function Footer() {
             </div>
             <div className="flex">
             <img src="/icons/map.png" className="h-5" />
-            <p className="my-auto ml-2 w-1/2">Jl. Domba No.22, Talise, Kec. Palu Tim., Kota Palu, Sulawesi Tengah 94118</p>
+            <p className="my-auto ml-2 w-1/2">Jl. Domba No.22, Talise, Kec. Palu Timur., Kota Palu, Sulawesi Tengah 94118</p>
             </div>
           </div>
         </div>
