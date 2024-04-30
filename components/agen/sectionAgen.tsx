@@ -31,7 +31,7 @@ export function SectionMain() {
     <Section className="relative w-full h-dvh text-white">
       <nav className="flex flex-wrap justify-between sm:px-24 lg:px-36 xs:px-5 py-2 bg-[#0b5394]">
         <div className="flex shrink">
-          <img src="/image/logo/logo_2.png" className="sm:h-14 xs:h-7" />
+          <img src="./image/logo/logo_2.png" className="sm:h-14 xs:h-7" />
           <p className="my-auto ml-2 text-white sm:text-2xl xs:text-xl font-bold select-none">
             Awaludin Agen
           </p>
