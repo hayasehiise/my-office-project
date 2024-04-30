@@ -124,11 +124,12 @@ export function SectionThird() {
 
   const opacity = useTransform(scrollSection, [0.05, 0.1, 0.9, 1], [0, 1, 1, 0]);
   const y = useTransform(scrollSection, [0.05, 0.1, 0.9, 1], [100, 0, 0, 100]);
+  const leftSlider = useTransform(scrollSection, [0.1, 0.8], [2000, -3200])
 
-  const xImage1 = useTransform(scrollSection, [0.1, 0.2], ["100vw", "-100vw"]);
-  const xImage2 = useTransform(scrollSection, [0.3, 0.4], ["100vw", "-100vw"]);
-  const xImage3 = useTransform(scrollSection, [0.5, 0.6], ["100vw", "-100vw"]);
-  const xImage4 = useTransform(scrollSection, [0.7, 0.8], ["100vw", "-100vw"]);
+  // const xImage1 = useTransform(scrollSection, [0.1, 0.5], ["100vw", "-100vw"]);
+  // const xImage2 = useTransform(scrollSection, [0.2, 0.6], ["100vw", "-100vw"]);
+  // const xImage3 = useTransform(scrollSection, [0.3, 0.7], ["100vw", "-100vw"]);
+  // const xImage4 = useTransform(scrollSection, [0.4, 0.8], ["100vw", "-100vw"]);
   return (
     <>
       <section
@@ -143,26 +144,33 @@ export function SectionThird() {
             Interior yang telah dibuat
           </p>
         </motion.div>
-          <motion.img
+        <motion.div className="fixed flex top-[25%] inset-0 gap-5" style={{ x: leftSlider }}>
+          <img src="/image/interior/carousel/item1.jpg" className="object-cover sm:h-[600px] sm:w-[600px] h-[350px] w-[350px] rounded-full" />
+          <img src="/image/interior/carousel/item2.jpg" className="object-cover sm:h-[600px] sm:w-[600px] h-[350px] w-[350px] rounded-full" />
+          <img src="/image/interior/carousel/item3.jpg" className="object-cover sm:h-[600px] sm:w-[600px] h-[350px] w-[350px] rounded-full" />
+          <img src="/image/interior/carousel/item4.jpg" className="object-cover sm:h-[600px] sm:w-[600px] h-[350px] w-[350px] rounded-full" />
+          <img src="/image/interior/carousel/item5.jpg" className="object-cover sm:h-[600px] sm:w-[600px] h-[350px] w-[350px] rounded-full" />
+        </motion.div>
+          {/* <motion.img
             style={{ x: xImage1 }}
             src="/image/interior/carousel/item1.jpg"
-            className="fixed top-[22%] sm:h-[600px] sm:w-[600px] h-[400px] w-[400px] object-cover rounded-full"
+            className="fixed top-[22%] inset-0 mx-auto sm:h-[600px] sm:w-[600px] h-[350px] w-[350px] object-cover rounded-full"
           />
           <motion.img
             style={{ x: xImage2 }}
             src="/image/interior/carousel/item2.jpg"
-            className="fixed top-[22%] sm:h-[600px] sm:w-[600px] h-[400px] w-[400px] object-cover rounded-full"
+            className="fixed top-[22%] inset-0 mx-auto sm:h-[600px] sm:w-[600px] h-[350px] w-[350px] object-cover rounded-full"
           />
           <motion.img
             style={{ x: xImage3 }}
             src="/image/interior/carousel/item3.jpg"
-            className="fixed top-[22%] sm:h-[600px] sm:w-[600px] h-[400px] w-[400px] object-cover rounded-full"
+            className="fixed top-[22%] inset-0 mx-auto sm:h-[600px] sm:w-[600px] h-[350px] w-[350px] object-cover rounded-full"
           />
           <motion.img
             style={{ x: xImage4 }}
             src="/image/interior/carousel/item4.jpg"
-            className="fixed top-[22%] sm:h-[600px] sm:w-[600px] h-[400px] w-[400px] object-cover rounded-full"
-          />
+            className="fixed top-[22%] inset-0 mx-auto sm:h-[600px] sm:w-[600px] h-[350px] w-[350px] object-cover rounded-full"
+          /> */}
       </section>
     </>
   );
