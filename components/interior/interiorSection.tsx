@@ -189,7 +189,7 @@ export function SectionKonsul() {
             </p>
             <Button variant="success" className="rounded-full p-6 mt-5" asChild>
               <Link
-                href="https://api.whatsapp.com/send?phone=6281352294435&text=Saya%20ingin%20Rancang%20Interior%20"
+                href="https://api.whatsapp.com/send?phone=6282122229500&text=Saya%20ingin%20Rancang%20Interior%20"
                 target="_blank"
                 className="xl:text-xl sm:text-xl xs:text-lg text-lg"
               >
