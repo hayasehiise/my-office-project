@@ -165,8 +165,8 @@ export function SectionPaket() {
           </tr>
           <tr>
             <td className=""></td>
-            <td className="p-5 border-y-2 ">
-              <Button variant={"default"} className="text-xl w-fit" asChild>
+            <td className="sm:p-5 p-2 border-y-2 ">
+              <Button variant={"default"} className="sm:text-xl text-base w-fit" asChild>
                 <Link
                   href={`https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Buat%20Website.%0APaket%20Hemat`}
                   target="_blank"
@@ -176,8 +176,8 @@ export function SectionPaket() {
                 </Link>
               </Button>
             </td>
-            <td className="p-5 border-y-2 ">
-              <Button variant={"default"} className="text-xl w-fit" asChild>
+            <td className="sm:p-5 p-2 border-y-2 ">
+              <Button variant={"default"} className="sm:text-xl w-fit" asChild>
                 <Link
                   href={`https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Buat%20Website.%0APaket%20Standar`}
                   target="_blank"
@@ -187,8 +187,8 @@ export function SectionPaket() {
                 </Link>
               </Button>
             </td>
-            <td className="p-5 border-y-2 ">
-              <Button variant={"default"} className="text-xl w-fit" asChild>
+            <td className="sm:p-5 p-2 border-y-2 ">
+              <Button variant={"default"} className="sm:text-xl w-fit" asChild>
                 <Link
                   href={`https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Buat%20Website.%0APaket%20Lengkap`}
                   target="_blank"
