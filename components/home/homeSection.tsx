@@ -52,7 +52,7 @@ const carouselImageData: carouselImageType[] = [
 const myServiceData: myServiceType[] = [
   {
     images: "./image/homepage/agen.jpg",
-    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Jadi%20Agen.",
+    links: "/agen",
     eventValue: 'button_wa'
   },
 ];
@@ -60,47 +60,47 @@ const myServiceData: myServiceType[] = [
 const myServiceDataGrid: myServiceType[] = [
   {
     images: "./image/homepage/desain.jpg",
-    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Desain%20Rumah.",
+    links: "/desain",
     eventValue: 'button_wa'
   },
   {
     images: "./image/homepage/bangun.jpg",
-    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Banguni%20Rumah.",
+    links: "/bangun",
     eventValue: 'button_wa'
   },
   {
     images: "./image/homepage/interior.jpg",
-    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Desain/Bangun%20Interior.",
+    links: "/interior",
     eventValue: 'button_wa'
   },
   {
     images: "./image/homepage/freelance.jpg",
-    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Jadi%20Freelance.",
+    links: "/freelance",
     eventValue: 'button_wa'
   },
   {
     images: "./image/homepage/bahan_bangun.jpg",
-    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Beli%20Bahan%20Bangunan.",
+    links: "#",
     eventValue: 'button_wa'
   },
   {
     images: "./image/homepage/jual.jpg",
-    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Jual/Beli%20Rumah.",
+    links: "#",
     eventValue: 'button_wa'
   },
   {
     images: "./image/homepage/iklan.jpg",
-    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Buat%20Iklan.",
+    links: "iklan",
     eventValue: 'button_wa'
   },
   {
     images: "./image/homepage/website.jpg",
-    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Buat%20Website.",
+    links: "/website",
     eventValue: 'button_wa'
   },
   {
     images: "./image/homepage/lowongan.jpg",
-    links: "https://api.whatsapp.com/send?phone=6282122229500&text=Assalamualaikum%0AHai%20Kak,%20Saya%20Mau%20Info%20Kerja.",
+    links: "/lowongan",
     eventValue: 'button_wa'
   },
   {
